@@ -16,6 +16,10 @@
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
+		92274CEC27EA781100BFBC46 /* video1_Speech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92274CEB27EA781100BFBC46 /* video1_Speech.mp4 */; };
+		92274CF027EA783C00BFBC46 /* video3_Speech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92274CEF27EA783C00BFBC46 /* video3_Speech.mp4 */; };
+		92274CF227EA784B00BFBC46 /* video1_Crowd_Trimmed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92274CF127EA784B00BFBC46 /* video1_Crowd_Trimmed.mp4 */; };
+		92274CF427EA7A3700BFBC46 /* Video2_Cropped.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92274CF327EA7A3700BFBC46 /* Video2_Cropped.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,11 @@
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITests.swift; sourceTree = "<group>"; };
 		27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		92274CEB27EA781100BFBC46 /* video1_Speech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1_Speech.mp4; sourceTree = "<group>"; };
+		92274CED27EA782C00BFBC46 /* Video2_Cropped.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Video2_Cropped.mov; sourceTree = "<group>"; };
+		92274CEF27EA783C00BFBC46 /* video3_Speech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3_Speech.mp4; sourceTree = "<group>"; };
+		92274CF127EA784B00BFBC46 /* video1_Crowd_Trimmed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1_Crowd_Trimmed.mp4; sourceTree = "<group>"; };
+		92274CF327EA7A3700BFBC46 /* Video2_Cropped.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video2_Cropped.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,11 @@
 		27CAC74F27D296A700013FD5 = {
 			isa = PBXGroup;
 			children = (
+				92274CF327EA7A3700BFBC46 /* Video2_Cropped.mp4 */,
+				92274CF127EA784B00BFBC46 /* video1_Crowd_Trimmed.mp4 */,
+				92274CEF27EA783C00BFBC46 /* video3_Speech.mp4 */,
+				92274CED27EA782C00BFBC46 /* Video2_Cropped.mov */,
+				92274CEB27EA781100BFBC46 /* video1_Speech.mp4 */,
 				27CAC75A27D296A700013FD5 /* AnneFrankAR */,
 				27CAC77027D296AB00013FD5 /* AnneFrankARTests */,
 				27CAC77A27D296AB00013FD5 /* AnneFrankARUITests */,
@@ -229,6 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92274CF427EA7A3700BFBC46 /* Video2_Cropped.mp4 in Resources */,
+				92274CF227EA784B00BFBC46 /* video1_Crowd_Trimmed.mp4 in Resources */,
+				92274CF027EA783C00BFBC46 /* video3_Speech.mp4 in Resources */,
+				92274CEC27EA781100BFBC46 /* video1_Speech.mp4 in Resources */,
 				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
 				27CAC76527D296AB00013FD5 /* Assets.xcassets in Resources */,
 				27CAC76327D296A700013FD5 /* Main.storyboard in Resources */,
