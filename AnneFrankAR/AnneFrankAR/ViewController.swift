@@ -9,15 +9,18 @@ import UIKit
 import RealityKit
 import SceneKit
 import ARKit
+import CoreBluetooth
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate {
+    
     
     //@IBOutlet var arView: ARView!
     @IBOutlet weak var sceneView: ARSCNView!
-    
-    
+    private var cbCentralManager: CBCentralManager!
+    private var beacon: CBPeripheral!
     override func viewDidLoad() {
         super.viewDidLoad()
+       cbCentralManager = CBCentralManager(delegate: self, queue: nil)
         
 //        // Load the "Box" scene from the "Experience" Reality File
 //        let boxAnchor = try! PosterInteractiveExample.loadBox()
@@ -31,6 +34,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         setupScene()
     }
     
+    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -123,4 +128,61 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+}
+
+extension ViewController :  CBCentralManagerDelegate {
+    
+    
+    
+func centralManagerDidUpdateState(_ central: CBCentralManager) {
+ if central.state == .poweredOn {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+        // Code you want to be delayed
+         central.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
+         print("Scanning...")
+     }
+
+  }
+}
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+          //discover all service
+          print("connected")
+          peripheral.discoverServices(nil)
+          
+
+        }
+        
+         
+      guard peripheral.name != nil else {return}
+        //print(peripheral.name)
+        if(peripheral.name=="Beacon_2"){
+            print(RSSI)
+            //print(advertisementData)
+            beacon = peripheral
+
+            beacon.delegate = self
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+      
+
+    }
+    func disconnectFromDevice () {
+        if beacon != nil {
+        cbCentralManager?.cancelPeripheralConnection(beacon!)
+        }
+     }
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("connected")
+        print(beacon)
+        print(beacon.readRSSI())
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // Change `2.0` to the desired number of seconds.
+           // Code you want to be delayed
+            self.disconnectFromDevice()
+        }
+        
+        
+}
 }
