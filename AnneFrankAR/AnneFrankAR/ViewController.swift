@@ -16,6 +16,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     
     //@IBOutlet var arView: ARView!
     @IBOutlet weak var sceneView: ARSCNView!
+    var made = false;
     private var cbCentralManager: CBCentralManager!
     private var beacon: CBPeripheral!
     override func viewDidLoad() {
@@ -27,11 +28,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
 //
 //        // Add the box anchor to the scene
 //        arView.scene.anchors.append(boxAnchor)
-        sceneView.delegate = self
-        sceneView.showsStatistics = true
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        sceneView.scene = scene
-        setupScene()
+ 
     }
     
     
@@ -54,7 +51,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     
     func setupScene() {
         let node = SCNNode()
-        node.position = SCNVector3.init(0, 0, 0)
+       //
         
         let leftWall = createBox(isDoor: false)
         leftWall.position = SCNVector3.init((-length / 2) + width, 0, 0)
@@ -110,8 +107,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         node.addChildNode(backWall)
         node.addChildNode(leftDoorSide)
         node.addChildNode(rightDoorSide)
-
+        let pov = self.sceneView.pointOfView
+        let position = pov?.position
+        let angle = pov?.eulerAngles
+        let posx = position?.x
+        let posy = position?.y
+        let posz = position?.z
+        let angx = angle?.x
+        let angy = angle?.y
+        let angz = angle?.z
+        print(angx,angy,angz)
+        node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2)
+        node.eulerAngles=SCNVector3.init(0,0, 0)
+        //self.sceneView.pointOfView?.addChildNode(node)
         self.sceneView.scene.rootNode.addChildNode(node)
+        
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -159,6 +169,14 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         //print(peripheral.name)
         if(peripheral.name=="Beacon_2"){
             print(RSSI)
+            if Int(RSSI) >= -60 && !made{
+                made=true
+                self.sceneView.showsStatistics = true
+                let scene = SCNScene(named: "art.scnassets/ship.scn")!
+                
+                self.sceneView.scene = scene 
+                self.setupScene()
+            }
             //print(advertisementData)
             beacon = peripheral
 
