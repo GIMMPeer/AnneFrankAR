@@ -19,6 +19,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     var made = false;
     private var cbCentralManager: CBCentralManager!
     private var beacon: CBPeripheral!
+    var one = -1
+    var two = -1
+    var three = -1
     override func viewDidLoad() {
         super.viewDidLoad()
        cbCentralManager = CBCentralManager(delegate: self, queue: nil)
@@ -141,7 +144,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
 }
 
 extension ViewController :  CBCentralManagerDelegate {
-    
+
     
     
 func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -161,29 +164,46 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
           print("connected")
           peripheral.discoverServices(nil)
           
-
-        }
+                   }
         
          
       guard peripheral.name != nil else {return}
-        //print(peripheral.name)
-        if(peripheral.name=="Beacon_2"){
-            print(RSSI)
-            if Int(RSSI) >= -60 && !made{
-                made=true
-                self.sceneView.showsStatistics = true
-                let scene = SCNScene(named: "art.scnassets/ship.scn")!
-                
-                self.sceneView.scene = scene 
-                self.setupScene()
-            }
-            //print(advertisementData)
-            beacon = peripheral
 
-            beacon.delegate = self
+        //print(peripheral.name)
+        //print(RSSI)
+        //print(peripheral.name)
+        if(peripheral.name=="Beacon_1"){
+            one=Int(RSSI)
+            //print(advertisementData)
+
             
             //cbCentralManager?.connect(beacon!, options: nil)
         }
+
+        if(peripheral.name=="Beacon_2"){
+            two=Int(RSSI)
+            //print(advertisementData)
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+
+        if(peripheral.name=="Beacon_3"){
+            three=Int(RSSI)
+            //print(advertisementData)
+      
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+        print(made,one,two,three)
+        if (one >= -75 && one != -1 && two >= -75 && two != -1 && three >= -75 && three != -1 && !made){
+            made=true
+            self.sceneView.showsStatistics = true
+            let scene = SCNScene(named: "art.scnassets/ship.scn")!
+            
+            self.sceneView.scene = scene
+            self.setupScene()
+        }
+
       
 
     }
