@@ -10,17 +10,17 @@ import SceneKit
 import ARKit
 
 var width : CGFloat = 0.03
-var height : CGFloat = 1
-var length : CGFloat = 1
+var height : CGFloat = 2
+var length : CGFloat = 2
 
-var doorLength : CGFloat = 0.3
+var doorLength : CGFloat = 0.6
 
-func createBox(isDoor : Bool) -> SCNNode {
+func createBox(isDoor : Bool, img : String) -> SCNNode {
     let node = SCNNode()
     
     //Add First Box
     let firstBox = SCNBox(width: width, height: height, length: isDoor ? doorLength : length, chamferRadius: 0)
-    firstBox.firstMaterial?.diffuse.contents = UIColor.blue
+    firstBox.firstMaterial?.diffuse.contents = UIImage(named: img)
     
     let firstBoxNode = SCNNode(geometry: firstBox)
     firstBoxNode.renderingOrder = 200
@@ -37,6 +37,20 @@ func createBox(isDoor : Bool) -> SCNNode {
     maskedBoxNode.position = SCNVector3.init(width, 0, 0)
     
     node.addChildNode(maskedBoxNode)
+    return node
+}
+
+func createPoster(image: String) -> SCNNode {
+    let node = SCNNode()
+    
+    let poster = SCNBox(width: 0.03, height: 0.5, length: 0.3, chamferRadius: 0)
+    poster.firstMaterial?.diffuse.contents = UIImage(named: image)
+    
+    let posterNode = SCNNode(geometry: poster)
+    posterNode.renderingOrder = 100
+    
+    node.addChildNode(posterNode)
+    
     return node
 }
 
