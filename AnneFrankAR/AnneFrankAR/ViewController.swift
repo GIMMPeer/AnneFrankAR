@@ -196,10 +196,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("connected")
         print(beacon)
         print(beacon.readRSSI())
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // Change `2.0` to the desired number of seconds.
-           // Code you want to be delayed
-            self.disconnectFromDevice()
-        }
+  
         
         
 }
