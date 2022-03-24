@@ -47,7 +47,7 @@ func createPoster(image: String) -> SCNNode {
     poster.firstMaterial?.diffuse.contents = UIImage(named: image)
     
     let posterNode = SCNNode(geometry: poster)
-    posterNode.renderingOrder = 100
+    posterNode.renderingOrder = 300
     
     node.addChildNode(posterNode)
     

@@ -48,6 +48,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func setupScene() {
+        //Rendering order must be above 100 in order to be properly hidden in the portal
+        
         let node = SCNNode()
         node.position = SCNVector3.init(0, 0, 0)
         
@@ -83,12 +85,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
         
         let subScene = SCNScene(named: "art.scnassets/AmericanPillar.scn")!
+        
         let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
+      //  amer.renderingOrder=200
         amer.position = SCNVector3.init(0.75, -0.1, (-length / 2) + width * 3)
         amer.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+        
         let germ = subScene.rootNode.childNode(withName: "Cylinder2", recursively: true)!
+        //germ.renderingOrder=200
         germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
         germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+
         
         //create light
         let light = SCNLight()
@@ -118,10 +125,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(backWall)
         node.addChildNode(leftDoorSide)
         node.addChildNode(rightDoorSide)
+        posterTest.renderingOrder=200
+        
         node.addChildNode(posterTest)
         node.addChildNode(amer)
         node.addChildNode(germ)
-
+        
+        
         self.sceneView.scene.rootNode.addChildNode(node)
     }
     
