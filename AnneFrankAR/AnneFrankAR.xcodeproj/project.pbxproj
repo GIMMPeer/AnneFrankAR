@@ -18,6 +18,7 @@
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
+		DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITests.swift; sourceTree = "<group>"; };
 		27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendshapesPoster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */,
 				27CAC76427D296AB00013FD5 /* Assets.xcassets */,
 				27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */,
+				DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */,
 			);
 			path = AnneFrankAR;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */,
 				21464CED27D2B739002E875A /* PosterInteractiveExample.rcproject in Sources */,
+				DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */,
 				27CAC75C27D296A700013FD5 /* AppDelegate.swift in Sources */,
 				219428DC27E8E478009E5250 /* Extensions.swift in Sources */,
 			);
