@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2022-03-22T17:32:11Z</created>
-  <modified>2022-03-22T17:32:11Z</modified>
+  <created>2022-03-24T15:26:58Z</created>
+  <modified>2022-03-24T15:26:58Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -58,6 +58,11 @@
    <node id="Cylinder" name="Cylinder">
     <matrix>0.1 0 0 0 0 0.1 0 1 0 0 0.1 0 0 0 0 1 </matrix>
     <instance_geometry url="#geometry1"/>
+    <extra>
+     <technique profile="SceneKit">
+      <visibility>0</visibility>
+     </technique>
+    </extra>
    </node>
   </visual_scene>
  </library_visual_scenes>

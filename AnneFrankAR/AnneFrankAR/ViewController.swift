@@ -9,17 +9,25 @@ import UIKit
 import RealityKit
 import SceneKit
 import ARKit
+import CoreBluetooth
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate {
+    
     
     //@IBOutlet var arView: ARView!
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
-    
-    
+    var made = false;
+    private var cbCentralManager: CBCentralManager!
+    private var beacon: CBPeripheral!
+    var one = -1
+    var two = -1
+    var three = -1
     override func viewDidLoad() {
         super.viewDidLoad()
+       cbCentralManager = CBCentralManager(delegate: self, queue: nil)
         
+
         //init things for scene
         sceneView.delegate = self
         //show statistics shows framerate in corner, could probably be removed in future
@@ -28,8 +36,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
         //setupScene is the function that builds the AR portal
         setupScene()
+
     }
     
+    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -51,7 +62,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //node is the spawn point of everything in the scene
         let node = SCNNode()
-        node.position = SCNVector3.init(0, 0, 0)
+       //
         
         //each wall calls createBox() which is in Extensions
         let leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
@@ -134,6 +145,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(backWall)
         node.addChildNode(leftDoorSide)
         node.addChildNode(rightDoorSide)
+        let pov = self.sceneView.pointOfView
+        let position = pov?.position
+        let angle = pov?.eulerAngles
+        let posx = position?.x
+        let posy = position?.y
+        let posz = position?.z
+        let angx = angle?.x
+        let angy = angle?.y
+        let angz = angle?.z
+        print(angx,angy,angz)
+        node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2)
+        node.eulerAngles=SCNVector3.init(0,0, 0)
+        //self.sceneView.pointOfView?.addChildNode(node)
         posterTest.renderingOrder=200
         
         node.addChildNode(posterTest)
@@ -142,6 +166,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //This is the final step, officially adding node to the scene itself
         self.sceneView.scene.rootNode.addChildNode(node)
+        
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -158,4 +183,83 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+}
+
+extension ViewController :  CBCentralManagerDelegate {
+
+    
+    
+func centralManagerDidUpdateState(_ central: CBCentralManager) {
+ if central.state == .poweredOn {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+        // Code you want to be delayed
+         central.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
+         print("Scanning...")
+     }
+
+  }
+}
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+          //discover all service
+          print("connected")
+          peripheral.discoverServices(nil)
+          
+                   }
+        
+         
+      guard peripheral.name != nil else {return}
+
+        //print(peripheral.name)
+        //print(RSSI)
+        //print(peripheral.name)
+        if(peripheral.name=="Beacon_1"){
+            one=Int(RSSI)
+            //print(advertisementData)
+
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+
+        if(peripheral.name=="Beacon_2"){
+            two=Int(RSSI)
+            //print(advertisementData)
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+
+        if(peripheral.name=="Beacon_3"){
+            three=Int(RSSI)
+            //print(advertisementData)
+      
+            
+            //cbCentralManager?.connect(beacon!, options: nil)
+        }
+        print(made,one,two,three)
+        if (one >= -75 && one != -1 && two >= -75 && two != -1 && three >= -75 && three != -1 && !made){
+            made=true
+            self.sceneView.showsStatistics = true
+            let scene = SCNScene(named: "art.scnassets/ship.scn")!
+            
+            self.sceneView.scene = scene
+            self.setupScene()
+        }
+
+      
+
+    }
+    func disconnectFromDevice () {
+        if beacon != nil {
+        cbCentralManager?.cancelPeripheralConnection(beacon!)
+        }
+     }
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("connected")
+        print(beacon)
+        print(beacon.readRSSI())
+  
+        
+        
+}
 }
