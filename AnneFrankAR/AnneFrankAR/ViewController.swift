@@ -11,18 +11,33 @@ import SceneKit
 import ARKit
 import CoreBluetooth
 
+
+
 class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate {
     
     
     //@IBOutlet var arView: ARView!
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
+    
     var made = false;
     private var cbCentralManager: CBCentralManager!
     private var beacon: CBPeripheral!
     var one = -1
     var two = -1
     var three = -1
+    
+    //Decleare Instances
+    var buttonList: [UIButton:String] = [:]
+    var contentData: ContentData?
+    @IBOutlet weak var HorizonalStackButtons: UIStackView!
+    @IBOutlet weak var ContentUI: UIView!
+    @IBOutlet weak var ButtonUIView: UIView!
+    @IBOutlet weak var ContentTextUI: UILabel!
+    @IBAction func ToNextScenes(unwindSegue: UIStoryboardSegue){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        cbCentralManager = CBCentralManager(delegate: self, queue: nil)
@@ -36,7 +51,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         sceneView.scene = scene
         //setupScene is the function that builds the AR portal
         setupScene()
-
+        parseJson()
+        setUpButtons()
+        
     }
     
     
@@ -154,7 +171,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         let angx = angle?.x
         let angy = angle?.y
         let angz = angle?.z
-        print(angx,angy,angz)
+        
         node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2)
         node.eulerAngles=SCNVector3.init(0,0, 0)
         //self.sceneView.pointOfView?.addChildNode(node)
@@ -183,6 +200,80 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    func parseJson(){
+        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else{
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        do{
+            let jsonData = try Data(contentsOf: url)
+            contentData = try JSONDecoder().decode(ContentData.self, from: jsonData)
+            
+        }catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    private func getTotalContents() -> Int{
+        return contentData!.data.count ?? 0
+    }
+    
+    func setUpButtons(){
+        for content in contentData!.data{
+            let button = UIButton(type: .system)
+            var title:String = content.title
+            button.setTitle("\(title)", for: .normal)
+            button.setImage(UIImage(named: "circle"), for: .normal)
+            button.setImage(UIImage(named: "circle.fill"), for: .selected)
+            
+            button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+            HorizonalStackButtons.alignment = .fill
+            HorizonalStackButtons.distribution = .fillEqually
+            HorizonalStackButtons.spacing = 8.0
+            HorizonalStackButtons.addArrangedSubview(button)
+        
+            
+        }
+    }
+    
+    @IBAction func buttonAction(_ sender:UIButton){
+        if (sender.isSelected == true){
+            ContentUI.isHidden = true;
+            sender.isSelected = false
+        }
+        else{
+            ContentTextUI.text = buttonList[sender]
+            ContentUI.isHidden = false;
+            sender.isSelected = true
+        }
+        
+        for (btn, txt) in buttonList{
+            if(btn != sender){
+                btn.isSelected = false
+            } else{
+               
+            }
+        }
+        
+        ButtonUIView.alpha = 1
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch:UITouch? = touches.first
+        if(touch?.view != ContentUI || touch?.view != ButtonUIView){
+            ContentUI.isHidden = true
+            ButtonUIView.alpha = 0.5
+            for (btn,txt) in buttonList{
+                btn.isSelected = false
+            }
+        } else{
+            ButtonUIView.alpha = 1
+        }
+    }
+    
+    
 }
 
 extension ViewController :  CBCentralManagerDelegate {
@@ -259,7 +350,5 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print(beacon)
         print(beacon.readRSSI())
   
-        
-        
-}
+    }
 }
