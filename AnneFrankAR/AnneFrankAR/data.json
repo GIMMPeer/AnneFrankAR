@@ -1,0 +1,30 @@
+{
+    "data":[
+        {
+            "title":"1924",
+            "context" : [
+                "First Section",
+                "Second Section",
+                "Third Section",
+                "Fourth Section"
+            ]
+        },
+        {
+            "title":"1924-1945",
+            "context" : [
+                "Fifth Section",
+                "Sixth Section",
+                "Seventh Section",
+                "Eighth Section"
+            ]
+        },
+        {
+            "title":"1946",
+            "context" : [
+                "Ninth Section",
+                "Tenth Section",
+                "Eleventh Section"
+            ]
+        }
+    ]
+}
