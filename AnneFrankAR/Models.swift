@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealityKit
 
 
 /*
@@ -18,5 +19,12 @@ struct ContentData:Codable{
 
 struct ContentItem:Codable{
     let title:String
-    let context:[String]
+    let pageData:[PageItem]
+}
+
+struct PageItem:Codable{
+    let title:String
+    let context:String
+    let image:String
+    let video:String
 }
