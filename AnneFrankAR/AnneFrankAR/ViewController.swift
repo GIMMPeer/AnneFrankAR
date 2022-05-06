@@ -39,12 +39,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     
     @IBOutlet weak var ContentTextUI: UILabel!
     
+    @IBOutlet weak var ImageViewUI: UIImageView!
     @IBOutlet weak var ContentPageUI: UILabel!
     @IBOutlet weak var ToPrevPageUI: UIView!
     @IBOutlet weak var ToNextPageUI: UIView!
-    @IBAction func ToNextScenes(unwindSegue: UIStoryboardSegue){
-        
-    }
+    @IBAction func ToNextScenes(seque: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -236,7 +235,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
                 button.setTitle("\(title)", for: .normal)
                 button.setImage(UIImage(named: "circle"), for: .normal)
                 button.setImage(UIImage(named: "circle.fill"), for: .selected)
-
                 button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
                 HorizonalStackButtons.alignment = .center
                 HorizonalStackButtons.distribution = .fillEqually
@@ -269,6 +267,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
                 var pageIndex = currentPage%pageItem.count
                 ContentTitleUI.text = pageItem[pageIndex].title
                 ContentTextUI.text = pageItem[pageIndex].context
+                if pageItem[pageIndex].image != ""{
+                    ImageViewUI.image = UIImage(named: pageItem[pageIndex].image)
+                }else{
+                    ImageViewUI.image = UIImage();
+                }
                 ContentPageUI.text = "Page \(pageIndex+1) of \(pageItem.count)"
             }
             
@@ -282,9 +285,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     func UpdateContentPage(){
         var pageItem = buttonList[currentTimeLine]!
         if pageItem != nil{
+            if(currentPage < 0){
+                currentPage = pageItem.count - 1;
+            }
             var pageIndex = currentPage%pageItem.count
             ContentTitleUI.text = pageItem[pageIndex].title
             ContentTextUI.text = pageItem[pageIndex].context
+            if pageItem[pageIndex].image != ""{
+                ImageViewUI.image = UIImage(named: pageItem[pageIndex].image)
+            } else{
+                ImageViewUI.image = UIImage();
+            }
             ContentPageUI.text = "Page \(pageIndex+1) of \(pageItem.count)"
         }
    

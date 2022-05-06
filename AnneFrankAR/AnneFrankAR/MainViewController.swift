@@ -11,6 +11,13 @@ import ARKit
 
 class MainViewController: UIViewController {
     
-
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        print("main view loaded")
+    }
+    
+    @IBAction func unwindToMainViewController(_ sender: UIStoryboardSegue){
+        print("go to main view controller")
+    }
     
 }
