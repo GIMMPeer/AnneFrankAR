@@ -6,18 +6,18 @@
                 {
                     "title" : "First Page Title",
                     "context": "First Page context",
-                    "image" : "",
+                    "image" : "firstContent",
                     "video" : ""
                 },
                 {
                     "title" : "Second Page Title",
                     "context": "Second Page context",
-                    "image" : "",
+                    "image" : "secondContent",
                     "video" : ""
                 },{
                     "title" : "Third Page Title",
                     "context": "Third Page context",
-                    "image" : "",
+                    "image" : "thirdContent",
                     "video" : ""
                 }
             ]
