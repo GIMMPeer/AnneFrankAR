@@ -92,7 +92,6 @@
 		27CAC74F27D296A700013FD5 = {
 			isa = PBXGroup;
 			children = (
-				27396CCB280A218B0034828A /* Models.swift */,
 				27CAC75A27D296A700013FD5 /* AnneFrankAR */,
 				27CAC77027D296AB00013FD5 /* AnneFrankARTests */,
 				27CAC77A27D296AB00013FD5 /* AnneFrankARUITests */,
@@ -113,6 +112,7 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
+				27396CCB280A218B0034828A /* Models.swift */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
 				27CAC75B27D296A700013FD5 /* AppDelegate.swift */,
