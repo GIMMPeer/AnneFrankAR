@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -354,10 +354,34 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="YOD-ZI-uOd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjx-e3-Dkc" userLabel="Video">
+                                <rect key="frame" x="260" y="540" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="TqL-Ox-eJ1"/>
+                                    <constraint firstAttribute="height" constant="100" id="gW5-Im-Zrq"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Video Demo">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="HVY-UQ-8HS" kind="show" id="5pV-wY-Jdv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u1R-xw-6d1"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
+                            <constraint firstItem="vjx-e3-Dkc" firstAttribute="centerY" secondItem="Mb3-mB-ecL" secondAttribute="centerY" id="3Ii-Zn-ltL"/>
+                            <constraint firstItem="vjx-e3-Dkc" firstAttribute="centerX" secondItem="Mb3-mB-ecL" secondAttribute="centerX" id="FOC-MD-gIg"/>
                             <constraint firstItem="CxN-jy-1M8" firstAttribute="centerY" secondItem="Mb3-mB-ecL" secondAttribute="centerY" constant="300" id="YiG-2f-4DI"/>
                             <constraint firstItem="ant-pP-vQ1" firstAttribute="centerX" secondItem="Mb3-mB-ecL" secondAttribute="centerX" id="gkG-dS-2uc"/>
                             <constraint firstItem="ant-pP-vQ1" firstAttribute="centerY" secondItem="Mb3-mB-ecL" secondAttribute="centerY" constant="150" id="m8Z-8t-4Yg"/>
@@ -388,9 +412,25 @@
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cm0-VW-MaU">
+            <objects>
+                <viewController id="HVY-UQ-8HS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lFg-TK-9Bg">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S5l-kx-5cr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6C9-3L-t8w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkZ-Ym-GyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="-531"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rdv-0t-cxd"/>
+        <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>
