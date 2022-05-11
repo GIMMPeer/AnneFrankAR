@@ -26,6 +26,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
     var one = -1
     var two = -1
     var three = -1
+    var four = 0
+    var nodeName:String?
 
     @IBAction func unwindARView(_ sender:UIStoryboardSegue){}
     
@@ -43,9 +45,27 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         //setupScene is the function that builds the AR portal
         setupScene()
         
+        sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
+        //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
+        
     }
     
-    
+    @objc func handleTap(_ gesture: UIPanGestureRecognizer){
+        let location = gesture.location(in: self.sceneView)
+        guard let nodeHitTest = self.sceneView.hitTest(location, options: nil).first else{
+            print("no node"); return
+        }
+        let nodeHit = nodeHitTest.node
+        nodeName = nodeHit.name
+        if(nodeName != nil){
+            print(nodeName!)
+        }else{
+            print("nil")
+        }
+        
+        
+        
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -244,7 +264,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
             
             //cbCentralManager?.connect(beacon!, options: nil)
         }
-        print(made,one,two,three)
+        //print(made,one,two,three)
         if (one >= -75 && one != -1 && two >= -75 && two != -1 && three >= -75 && three != -1 && !made){
             made=true
             self.sceneView.showsStatistics = true
