@@ -43,13 +43,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yly-JX-xEe">
-                                <rect key="frame" x="0.0" y="1080" width="820" height="50"/>
+                                <rect key="frame" x="0.0" y="1030" width="820" height="100"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-Gn-xrN">
-                                        <rect key="frame" x="0.0" y="0.0" width="820" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-yd-p80">
-                                                <rect key="frame" x="0.0" y="0.0" width="820" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -64,7 +64,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="M6h-4I-NAi"/>
+                                    <constraint firstAttribute="height" constant="100" id="M6h-4I-NAi"/>
                                     <constraint firstItem="vM9-Gn-xrN" firstAttribute="top" secondItem="yly-JX-xEe" secondAttribute="top" id="Mzj-pe-zac"/>
                                     <constraint firstItem="vM9-Gn-xrN" firstAttribute="centerY" secondItem="yly-JX-xEe" secondAttribute="centerY" id="VIn-wr-bYl"/>
                                     <constraint firstItem="vM9-Gn-xrN" firstAttribute="leading" secondItem="yly-JX-xEe" secondAttribute="leading" id="g1R-XD-Y5i"/>
@@ -119,6 +119,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL6-iQ-JsK">
                                                 <rect key="frame" x="0.0" y="350" width="680" height="300"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEX-qt-5U0">
+                                                        <rect key="frame" x="150" y="0.0" width="380" height="300"/>
+                                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                                    </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC4-8L-Gnh">
                                                         <rect key="frame" x="100" y="10" width="480" height="280"/>
                                                         <imageReference key="image" image="Floor.png" symbolScale="default"/>
@@ -127,9 +131,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="TC4-8L-Gnh" secondAttribute="bottom" constant="10" id="EG9-Ay-cfR"/>
                                                     <constraint firstAttribute="trailing" secondItem="TC4-8L-Gnh" secondAttribute="trailing" constant="100" id="MrC-e9-ki5"/>
+                                                    <constraint firstItem="UEX-qt-5U0" firstAttribute="top" secondItem="qL6-iQ-JsK" secondAttribute="top" id="Yc8-kw-8M7"/>
                                                     <constraint firstAttribute="height" constant="300" id="cYJ-5A-YwE"/>
                                                     <constraint firstItem="TC4-8L-Gnh" firstAttribute="leading" secondItem="qL6-iQ-JsK" secondAttribute="leading" constant="100" id="eVK-6W-VwF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UEX-qt-5U0" secondAttribute="trailing" constant="150" id="krt-ek-5VQ"/>
                                                     <constraint firstItem="TC4-8L-Gnh" firstAttribute="top" secondItem="qL6-iQ-JsK" secondAttribute="top" constant="10" id="m1M-sq-vOc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UEX-qt-5U0" secondAttribute="bottom" id="uZM-8C-kBv"/>
+                                                    <constraint firstItem="UEX-qt-5U0" firstAttribute="leading" secondItem="qL6-iQ-JsK" secondAttribute="leading" constant="150" id="vX1-hi-TxX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-Xd-Oed">
@@ -250,19 +258,12 @@
                         <outlet property="ImageViewUI" destination="TC4-8L-Gnh" id="pmV-sR-ugf"/>
                         <outlet property="ToNextPageUI" destination="1fw-pY-GHV" id="DdL-Mi-Iqm"/>
                         <outlet property="ToPrevPageUI" destination="iok-4r-Ktd" id="FCB-Ho-MY4"/>
+                        <outlet property="VideoPlayerUI" destination="UEX-qt-5U0" id="05c-2T-xpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdB-lo-LW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="541"/>
-        </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="xRa-xc-wIu">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="lmH-5M-hJl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4T5-GK-2OM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2542" y="541"/>
+            <point key="canvasLocation" x="1666.8292682926829" y="540.50847457627117"/>
         </scene>
         <!--Blendshapes Poster-->
         <scene sceneID="Mcs-2w-VgS">
@@ -390,11 +391,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rdv-0t-cxd"/>
+        <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>
         <image name="camera.metering.center.weighted" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

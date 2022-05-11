@@ -19,6 +19,7 @@ struct ContentData:Codable{
 
 struct ContentItem:Codable{
     let title:String
+    let unlocked: Bool
     let pageData:[PageItem]
 }
 
