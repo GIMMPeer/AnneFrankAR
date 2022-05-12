@@ -83,6 +83,10 @@ class MainViewController: UIViewController {
 
     }
     
+    @IBAction func playVideo(sender: AnyObject) {
+        
+    }
+    
     @IBAction func buttonAction(_ sender:UIButton){
         currentTimeLine = sender
         currentPage = 0

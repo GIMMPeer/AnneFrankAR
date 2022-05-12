@@ -358,6 +358,7 @@
                                 <rect key="frame" x="260" y="540" width="300" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="TqL-Ox-eJ1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="axD-LO-D3s"/>
                                     <constraint firstAttribute="height" constant="100" id="gW5-Im-Zrq"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -373,6 +374,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="playVideo:" destination="dv1-TA-OEJ" eventType="touchUpInside" id="Ohu-oV-W9V"/>
                                     <segue destination="HVY-UQ-8HS" kind="show" id="5pV-wY-Jdv"/>
                                 </connections>
                             </button>
@@ -391,6 +393,7 @@
                     <navigationItem key="navigationItem" id="Y1c-2n-JkW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8F-6V-mh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dv1-TA-OEJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="815.85365853658539" y="132.71186440677968"/>
         </scene>
@@ -412,10 +415,10 @@
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
         </scene>
-        <!--View Controller-->
+        <!--Video View-->
         <scene sceneID="cm0-VW-MaU">
             <objects>
-                <viewController id="HVY-UQ-8HS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videoView" id="HVY-UQ-8HS" customClass="VideoView" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lFg-TK-9Bg">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
