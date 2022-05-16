@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2m-g3-DPN">
-                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-iS-aUo">
-                                <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
                         </subviews>
@@ -37,7 +37,7 @@
         <!--Main View Controller-->
         <scene sceneID="cbl-0t-NJa">
             <objects>
-                <viewController id="ftG-QF-fXg" customClass="MainViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" id="ftG-QF-fXg" customClass="MainViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ui8-M4-pWj">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,13 +307,16 @@
         <!--Main Menu-->
         <scene sceneID="otX-JW-AcI">
             <objects>
-                <viewController id="1vo-74-JOV" customClass="MainMenu" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mb3-mB-ecL" customClass="Mainmenu" customModule="AnneFrankAR" customModuleProvider="target">
+                <viewController id="1vo-74-JOV" customClass="MainMenu" customModule="AnneFrankAR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mb3-mB-ecL">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxN-jy-1M8">
                                 <rect key="frame" x="260" y="840" width="300" height="100"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Timeline">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="P3P-xw-B7i"/>
                                     <constraint firstAttribute="width" constant="300" id="rtA-8Z-XpA"/>
@@ -331,7 +334,8 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="ftG-QF-fXg" kind="show" id="yDE-wk-VvT"/>
+                                    <action selector="Timeline:" destination="CQe-fm-lZN" eventType="touchUpInside" id="v2r-fJ-DaH"/>
+                                    <action selector="TimelineAnimation:" destination="1vo-74-JOV" eventType="touchUpInside" id="x0z-5Z-7gn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ant-pP-vQ1">
@@ -368,6 +372,7 @@
                     <navigationItem key="navigationItem" id="Y1c-2n-JkW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8F-6V-mh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="CQe-fm-lZN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="815.85365853658539" y="132.71186440677968"/>
         </scene>
@@ -391,7 +396,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YOD-ZI-uOd"/>
+        <segue reference="Rdv-0t-cxd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>

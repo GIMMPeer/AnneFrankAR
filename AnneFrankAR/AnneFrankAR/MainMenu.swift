@@ -7,20 +7,25 @@
 
 import UIKit
 import SceneKit
+import Foundation
 
 class MainMenu: UIViewController
 {
     var cameraNode: SCNNode!
-    var animations = [String: CAAnimation]()
-
+    
+   
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        print("loaded")
         let scene = SCNScene(named: "art.scnassets/bookNoAnim.dae")!
         
         cameraNode = setupCamera(for: scene)
         setupLighting(for: scene)
-        setupSceneView(with: scene)
+        setupSceneView(with: scene, layer: 0, remove:false)
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     
@@ -51,13 +56,11 @@ class MainMenu: UIViewController
            scene.rootNode.addChildNode(ambientLightNode)
        }
        
-       func setupSceneView(with scene: SCNScene!) {
-           // retrieve the SCNView
-           
-           
+    func setupSceneView(with scene: SCNScene!, layer: Int, remove: Bool) {
+           // in the SCNview
            let sceneView = SCNView(frame: view.frame)
            
-           view.insertSubview(sceneView, at: 0)
+           view.insertSubview(sceneView, at: layer)
            
            // set the scene to the view
            sceneView.scene = scene
@@ -68,9 +71,32 @@ class MainMenu: UIViewController
            
            // configure the view
            sceneView.backgroundColor = UIColor.black
+        
+        if(remove == true)
+        {
+            let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+                sceneView.removeFromSuperview()
+                
+            }
+        }
            
        }
     
    
+    @IBAction func TimelineAnimation(_ sender: Any) {
+        print("Clicked")
+        let scene = SCNScene(named: "art.scnassets/book.dae")!
+        
+        setupSceneView(with: scene, layer:1, remove:true)
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
+            print("Timer fired!")
+            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            self.navigationController?.pushViewController(loginVC, animated: false)
+            
+        }
+        
+        
+    }
 }
 
