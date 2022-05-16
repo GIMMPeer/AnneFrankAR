@@ -304,11 +304,11 @@
             </objects>
             <point key="canvasLocation" x="3586.0975609756097" y="98.644067796610173"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu-->
         <scene sceneID="otX-JW-AcI">
             <objects>
-                <viewController id="1vo-74-JOV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mb3-mB-ecL">
+                <viewController id="1vo-74-JOV" customClass="MainMenu" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mb3-mB-ecL" customClass="Mainmenu" customModule="AnneFrankAR" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -331,7 +331,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="ftG-QF-fXg" kind="show" id="3wR-A8-i5C"/>
+                                    <segue destination="ftG-QF-fXg" kind="show" id="yDE-wk-VvT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ant-pP-vQ1">

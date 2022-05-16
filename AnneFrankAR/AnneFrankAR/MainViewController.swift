@@ -90,6 +90,7 @@ class MainViewController: UIViewController {
     
     //Timeline button action
     @IBAction func buttonAction(_ sender:UIButton){
+        print("Send to book")
         currentTimeLine = sender
         currentPage = 0
         let timelineStatus = contentDictionary[currentTimeLine]?.unlocked
