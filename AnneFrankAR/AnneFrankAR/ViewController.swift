@@ -134,8 +134,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         
         //This is accessing the scn file and then the specific pillar object called "Cylinder2"
         let germ = subScene.rootNode.childNode(withName: "Cylinder2", recursively: true)!
-        germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
+        germ.position = SCNVector3.init(-0.55, -0.1, (-length / 2) + width * 3)
         germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+        
+        //This is accessing the scn file and then the specific scroll object called "TextualRhetoric"
+        let textRhet = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
+        textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
+        textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
+        
+        let tRhetLabel = createText(text: "Textual Rhetoric label test")
+        //tRhetLabel.position = textRhet.position
+        tRhetLabel.position = SCNVector3.init(0,0,0)
+        tRhetLabel.rotation = SCNVector4.init(0, 360.0.degreesToRadians, 0, 1)
+        
+        tRhetLabel.scale = SCNVector3.init(0.01, 0.01, 0.01)
 
         
         //create light, otherwise the portal would be black
@@ -173,15 +185,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         node.addChildNode(rightDoorSide)
         let pov = self.sceneView.pointOfView
         let position = pov?.position
-        let angle = pov?.eulerAngles
+        //let angle = pov?.eulerAngles
         let posx = position?.x
         let posy = position?.y
         let posz = position?.z
-        let angx = angle?.x
-        let angy = angle?.y
-        let angz = angle?.z
+        //let angx = angle?.x
+        //let angy = angle?.y
+        //let angz = angle?.z
         
-        node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2)
+        node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2) //Initial z is posz! - 2
         node.eulerAngles=SCNVector3.init(0,0, 0)
         //self.sceneView.pointOfView?.addChildNode(node)
         posterTest.renderingOrder=200
@@ -189,6 +201,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         node.addChildNode(posterTest)
         node.addChildNode(amer)
         node.addChildNode(germ)
+        node.addChildNode(textRhet)
+        node.addChildNode(tRhetLabel)
         
         //This is the final step, officially adding node to the scene itself
         self.sceneView.scene.rootNode.addChildNode(node)
