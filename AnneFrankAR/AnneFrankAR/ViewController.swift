@@ -142,13 +142,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
         textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
         
-        let tRhetLabel = createText(text: "Textual Rhetoric label test")
+        let tRhetLabel = createText(text: "Textual Rhetoric label test", parent: textRhet)
         //tRhetLabel.position = textRhet.position
-        tRhetLabel.position = SCNVector3.init(0,0,0)
-        tRhetLabel.rotation = SCNVector4.init(0, 360.0.degreesToRadians, 0, 1)
+        //tRhetLabel.position = SCNVector3.init(textRhet.position.x-0.1,textRhet.position.y,textRhet.position.z-0.1)
+        tRhetLabel.position = SCNVector3.init(0.75,-0.5,0.75)
+        tRhetLabel.rotation = SCNVector4.init(0, 45.0.degreesToRadians, 0, 1)
         
         tRhetLabel.scale = SCNVector3.init(0.01, 0.01, 0.01)
-
         
         //create light, otherwise the portal would be black
         let light = SCNLight()
@@ -193,7 +193,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate 
         //let angy = angle?.y
         //let angz = angle?.z
         
-        node.position = SCNVector3(x: posx!, y: posy!, z: posz!-2) //Initial z is posz! - 2
+        node.position = SCNVector3(x: posx!, y: posy!, z: posz! - 2) //Initial z is posz! - 2
         node.eulerAngles=SCNVector3.init(0,0, 0)
         //self.sceneView.pointOfView?.addChildNode(node)
         posterTest.renderingOrder=200
@@ -257,7 +257,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         //print(RSSI)
         //print(peripheral.name)
         if(peripheral.name=="Beacon_1"){
-            one=Int(RSSI)
+            one=Int(truncating: RSSI)
             //print(advertisementData)
 
             
@@ -265,14 +265,14 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         }
 
         if(peripheral.name=="Beacon_2"){
-            two=Int(RSSI)
+            two=Int(truncating: RSSI)
             //print(advertisementData)
             
             //cbCentralManager?.connect(beacon!, options: nil)
         }
 
         if(peripheral.name=="Beacon_3"){
-            three=Int(RSSI)
+            three=Int(truncating: RSSI)
             //print(advertisementData)
       
             
@@ -298,7 +298,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
      }
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("connected")
-        print(beacon)
+        print(beacon!)
         print(beacon.readRSSI())
   
     }
