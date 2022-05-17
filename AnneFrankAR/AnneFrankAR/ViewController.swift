@@ -47,15 +47,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         sceneView.showsStatistics = true
         let scene = SCNScene()
         sceneView.scene = scene
-        //setupScene is the function that builds the AR portal
+        
+        
+        
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
-          button.setTitle("Spawn Propoganda Portal", for: .normal)
+          button.setTitle("Portal 1", for: .normal)
           button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
-        self.view.addSubview(button)
-
+        let button_2 = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 50))
+          button_2.backgroundColor = .blue
+          button_2.setTitle("Portal 2", for: .normal)
+          button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
+        
+        self.view.addSubview(button)
+        self.view.addSubview(button_2)
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
         
@@ -67,6 +74,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
       setupPortal(portalNum: 1)
     }
+    @objc func buttonAction2(sender: UIButton!) {
+        
+      setupPortal(portalNum: 2)
+    }
+  
     
     @objc func handleTap(_ gesture: UIPanGestureRecognizer){
         let location = gesture.location(in: self.sceneView)
@@ -106,19 +118,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         node.position = camPos!
         node.eulerAngles = camRot!
         
-        let leftWall:SCNNode?
+        var leftWall:SCNNode?
         
-        let rightWall:SCNNode?
+        var rightWall:SCNNode?
         
-        let topWall:SCNNode?
+        var topWall:SCNNode?
         
-        let bottomWall:SCNNode?
+        var bottomWall:SCNNode?
         
-        let backWall:SCNNode?
+        var backWall:SCNNode?
         
-        let leftDoorSide:SCNNode?
+        var leftDoorSide:SCNNode?
         
-        let rightDoorSide:SCNNode?
+        var rightDoorSide:SCNNode?
         
         if(portalNum == 1) {
             leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
@@ -207,17 +219,76 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(lightNode)
             
         }
+        if(portalNum == 2) {
+            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
         
-        
-        
-        
-
-        
-       
-        
+            leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
+            leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
+            
+            rightWall!.position = SCNVector3.init((length / 2) - width, 0, 0)
+            
+            topWall!.position = SCNVector3.init(0, (height / 2) - width, 0)
+            topWall!.eulerAngles = SCNVector3.init(0, 0, 90.0.degreesToRadians)
+            
+            bottomWall!.position = SCNVector3.init(0, (-height / 2) + width, 0)
+            bottomWall!.eulerAngles = SCNVector3.init(0, 0, -90.0.degreesToRadians)
+            
+            backWall!.position = SCNVector3.init(0, 0, (-length / 2) + width)
+            backWall!.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
+            
+            leftDoorSide!.position = SCNVector3.init((-length / 2 + width) + (doorLength / 2), 0, (length / 2) - width)
+            leftDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+            
+            rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
+            rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+            
+            //This is not a wall, it's a poster. Works very similar to the walls though
+            //createPoster() is also in Extensions
+            
+            
+            node.addChildNode(leftWall!)
+            node.addChildNode(rightWall!)
+            node.addChildNode(topWall!)
+            node.addChildNode(bottomWall!)
+            node.addChildNode(backWall!)
+            node.addChildNode(leftDoorSide!)
+            node.addChildNode(rightDoorSide!)
+            
+            
+            
+            //create light, otherwise the portal would be black
+            let light = SCNLight()
+            //omni has worked the best on image textures, but could be better
+            light.type = .omni
+            light.spotInnerAngle = 70
+            light.spotOuterAngle = 120
+            light.zNear = 0.00001
+            light.zFar = 3
+            light.castsShadow = true
+            light.shadowRadius = 200
+            light.intensity = 400
+            light.shadowColor = UIColor.black.withAlphaComponent(0.7)
+            light.shadowMode = .forward
+            //This points the light in a specific direction
+            let constraint = SCNLookAtConstraint(target: bottomWall)
+            constraint.isGimbalLockEnabled = true
+            
+            //This is what actually places the light in the scene
+            let lightNode = SCNNode()
+            lightNode.light = light
+            lightNode.position = SCNVector3.init(0, 4, 0)
+            lightNode.constraints = [constraint]
+            node.addChildNode(lightNode)
+            
+        }
         //node is the main scene node in the center of the scene
         //If you add something and it's not showing up in the scene, chances are you need to add it to node
-        
         //let pov = self.sceneView.pointOfView
         //let position = pov?.position
         //let angle = pov?.eulerAngles
@@ -227,17 +298,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         //let angx = angle?.x
         //let angy = angle?.y
         //let angz = angle?.z
-        
-        
-        
         //self.sceneView.pointOfView?.addChildNode(node)
-        
         
         //This is the final step, officially adding node to the scene itself
         self.sceneView.scene.rootNode.addChildNode(node)
-        
-
-        
     }
     
     
