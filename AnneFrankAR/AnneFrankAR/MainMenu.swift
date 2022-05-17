@@ -65,7 +65,7 @@ class MainMenu: UIViewController
            // set the scene to the view
            sceneView.scene = scene
            // allows the user to manipulate the camera
-           //sceneView.allowsCameraControl = true
+           sceneView.allowsCameraControl = true
            
            // show statistics such as fps and timing information
            
