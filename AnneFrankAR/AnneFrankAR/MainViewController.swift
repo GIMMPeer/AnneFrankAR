@@ -13,6 +13,7 @@ import AVFoundation
 
 class MainViewController: UIViewController {
     
+  
     //Button UI references
     @IBOutlet weak var ButtonUIView: UIView!
     @IBOutlet weak var HorizonalStackButtons: UIStackView!
@@ -90,6 +91,7 @@ class MainViewController: UIViewController {
     
     //Timeline button action
     @IBAction func buttonAction(_ sender:UIButton){
+        print("Send to book")
         currentTimeLine = sender
         currentPage = 0
         let timelineStatus = contentDictionary[currentTimeLine]?.unlocked
