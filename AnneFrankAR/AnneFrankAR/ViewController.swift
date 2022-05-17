@@ -180,6 +180,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
             germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
+            let textRhet = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
+            textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
+            textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
+            
+            let tRhetLabel = createText(text: "Textual Rhetoric label test", parent: textRhet)
+            //tRhetLabel.position = textRhet.position
+            //tRhetLabel.position = SCNVector3.init(textRhet.position.x-0.1,textRhet.position.y,textRhet.position.z-0.1)
+            tRhetLabel.position = SCNVector3.init(0.75,-0.5,0.75)
+            tRhetLabel.rotation = SCNVector4.init(0, 45.0.degreesToRadians, 0, 1)
+            
             posterTest.renderingOrder=200
             
             node.addChildNode(leftWall!)
@@ -193,6 +203,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(posterTest)
             node.addChildNode(amer)
             node.addChildNode(germ)
+            node.addChildNode(textRhet)
+            node.addChildNode(tRhetLabel)
             
             //create light, otherwise the portal would be black
             let light = SCNLight()
