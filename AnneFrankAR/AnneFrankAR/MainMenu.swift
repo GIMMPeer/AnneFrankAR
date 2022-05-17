@@ -16,7 +16,7 @@ class MainMenu: UIViewController
    
     override func viewDidLoad(){
         super.viewDidLoad()
-        print("loaded")
+        //print("loaded")
         let scene = SCNScene(named: "art.scnassets/bookNoAnim.dae")!
         
         cameraNode = setupCamera(for: scene)
@@ -65,7 +65,7 @@ class MainMenu: UIViewController
            // set the scene to the view
            sceneView.scene = scene
            // allows the user to manipulate the camera
-           sceneView.allowsCameraControl = true
+           //sceneView.allowsCameraControl = true
            
            // show statistics such as fps and timing information
            
@@ -84,13 +84,12 @@ class MainMenu: UIViewController
     
    
     @IBAction func TimelineAnimation(_ sender: Any) {
-        print("Clicked")
         let scene = SCNScene(named: "art.scnassets/book.dae")!
         
         setupSceneView(with: scene, layer:1, remove:true)
         
         let timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
-            print("Timer fired!")
+            //print("Timer fired!")
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
             self.navigationController?.pushViewController(loginVC, animated: false)
             
