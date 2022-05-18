@@ -65,7 +65,7 @@ class MainMenu: UIViewController
            // set the scene to the view
            sceneView.scene = scene
            // allows the user to manipulate the camera
-           sceneView.allowsCameraControl = true
+           //sceneView.allowsCameraControl = true
            
            // show statistics such as fps and timing information
            
@@ -84,7 +84,7 @@ class MainMenu: UIViewController
     
    
     @IBAction func TimelineAnimation(_ sender: Any) {
-        let scene = SCNScene(named: "art.scnassets/book.dae")!
+        let scene = SCNScene(named: "art.scnassets/bookFinal.dae")!
         
         setupSceneView(with: scene, layer:1, remove:true)
         
