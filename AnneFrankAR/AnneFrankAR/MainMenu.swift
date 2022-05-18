@@ -84,7 +84,7 @@ class MainMenu: UIViewController
     
    
     @IBAction func TimelineAnimation(_ sender: Any) {
-        let scene = SCNScene(named: "art.scnassets/book.dae")!
+        let scene = SCNScene(named: "art.scnassets/bookFinal.dae")!
         
         setupSceneView(with: scene, layer:1, remove:true)
         
