@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -262,7 +262,7 @@
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="lmH-5M-hJl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T5-GK-2OM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542" y="541"/>
+            <point key="canvasLocation" x="2399" y="585"/>
         </scene>
         <!--Blendshapes Poster-->
         <scene sceneID="Mcs-2w-VgS">
@@ -374,8 +374,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="playVideo:" destination="dv1-TA-OEJ" eventType="touchUpInside" id="Ohu-oV-W9V"/>
-                                    <segue destination="HVY-UQ-8HS" kind="show" id="5pV-wY-Jdv"/>
+                                    <segue destination="HVY-UQ-8HS" kind="show" id="oGL-tR-c1g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -393,7 +392,6 @@
                     <navigationItem key="navigationItem" id="Y1c-2n-JkW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8F-6V-mh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="dv1-TA-OEJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="815.85365853658539" y="132.71186440677968"/>
         </scene>

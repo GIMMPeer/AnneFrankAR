@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21464CED27D2B739002E875A /* PosterInteractiveExample.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */; };
+		21571DD72836B7EF0084CB18 /* video1_Speech.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 21571DD62836B7EF0084CB18 /* video1_Speech.mp4 */; };
 		219428DC27E8E478009E5250 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219428DB27E8E478009E5250 /* Extensions.swift */; };
 		219428FD27E8EC16009E5250 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 219428FC27E8EC16009E5250 /* art.scnassets */; };
 		27396CC7280A12820034828A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 27396CC6280A12820034828A /* data.json */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = PosterInteractiveExample.rcproject; sourceTree = "<group>"; };
+		21571DD62836B7EF0084CB18 /* video1_Speech.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1_Speech.mp4; sourceTree = "<group>"; };
 		219428DB27E8E478009E5250 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		219428FC27E8EC16009E5250 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		27396CC6280A12820034828A /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		27CAC74F27D296A700013FD5 = {
 			isa = PBXGroup;
 			children = (
+				21571DD62836B7EF0084CB18 /* video1_Speech.mp4 */,
 				27CAC75A27D296A700013FD5 /* AnneFrankAR */,
 				27CAC77027D296AB00013FD5 /* AnneFrankARTests */,
 				27CAC77A27D296AB00013FD5 /* AnneFrankARUITests */,
@@ -253,6 +256,7 @@
 				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
+				21571DD72836B7EF0084CB18 /* video1_Speech.mp4 in Resources */,
 				27CAC76327D296A700013FD5 /* Main.storyboard in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
 			);
@@ -466,7 +470,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AUZXFUDQS4;
+				DEVELOPMENT_TEAM = SJH4B84W5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -484,7 +488,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anne;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.annef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -500,7 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AUZXFUDQS4;
+				DEVELOPMENT_TEAM = SJH4B84W5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -518,7 +522,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anne;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.annef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
