@@ -401,7 +401,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
             let scene = SCNScene(named: "art.scnassets/ship.scn")!
             
             self.sceneView.scene = scene
-            //self.setupPortal()
+            self.setupPortal(portalNum: 1)
         }
 
       
