@@ -12,13 +12,12 @@ import AVKit
 import AVFoundation
 
 class MainViewController: UIViewController {
-    
-  
-    //Button UI references
+
+    // Button UI references
     @IBOutlet weak var ButtonUIView: UIView!
     @IBOutlet weak var HorizonalStackButtons: UIStackView!
-    
-    //Content UI references
+
+    // Content UI references
     @IBOutlet weak var ContentUI: UIView!
     @IBOutlet weak var ContentTitleUI: UILabel!
     @IBOutlet weak var ContentTextUI: UILabel!
@@ -27,34 +26,32 @@ class MainViewController: UIViewController {
     @IBOutlet weak var VideoPlayerUI: UIView!
     @IBOutlet weak var ToPrevPageUI: UIView!
     @IBOutlet weak var ToNextPageUI: UIView!
-    //Decleare Instances
-    var currentTimeLine:UIButton!
-    var currentPage = 0;
-    var contentDictionary = [UIButton:ContentItem]()
+    // Decleare Instances
+    var currentTimeLine: UIButton!
+    var currentPage = 0
+    var contentDictionary = [UIButton: ContentItem]()
     var contentData: ContentData?
-    
-    @IBAction func unwindToMainViewController(_ sender: UIStoryboardSegue){}
-    
-    
-    override func viewDidLoad(){
+
+    @IBAction func unwindToMainViewController(_ sender: UIStoryboardSegue) {}
+
+    override func viewDidLoad() {
         super.viewDidLoad()
         parseJson()
         setUpUI()
     }
-    
-    
-    func setUpUI(){
-        if contentData != nil{
+
+    func setUpUI() {
+        if contentData != nil {
             let contentList = contentData!.data
-            for contentItem in contentList{
+            for contentItem in contentList {
                 let button = UIButton(type: .custom)
-                let title:String = contentItem.title
+                let title: String = contentItem.title
                 button.configuration = .plain()
                 button.configuration?.title = title
                 button.configuration?.image = UIImage(systemName: "rectangle")?.withRenderingMode(.alwaysOriginal)
                 button.configuration?.imagePadding = 10
                 button.configuration?.imagePlacement = .bottom
-                
+
                 button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
                 HorizonalStackButtons.alignment = .center
                 HorizonalStackButtons.distribution = .fillEqually
@@ -70,139 +67,133 @@ class MainViewController: UIViewController {
 
     }
 
-    
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touch:UITouch? = touches.first
-        
-        if(touch?.view == VideoPlayerUI){
+        let touch: UITouch? = touches.first
+
+        if touch?.view == VideoPlayerUI {
             PlayVideo(current: currentTimeLine)
         }
-        
-        if(touch?.view == ToPrevPageUI){
+
+        if touch?.view == ToPrevPageUI {
             currentPage -= 1
             UpdateContentPage()
         }
-        if(touch?.view == ToNextPageUI){
+        if touch?.view == ToNextPageUI {
             currentPage += 1
             UpdateContentPage()
         }
     }
-    
-    //Timeline button action
-    @IBAction func buttonAction(_ sender:UIButton){
+
+    // Timeline button action
+    @IBAction func buttonAction(_ sender: UIButton) {
         print("Send to book")
         currentTimeLine = sender
         currentPage = 0
         let timelineStatus = contentDictionary[currentTimeLine]?.unlocked
-        if timelineStatus == false{
+        if timelineStatus == false {
             return
         }
-        if (sender.isSelected == true){
-            ContentUI.isHidden = true;
+        if sender.isSelected == true {
+            ContentUI.isHidden = true
             sender.isSelected = false
-        }
-        else{
-            
-            ContentUI.isHidden = false;
+        } else {
+
+            ContentUI.isHidden = false
             sender.isSelected = true
         }
-        
-        for (btn,pageItem) in contentDictionary{
-            if(pageItem.unlocked){
-                if(btn == sender){
+
+        for (btn, pageItem) in contentDictionary {
+            if pageItem.unlocked {
+                if btn == sender {
                     btn.configuration?.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysOriginal)
                     continue
                 }
                 btn.configuration?.image = UIImage(systemName: "circle")?.withRenderingMode(.alwaysOriginal)
-                btn.isSelected = false;
+                btn.isSelected = false
             }
         }
         UpdateContentPage()
     }
-    
-    //Pase json file from data.json
-    func parseJson(){
-        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else{
+
+    // Pase json file from data.json
+    func parseJson() {
+        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else {
             return
         }
-        
+
         let url = URL(fileURLWithPath: path)
-        do{
+        do {
             let jsonData = try Data(contentsOf: url)
             contentData = try JSONDecoder().decode(ContentData.self, from: jsonData)
-        }catch{
+        } catch {
             print("Error: \(error)")
         }
     }
-    
-    
 
-    //Update page when toPrevView or toNextView triggered
-    func UpdateContentPage(){
-        let pageItem = contentDictionary[currentTimeLine]!.pageData
-        
-        if pageItem != nil{
-            if(currentPage < 0){
-                currentPage = pageItem.count - 1;
+    // Update page when toPrevView or toNextView triggered
+    func UpdateContentPage() {
+        let pageItemQ = contentDictionary[currentTimeLine]?.pageData
+
+        if pageItemQ != nil {
+            let pageItem = pageItemQ!
+            if currentPage < 0 {
+                currentPage = pageItem.count - 1
             }
             let pageIndex = currentPage%pageItem.count
             let currentPage = pageItem[pageIndex]
             ContentTitleUI.text = currentPage.title
             ContentTextUI.text = currentPage.context
-            
-            //Video hidden options
-            if(currentPage.video == ""){
+
+            // Video hidden options
+            if currentPage.video == "" {
                 VideoPlayerUI.isHidden = true
-            } else{
+            } else {
                 VideoPlayerUI.isHidden = false
             }
-            
-            //Image content hidden options
+
+            // Image content hidden options
             if currentPage.image != ""{
-                ImageViewUI.isHidden = false;
+                ImageViewUI.isHidden = false
                 ImageViewUI.image = UIImage(named: pageItem[pageIndex].image)
-                
-            } else{
+
+            } else {
                 ImageViewUI.isHidden = true
-                ImageViewUI.image = UIImage();
+                ImageViewUI.image = UIImage()
             }
-            
-            //Update page numbers
+
+            // Update page numbers
             ContentPageUI.text = "Page \(pageIndex+1) of \(pageItem.count)"
         }
-   
+
     }
-    
-    //Call when new artifact or timeline unlocked
-    func UpdateUnlockedButton(){
-        for (btn,pageItem) in contentDictionary{
-            if(pageItem.unlocked){
-                if(btn.isSelected){
+
+    // Call when new artifact or timeline unlocked
+    func UpdateUnlockedButton() {
+        for (btn, pageItem) in contentDictionary {
+            if pageItem.unlocked {
+                if btn.isSelected {
                     btn.configuration?.image = UIImage(systemName: "circle.fill")?.withRenderingMode(.alwaysOriginal)
                 }
                 btn.configuration?.image = UIImage(systemName: "circle")?.withRenderingMode(.alwaysOriginal)
             }
         }
     }
-    
 
-    
-    func PlayVideo(current: UIButton){
+    func PlayVideo(current: UIButton) {
         let currentPageItem = contentDictionary[current]!.pageData
         let VideoURL = currentPageItem[currentPage%currentPageItem.count].video
-        if(VideoURL == ""){
+        if VideoURL == "" {
             return
         }
-        
+
         let player = AVPlayer(url: URL(fileURLWithPath: VideoURL))
         let playerController = AVPlayerViewController()
         playerController.player = player
-        
-        present(playerController,animated: true){
+
+        present(playerController, animated: true) {
             player.play()
         }
-        
+
     }
-    
+
 }
