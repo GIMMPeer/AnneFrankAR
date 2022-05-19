@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2m-g3-DPN">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-iS-aUo">
-                                <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
+                                <rect key="frame" x="0.0" y="0.0" width="820" height="1179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
                         </subviews>
@@ -33,6 +33,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1667" y="-301"/>
+        </scene>
+        <!--Burnt Book Artifact-->
+        <scene sceneID="bU5-EL-3Ui">
+            <objects>
+                <viewController restorationIdentifier="BurntBookArtifact" storyboardIdentifier="BurntBookArtifact" id="9ey-0E-jSP" customClass="BurntBookArtifact" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="4Mo-BM-XFs">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
+                                <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xrS-NI-fgm" secondAttribute="height" multiplier="41:59" id="juG-Ha-eo2"/>
+                                </constraints>
+                            </sceneKitView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="R5e-ff-FTt"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="buu-Ym-6pH"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="4Mo-BM-XFs" secondAttribute="topMargin" id="la7-Qx-4eY"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="zYv-OO-C2G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-fc-0h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.4634146341464" y="-551.18644067796617"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="cbl-0t-NJa">
@@ -396,7 +428,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rdv-0t-cxd"/>
+        <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>

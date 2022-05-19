@@ -60,9 +60,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
           button_2.setTitle("Portal 2", for: .normal)
           button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
+        let button_3 = UIButton(frame: CGRect(x: 250, y: 250, width: 100, height: 50))
+          button_3.backgroundColor = .red
+          button_3.setTitle("Book Burning Artifact", for: .normal)
+          button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
+        self.view.addSubview(button_3)
+        
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
         
@@ -74,9 +80,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
       setupPortal(portalNum: 1)
     }
+    
     @objc func buttonAction2(sender: UIButton!) {
         
       setupPortal(portalNum: 2)
+    }
+    
+    @objc func buttonAction3(sender: UIButton!) {
+        
+      
     }
   
     
@@ -89,10 +101,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         nodeName = nodeHit.name
         if(nodeName != nil){
             print(nodeName!)
+            
+            if(nodeName! == "Book")
+            {
+                let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BurntBookArtifact") as! BurntBookArtifact
+                self.navigationController?.pushViewController(bookArtifactScene, animated: false)
+                
+            }
         }else{
             print("nil")
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sceneView.session.delegate = self             // ARSESSION DELEGATE
@@ -168,7 +188,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
             
             //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
-            let subScene = SCNScene(named: "art.scnassets/AmericanPillar.scn")!
+            let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
             
             //This is accessing the scn file and then the specific pillar object called "Cylinder"
             let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
@@ -184,11 +204,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
             textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
             
-            let tRhetLabel = createText(text: "Textual Rhetoric label test", parent: textRhet)
+            let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
+            burntBook.position = SCNVector3.init(0.50, -0.5, 0.75)
+            burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
+            
+            //let tRhetLabel = createText(text: "Textual Rhetoric label test", parent: textRhet)
             //tRhetLabel.position = textRhet.position
             //tRhetLabel.position = SCNVector3.init(textRhet.position.x-0.1,textRhet.position.y,textRhet.position.z-0.1)
-            tRhetLabel.position = SCNVector3.init(0.75,-0.5,0.75)
-            tRhetLabel.rotation = SCNVector4.init(0, 45.0.degreesToRadians, 0, 1)
+            //tRhetLabel.position = SCNVector3.init(0.75,-0.5,0.75)
+            //tRhetLabel.rotation = SCNVector4.init(0, 45.0.degreesToRadians, 0, 1)
             
             posterTest.renderingOrder=200
             
@@ -204,7 +228,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(amer)
             node.addChildNode(germ)
             node.addChildNode(textRhet)
-            node.addChildNode(tRhetLabel)
+            node.addChildNode(burntBook)
+            //node.addChildNode(tRhetLabel)
             
             //create light, otherwise the portal would be black
             let light = SCNLight()

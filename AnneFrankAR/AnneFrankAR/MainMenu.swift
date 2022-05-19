@@ -90,8 +90,8 @@ class MainMenu: UIViewController
         
         let timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
             //print("Timer fired!")
-            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-            self.navigationController?.pushViewController(loginVC, animated: false)
+            let timelineVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            self.navigationController?.pushViewController(timelineVC, animated: false)
             
         }
         
