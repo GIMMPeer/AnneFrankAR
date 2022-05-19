@@ -7,10 +7,12 @@ class VideoView: UIViewController {
     
     @IBOutlet var arView: ARView!
 
+    @IBAction func playVideoButton(_ sender: Any) {
+        PlayVideo()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PlayVideo()
     }
         
         private func PlayVideo(){
