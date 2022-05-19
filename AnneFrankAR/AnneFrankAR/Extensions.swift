@@ -64,6 +64,29 @@ func createPoster(image: String) -> SCNNode {
     return node
 }
 
+func createText(text: String, parent: SCNNode) -> SCNNode {
+    //root node that will be added to the scene
+    let node = SCNNode()
+    
+    //creates text object based on given string
+    let text = SCNText(string: "Textual Rhetoric label test", extrusionDepth: 1)
+    let material = SCNMaterial()
+    material.diffuse.contents = UIColor.black
+    text.materials = [material]
+    //text.containerFrame = CGRect(x: parent.position.x, y: parent.position.y, width: 60, height: 20)
+    
+    //the poster needs a node to attach to in the actual scene
+    let textNode = SCNNode(geometry: text)
+    textNode.renderingOrder = 300
+    
+    
+    
+    //add the text node to the parent node
+    parent.addChildNode(textNode)
+    
+    return node
+}
+
 //couple helper functions for rotation
 extension FloatingPoint {
     var degreesToRadians : Self {
