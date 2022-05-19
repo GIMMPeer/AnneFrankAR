@@ -38,16 +38,17 @@
         <scene sceneID="bU5-EL-3Ui">
             <objects>
                 <viewController restorationIdentifier="BurntBookArtifact" storyboardIdentifier="BurntBookArtifact" id="9ey-0E-jSP" customClass="BurntBookArtifact" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="4Mo-BM-XFs">
+                    <view key="view" contentMode="scaleToFill" id="4Mo-BM-XFs">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
                                 <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xrS-NI-fgm" secondAttribute="height" multiplier="41:59" id="juG-Ha-eo2"/>
-                                </constraints>
                             </sceneKitView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-aF-NWp">
+                                <rect key="frame" x="132" y="167" width="543" height="851"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,6 +60,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="overlay" destination="oc4-aF-NWp" id="hUv-Ea-1gl"/>
                         <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
                     </connections>
                 </viewController>

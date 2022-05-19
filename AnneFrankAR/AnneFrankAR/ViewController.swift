@@ -60,14 +60,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
           button_2.setTitle("Portal 2", for: .normal)
           button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
-        let button_3 = UIButton(frame: CGRect(x: 250, y: 250, width: 100, height: 50))
-          button_3.backgroundColor = .red
-          button_3.setTitle("Book Burning Artifact", for: .normal)
-          button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
+        
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
-        self.view.addSubview(button_3)
+        
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()

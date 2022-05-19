@@ -11,12 +11,16 @@ import SceneKit
 
 class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 {
+    var nodeName:String?
+    
     
     @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var overlay: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overlay.alpha = 0
         
         sceneView.delegate = self
         //show statistics shows framerate in corner, could probably be removed in future
@@ -28,17 +32,36 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         setupGame()
         
+        sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
     }
+    
+    @objc func handleTap(_ gesture: UIPanGestureRecognizer){
+        let location = gesture.location(in: self.sceneView)
+        guard let nodeHitTest = self.sceneView.hitTest(location, options: nil).first else{
+            print("no node"); return
+        }
+        let nodeHit = nodeHitTest.node
+        nodeName = nodeHit.name
+        if(nodeName != nil){
+            print(nodeName!)
+            
+            if(nodeName! == "Book")
+            {
+                overlay.alpha = 1
+                overlay.backgroundColor = .brown
+                
+            }
+        }else{
+            print("nil")
+        }
+    }
+    
     
     func setupGame()
     {
         let node = SCNNode()
         
         let bonfireScene = SCNScene(named: "art.scnassets/bonfire.scn")!
-        
-        let book1 = bonfireScene.rootNode.childNode(withName: "Book1", recursively: true)!
-        let book2 = bonfireScene.rootNode.childNode(withName: "Book2", recursively: true)!
-        let book3 = bonfireScene.rootNode.childNode(withName: "Book2", recursively: true)!
 
         node.addChildNode(bonfireScene.rootNode)
         
