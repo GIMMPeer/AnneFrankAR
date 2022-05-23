@@ -42,24 +42,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
-                                <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
+                                <rect key="frame" x="0.0" y="24" width="820" height="1086"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </sceneKitView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-aF-NWp">
                                 <rect key="frame" x="132" y="167" width="543" height="851"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="s2f-wU-FTG">
+                                <rect key="frame" x="212" y="344" width="383.5" height="447"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-eK-Vtx" userLabel="Book1">
+                                        <rect key="frame" x="0.0" y="0.0" width="383.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="A Farewell to Arms - Earnest Hemingway"/>
+                                        <connections>
+                                            <action selector="book1:" destination="9ey-0E-jSP" eventType="touchUpInside" id="da7-To-SFq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMa-yT-sAd">
+                                        <rect key="frame" x="0.0" y="104" width="383.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="All's Quiet on the Western Front - Eich Maria Remarque "/>
+                                        <connections>
+                                            <action selector="book2:" destination="9ey-0E-jSP" eventType="touchUpInside" id="Z3A-bw-0UE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS7-e6-a6b">
+                                        <rect key="frame" x="0.0" y="208" width="383.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="The Iron Heel - Jack London"/>
+                                        <connections>
+                                            <action selector="book3:" destination="9ey-0E-jSP" eventType="touchUpInside" id="jxb-Pm-YOF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBg-2i-iIM">
+                                        <rect key="frame" x="0.0" y="312" width="383.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="The Man Who Conquered Death - Franz Werfel"/>
+                                        <connections>
+                                            <action selector="book4:" destination="9ey-0E-jSP" eventType="touchUpInside" id="G4T-QD-lUo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-FT-nMs">
+                                        <rect key="frame" x="0.0" y="416" width="383.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Phantastische Nacht - Stefan Zweig"/>
+                                        <connections>
+                                            <action selector="book5:" destination="9ey-0E-jSP" eventType="touchUpInside" id="X88-xT-cpk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label more label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
+                                <rect key="frame" x="161" y="257" width="487" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="R5e-ff-FTt"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="buu-Ym-6pH"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="4Mo-BM-XFs" secondAttribute="topMargin" id="la7-Qx-4eY"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="zYv-OO-C2G"/>
+                            <constraint firstItem="yAm-hL-dg9" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="161" id="DID-Oi-czX"/>
+                            <constraint firstItem="s2f-wU-FTG" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="320" id="JtJ-8W-vXj"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="yAm-hL-dg9" secondAttribute="trailing" constant="172" id="Qjs-2o-CFe"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="s2f-wU-FTG" secondAttribute="bottom" constant="319" id="WiD-mV-1fK"/>
+                            <constraint firstItem="yAm-hL-dg9" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="233" id="rZG-WE-rgE"/>
+                            <constraint firstItem="s2f-wU-FTG" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="212" id="w0F-q8-bza"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="s2f-wU-FTG" secondAttribute="trailing" constant="224.5" id="xdM-q5-xRS"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
+                        <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
                         <outlet property="overlay" destination="oc4-aF-NWp" id="hUv-Ea-1gl"/>
                         <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
                     </connections>
