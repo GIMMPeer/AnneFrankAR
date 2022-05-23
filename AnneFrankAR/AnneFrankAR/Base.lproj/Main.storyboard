@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2m-g3-DPN">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-iS-aUo">
-                                <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
+                                <rect key="frame" x="0.0" y="0.0" width="820" height="1179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
                         </subviews>
@@ -33,6 +33,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1667" y="-301"/>
+        </scene>
+        <!--Burnt Book Artifact-->
+        <scene sceneID="bU5-EL-3Ui">
+            <objects>
+                <viewController restorationIdentifier="BurntBookArtifact" storyboardIdentifier="BurntBookArtifact" id="9ey-0E-jSP" customClass="BurntBookArtifact" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Mo-BM-XFs">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
+                                <rect key="frame" x="0.0" y="24" width="820" height="1156"/>
+                            </sceneKitView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurntPageTexture.png" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-dY-7Za">
+                                <rect key="frame" x="129" y="142" width="550" height="850"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label more label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
+                                <rect key="frame" x="161" y="257" width="487" height="106"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="s2f-wU-FTG">
+                                <rect key="frame" x="212" y="344" width="383.5" height="447"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-eK-Vtx" userLabel="Book1">
+                                        <rect key="frame" x="0.0" y="0.0" width="383.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="A Farewell to Arms - Earnest Hemingway"/>
+                                        <connections>
+                                            <action selector="book1:" destination="9ey-0E-jSP" eventType="touchUpInside" id="da7-To-SFq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMa-yT-sAd">
+                                        <rect key="frame" x="0.0" y="104" width="383.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="All's Quiet on the Western Front - Eich Maria Remarque "/>
+                                        <connections>
+                                            <action selector="book2:" destination="9ey-0E-jSP" eventType="touchUpInside" id="Z3A-bw-0UE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS7-e6-a6b">
+                                        <rect key="frame" x="0.0" y="208" width="383.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="The Iron Heel - Jack London"/>
+                                        <connections>
+                                            <action selector="book3:" destination="9ey-0E-jSP" eventType="touchUpInside" id="jxb-Pm-YOF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBg-2i-iIM">
+                                        <rect key="frame" x="0.0" y="312" width="383.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Realism and Inwardness - Franz Werfel"/>
+                                        <connections>
+                                            <action selector="book4:" destination="9ey-0E-jSP" eventType="touchUpInside" id="G4T-QD-lUo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-FT-nMs">
+                                        <rect key="frame" x="0.0" y="416" width="383.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Phantastische Nacht - Stefan Zweig"/>
+                                        <connections>
+                                            <action selector="book5:" destination="9ey-0E-jSP" eventType="touchUpInside" id="X88-xT-cpk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
+                                <rect key="frame" x="129" y="142" width="10" height="850"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yAm-hL-dg9" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="161" id="DID-Oi-czX"/>
+                            <constraint firstItem="LcM-dY-7Za" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="129" id="JOM-r4-p0a"/>
+                            <constraint firstItem="s2f-wU-FTG" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="320" id="JtJ-8W-vXj"/>
+                            <constraint firstItem="LcM-dY-7Za" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="118" id="Jz8-sI-1TA"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="yAm-hL-dg9" secondAttribute="trailing" constant="172" id="Qjs-2o-CFe"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="RKc-Mi-z1l"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="LcM-dY-7Za" secondAttribute="trailing" constant="141" id="SgN-is-liM"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="s2f-wU-FTG" secondAttribute="bottom" constant="319" id="WiD-mV-1fK"/>
+                            <constraint firstAttribute="bottom" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="bbT-bv-gKc"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="LcM-dY-7Za" secondAttribute="bottom" constant="118" id="fna-3N-xcE"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="h1M-xD-7AK"/>
+                            <constraint firstItem="yAm-hL-dg9" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="233" id="rZG-WE-rgE"/>
+                            <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" id="sB6-Wm-X1i"/>
+                            <constraint firstItem="s2f-wU-FTG" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="212" id="w0F-q8-bza"/>
+                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="s2f-wU-FTG" secondAttribute="trailing" constant="224.5" id="xdM-q5-xRS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundTexture" destination="LcM-dY-7Za" id="MBK-Lg-cGe"/>
+                        <outlet property="bookButton1" destination="EzS-eK-Vtx" id="l6V-kW-Swm"/>
+                        <outlet property="bookButton2" destination="yMa-yT-sAd" id="4hH-G5-fl0"/>
+                        <outlet property="bookButton3" destination="tS7-e6-a6b" id="MSM-0E-17c"/>
+                        <outlet property="bookButton4" destination="HBg-2i-iIM" id="U8w-kf-9wK"/>
+                        <outlet property="bookButton5" destination="YVU-FT-nMs" id="4yY-sw-lnG"/>
+                        <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
+                        <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
+                        <outlet property="fireAnim" destination="wf2-tF-g7e" id="vjB-Kd-76A"/>
+                        <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-fc-0h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.4634146341464" y="-551.18644067796617"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="cbl-0t-NJa">
@@ -396,9 +511,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rdv-0t-cxd"/>
+        <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="BurntPageTexture.png" width="132" height="204"/>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>
         <image name="camera.metering.center.weighted" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
