@@ -80,7 +80,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBg-2i-iIM">
                                         <rect key="frame" x="0.0" y="312" width="383.5" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="The Man Who Conquered Death - Franz Werfel"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Realism and Inwardness - Franz Werfel"/>
                                         <connections>
                                             <action selector="book4:" destination="9ey-0E-jSP" eventType="touchUpInside" id="G4T-QD-lUo"/>
                                         </connections>
@@ -95,8 +95,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label more label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
-                                <rect key="frame" x="161" y="257" width="487" height="20.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label more label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
+                                <rect key="frame" x="161" y="257" width="487" height="106"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,6 +117,11 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bookButton1" destination="EzS-eK-Vtx" id="l6V-kW-Swm"/>
+                        <outlet property="bookButton2" destination="yMa-yT-sAd" id="4hH-G5-fl0"/>
+                        <outlet property="bookButton3" destination="tS7-e6-a6b" id="MSM-0E-17c"/>
+                        <outlet property="bookButton4" destination="HBg-2i-iIM" id="U8w-kf-9wK"/>
+                        <outlet property="bookButton5" destination="YVU-FT-nMs" id="4yY-sw-lnG"/>
                         <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
                         <outlet property="overlay" destination="oc4-aF-NWp" id="hUv-Ea-1gl"/>
