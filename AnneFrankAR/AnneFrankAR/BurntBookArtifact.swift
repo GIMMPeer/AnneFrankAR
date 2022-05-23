@@ -65,6 +65,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
+        fireAnim.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         
@@ -160,20 +161,20 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         bookText.sizeToFit()
         
         
-
+        fireAnim.isHidden = false
         
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
-            self.fireAnim.frame.size = CGSize(width: 550, height: 1050 )
+            self.fireAnim.frame.size = CGSize(width: 550, height: 850 )
         }, completion: { finished in
           print("Book has been burned")
-            self.fireAnim.frame.size = CGSize(width:0, height:1050 )
+            self.fireAnim.frame.size = CGSize(width:0, height:850 )
         })
         
         let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
             self.bookText.isHidden = true
             self.bookStack.isHidden = false
             self.backgroundTexture.isHidden = false
-            
+            self.fireAnim.isHidden = true
             if(self.index == 1)
             {
                 self.setupGame()
