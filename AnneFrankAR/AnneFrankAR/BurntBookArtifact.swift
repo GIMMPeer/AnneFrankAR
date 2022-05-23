@@ -107,24 +107,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 
         node.addChildNode(bonfireScene.rootNode)
         
-        let light = SCNLight()
-        //omni has worked the best on image textures, but could be better
-        light.type = .omni
-        light.spotInnerAngle = 70
-        light.spotOuterAngle = 120
-        light.zNear = 0.00001
-        light.zFar = 3
-        light.castsShadow = true
-        light.shadowRadius = 200
-        light.intensity = 400
-        light.shadowColor = UIColor.black.withAlphaComponent(0.7)
-        light.shadowMode = .forward
-        
-        let lightNode = SCNNode()
-        lightNode.light = light
-        lightNode.position = SCNVector3.init(0, 4, 0)
-        node.addChildNode(lightNode)
-        
+       
         self.sceneView.scene!.rootNode.addChildNode(node)
         
     }
