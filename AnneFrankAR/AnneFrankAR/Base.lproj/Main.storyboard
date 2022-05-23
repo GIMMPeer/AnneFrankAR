@@ -104,6 +104,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
+                                <rect key="frame" x="129" y="142" width="10" height="850"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,6 +141,7 @@
                         <outlet property="bookButton5" destination="YVU-FT-nMs" id="4yY-sw-lnG"/>
                         <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
+                        <outlet property="fireAnim" destination="wf2-tF-g7e" id="t6P-G4-lSx"/>
                         <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
                     </connections>
                 </viewController>

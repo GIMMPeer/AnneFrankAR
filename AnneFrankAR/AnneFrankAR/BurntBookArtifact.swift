@@ -57,6 +57,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         bookButton5.isHidden = true
     }
     
+    
+    @IBOutlet weak var fireAnim: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundTexture.isHidden = true
@@ -105,7 +108,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 
         node.addChildNode(bonfireScene.rootNode)
         
-       
         self.sceneView.scene!.rootNode.addChildNode(node)
         
     }
@@ -156,9 +158,27 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         bookText.numberOfLines = 10
         bookText.sizeToFit()
-        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+        
+        
+
+        
+        UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
+            self.fireAnim.frame.size = CGSize(width: 550, height: 1050 )
+        }, completion: { finished in
+          print("Book has been burned")
+            self.fireAnim.frame.size = CGSize(width:0, height:1050 )
+        })
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
             self.bookText.isHidden = true
             self.bookStack.isHidden = false
+            self.backgroundTexture.isHidden = false
+            
+            if(self.index == 1)
+            {
+                self.setupGame()
+                
+            }
             
             if(self.index == 5)
             {
