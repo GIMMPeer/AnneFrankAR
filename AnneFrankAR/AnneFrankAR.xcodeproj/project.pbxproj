@@ -27,6 +27,8 @@
 		84CEF4DC2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
 		84CEF4DD2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
 		84CEF4DE2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
+		84CEF4DF283C1DB00087869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC76127D296A700013FD5 /* Main.storyboard */; };
+		84CEF4E0283C1DB10087869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC76127D296A700013FD5 /* Main.storyboard */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
 		DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */; };
 /* End PBXBuildFile section */
@@ -272,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CEF4DF283C1DB00087869E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CEF4E0283C1DB10087869E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +486,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HQSKCJ5WSH;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -500,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank12;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -516,7 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HQSKCJ5WSH;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -534,7 +538,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank12;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
