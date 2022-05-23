@@ -105,7 +105,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     {
         let node = SCNNode()
         
-        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/bonfire.scn")!
+        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
 
         node.addChildNode(bonfireScene.rootNode)
         
