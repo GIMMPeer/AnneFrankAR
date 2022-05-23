@@ -103,7 +103,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     {
         let node = SCNNode()
         
-        let bonfireScene = SCNScene(named: "art.scnassets/bonfire.scn")!
+        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/bonfire.scn")!
 
         node.addChildNode(bonfireScene.rootNode)
         
@@ -173,5 +173,17 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
             self.bookText.isHidden = true
             self.bookStack.isHidden = false
        }
+    }
+    
+    func particleLighting() {
+        let node = SCNNode()
+        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/bonfire.scn")!
+        let particles = bonfireScene.rootNode.childNode(withName: "fire", recursively: true)
+        
+        let firePosX = particles!.position.x
+        let firePosZ = particles!.position.z
+        //z: -4, 3
+        particles!.position.x = Float.random(in: -4.0..<3.0)
+        particles!.position.z = Float.random(in: -4.0..<3.0)
     }
 }

@@ -82,11 +82,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
       setupPortal(portalNum: 2)
     }
-    
-    @objc func buttonAction3(sender: UIButton!) {
-        
-      
-    }
   
     
     @objc func handleTap(_ gesture: UIPanGestureRecognizer){
@@ -205,12 +200,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             burntBook.position = SCNVector3.init(0.50, -0.5, 0.75)
             burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
             
-            //let tRhetLabel = createText(text: "Textual Rhetoric label test", parent: textRhet)
-            //tRhetLabel.position = textRhet.position
-            //tRhetLabel.position = SCNVector3.init(textRhet.position.x-0.1,textRhet.position.y,textRhet.position.z-0.1)
-            //tRhetLabel.position = SCNVector3.init(0.75,-0.5,0.75)
-            //tRhetLabel.rotation = SCNVector4.init(0, 45.0.degreesToRadians, 0, 1)
-            
             posterTest.renderingOrder=200
             
             node.addChildNode(leftWall!)
@@ -226,7 +215,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(germ)
             node.addChildNode(textRhet)
             node.addChildNode(burntBook)
-            //node.addChildNode(tRhetLabel)
             
             //create light, otherwise the portal would be black
             let light = SCNLight()

@@ -4,14 +4,14 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2022-05-19T20:45:43Z</created>
-  <modified>2022-05-19T20:45:43Z</modified>
+  <created>2022-05-23T19:36:00Z</created>
+  <modified>2022-05-23T19:36:00Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
  <library_images>
   <image id="image1">
-   <init_from>ThinBurnedBook.png</init_from>
+   <init_from>BurntbookFromPS.png</init_from>
   </image>
  </library_images>
  <library_materials>
@@ -106,7 +106,7 @@
  <library_visual_scenes>
   <visual_scene id="scene8">
    <node id="Book" name="Book">
-    <matrix>-45.45137 -0 -0 0 -0 -136.1645 -0 1.674908 -0 -0 -94.97565 -0.7775955 -0 -0 -0 1 </matrix>
+    <matrix>-45.45137 0 0 0 0 -136.1645 0 1.674908 0 0 -94.97565 -0.7775955 0 0 0 1 </matrix>
     <instance_geometry url="#geometry3">
      <bind_material>
       <technique_common>
