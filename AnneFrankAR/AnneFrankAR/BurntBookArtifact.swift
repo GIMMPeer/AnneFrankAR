@@ -13,9 +13,8 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 {
     var nodeName:String?
     
-    
+    var index:Int32 = 0
     @IBOutlet weak var sceneView: SCNView!
-    @IBOutlet weak var overlay: UIView!
     @IBOutlet weak var bookStack: UIStackView!
     
     @IBOutlet weak var bookText: UILabel!
@@ -29,6 +28,8 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var bookButton4: UIButton!
     
     @IBOutlet weak var bookButton5: UIButton!
+    
+    @IBOutlet weak var backgroundTexture: UIImageView!
     
     @IBAction func book1(_ sender: Any) {
         setupReading(bookNum: 1)
@@ -58,15 +59,12 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        overlay.isHidden = true
+        backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
-        bookText.lineBreakMode = .byCharWrapping
+        //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         
-        //show statistics shows framerate in corner, could probably be removed in future
-        sceneView.showsStatistics = true
         
         let scene = SCNScene()
         
@@ -114,47 +112,65 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     func setupBook()
     {
-        overlay.isHidden = false
-        overlay.backgroundColor = .brown
-        bookText.isHidden = true
         bookStack.isHidden = false
+        backgroundTexture.isHidden = false
+        bookText.isHidden = true
+        
     }
     
     func setupReading(bookNum:Int32)
     {
+        
+        
         bookStack.isHidden = true
         bookText.isHidden = false
        if(bookNum == 1)
         {
            bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
            
-           
+           index = index + 1
            
                
            }
         if(bookNum == 2)
         {
             bookText.text = "I am young, I am twenty years old; yet I know nothing of life but despair, death, fear, and fatuous superficiality cast over an abyss of sorrow. I see how peoples are set against one another, and in silence, unknowingly, foolishly, obediently, innocently slay one another."
-            
+            index = index + 1
         }
         if(bookNum == 3)
         {
             bookText.text = "We will grind you revolutionists down under our heel, and we shall walk upon your faces. The world is ours, we are its lords, and ours it shall remain. As for the host of labor, it has been in the dirt since history began, and I read history aright. And in the dirt it shall remain so long as I and mine and those that come after us have the power. There is the word. It is the king of words—Power. Not God, not Mammon, but Power. Pour it over your tongue till it tingles with it. Power."
+            index = index + 1
         }
         if(bookNum == 4)
         {
             bookText.text = "Is it not astonishing that, in the course of history, all human types except [the soulful human who possesses fantasy] have been in power?...Instead of expecting such a person to come along, we must expect gas warfare! And the culprit will be the philistine nature of the political and economical world powers. Everything evil or stupid in this world is not supernatural destiny, but rather a deadly form of lack of fantasy..."
+            index = index + 1
         }
         if(bookNum == 5)
         {
             bookText.text = "But one who understands will not judge, and will have no pride. Before him I shall not be ashamed. Whoever has found himself can never again lose anything in this world. He who has grasped the human in himself understands all mankind."
+            index = index + 1
+            
         }
         
-        bookText.numberOfLines = 5
+        bookText.numberOfLines = 10
         bookText.sizeToFit()
         let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
             self.bookText.isHidden = true
             self.bookStack.isHidden = false
+            
+            if(self.index == 5)
+            {
+                print("finished")
+                self.setupFinalScene()
+            }
        }
+        
+        
+    }
+    func setupFinalScene()
+    {
+        backgroundTexture.isHidden = true
     }
 }
