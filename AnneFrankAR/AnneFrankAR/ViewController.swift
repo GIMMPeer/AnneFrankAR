@@ -102,7 +102,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             }
             if(nodeName! == "Paper")
             {
-                
+                let quizScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuizController") as! QuizController
+                self.navigationController?.pushViewController(quizScene, animated: false)
             }
         }else{
             print("nil")
