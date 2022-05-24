@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21464CED27D2B739002E875A /* PosterInteractiveExample.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */; };
 		219428DC27E8E478009E5250 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219428DB27E8E478009E5250 /* Extensions.swift */; };
 		219428FD27E8EC16009E5250 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 219428FC27E8EC16009E5250 /* art.scnassets */; };
 		27396CC7280A12820034828A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 27396CC6280A12820034828A /* data.json */; };
@@ -25,8 +24,6 @@
 		843E4C212832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C222832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		84CEF4DC2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
-		84CEF4DD2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
-		84CEF4DE2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
 		84CEF4DF283C1DB00087869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC76127D296A700013FD5 /* Main.storyboard */; };
 		84CEF4E0283C1DB10087869E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC76127D296A700013FD5 /* Main.storyboard */; };
 		84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF4E5283D3FB90087869E /* videoplayback.mp4 */; };
@@ -53,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = PosterInteractiveExample.rcproject; sourceTree = "<group>"; };
 		219428DB27E8E478009E5250 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		219428FC27E8EC16009E5250 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		27396CC6280A12820034828A /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
@@ -126,22 +122,15 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
-				27396CCB280A218B0034828A /* Models.swift */,
+				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				84CEF4E5283D3FB90087869E /* videoplayback.mp4 */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
-				27CAC75B27D296A700013FD5 /* AppDelegate.swift */,
 				27CAC75D27D296A700013FD5 /* ViewController.swift */,
-				84CEF4E7283D44C40087869E /* QuizController.swift */,
 				27A56C6827F7A67F00322039 /* MainViewController.swift */,
-				27CAC76127D296A700013FD5 /* Main.storyboard */,
-				84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */,
-				219428DB27E8E478009E5250 /* Extensions.swift */,
-				21464CEC27D2B739002E875A /* PosterInteractiveExample.rcproject */,
 				843E4C1F2832BAD300103576 /* MainMenu.swift */,
+				27CAC76127D296A700013FD5 /* Main.storyboard */,
 				27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */,
-				DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */,
-				92B0E6232800E009003E33C9 /* VideoView.swift */,
 				27396CC6280A12820034828A /* data.json */,
 			);
 			path = AnneFrankAR;
@@ -162,6 +151,20 @@
 				27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */,
 			);
 			path = AnneFrankARUITests;
+			sourceTree = "<group>";
+		};
+		84CEF4E9283D8CAB0087869E /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				27CAC75B27D296A700013FD5 /* AppDelegate.swift */,
+				92B0E6232800E009003E33C9 /* VideoView.swift */,
+				DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */,
+				219428DB27E8E478009E5250 /* Extensions.swift */,
+				84CEF4E7283D44C40087869E /* QuizController.swift */,
+				84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */,
+				27396CCB280A218B0034828A /* Models.swift */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +307,6 @@
 				843E4C202832BAD300103576 /* MainMenu.swift in Sources */,
 				84CEF4E8283D44C40087869E /* QuizController.swift in Sources */,
 				27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */,
-				21464CED27D2B739002E875A /* PosterInteractiveExample.rcproject in Sources */,
 				27396CCC280A218B0034828A /* Models.swift in Sources */,
 				DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */,
 				27A56C6927F7A67F00322039 /* MainViewController.swift in Sources */,
@@ -319,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */,
-				84CEF4DD2836B3A60087869E /* BurntBookArtifact.swift in Sources */,
 				843E4C212832BAD300103576 /* MainMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +331,6 @@
 			files = (
 				27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */,
 				843E4C222832BAD300103576 /* MainMenu.swift in Sources */,
-				84CEF4DE2836B3A60087869E /* BurntBookArtifact.swift in Sources */,
 				27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
