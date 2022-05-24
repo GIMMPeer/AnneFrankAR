@@ -21,7 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
     
-    
+    var tvPlayer:AVPlayer!
     var made = false;
     private var cbCentralManager: CBCentralManager!
     private var beacon: CBPeripheral!
@@ -272,7 +272,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             
             //This is not a wall, it's a poster. Works very similar to the walls though
             //createPoster() is also in Extensions
+            let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource:"videoplayback", ofType: "mp4")!)
+            tvPlayer = AVPlayer(url: fileURL)
+                        
+            let tvGeo = SCNPlane(width:1.6,height: 0.9)
+            tvGeo.firstMaterial?.diffuse.contents = tvPlayer
+            tvGeo.firstMaterial?.isDoubleSided = true
+                        
+            let tvNode = SCNNode(geometry: tvGeo)
+            tvNode.position.z = -0.9
             
+            
+            node.addChildNode(tvNode)
+            tvPlayer.play()
             
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
