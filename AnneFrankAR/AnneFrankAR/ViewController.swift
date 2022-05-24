@@ -100,6 +100,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
                 self.navigationController?.pushViewController(bookArtifactScene, animated: false)
                 
             }
+            if(nodeName! == "Paper")
+            {
+                
+            }
         }else{
             print("nil")
         }
@@ -286,6 +290,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(tvNode)
             tvPlayer.play()
             
+            let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
+            
+            let quiz = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
+            quiz.position = SCNVector3.init(0.50, -0.5, -0.75)
+            quiz.eulerAngles = SCNVector3.init(0, 0, 0)
+            
+            node.addChildNode(quiz)
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
             node.addChildNode(topWall!)
