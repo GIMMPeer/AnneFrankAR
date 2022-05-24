@@ -12,14 +12,29 @@ class QuizController: UIViewController
 {
     var questionArr = [Poster]()
     
+    @IBOutlet weak var feedbackOverlay: UIView!
+    
     var index:Int = 0
     var answerVal:Int?
     var correct:Bool = false
+    var finished:Bool = false
     var totalCorrect:Int = 0
     @IBOutlet weak var posterImage: UIImageView!
     
-    @IBOutlet weak var totalScore: UILabel!
+    @IBOutlet weak var feedbackText: UILabel!
+    
+    @IBOutlet weak var answerFeedback: UILabel!
+    
     @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBAction func `continue`(_ sender: Any) {
+        feedbackOverlay.isHidden = true
+        if(finished)
+        {
+            let arview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            self.navigationController?.pushViewController(arview, animated: false)
+        }
+    }
     
     @IBAction func answerBandwagon(_ sender: Any) {
         answerVal = 1
@@ -61,26 +76,24 @@ class QuizController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        feedbackOverlay.isHidden = true
        
-        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [1,3])
-        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [2,4])
-        let posterC = Poster(image: UIImage(named:"thirdContent")!, value:[7])
+        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [1,3], feedback: "This poster is a primary example of Scapegoating")
+        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [2,4], feedback: "This poster is a primary example of Fearmongering")
+        let posterC = Poster(image: UIImage(named:"thirdContent")!, value:[7], feedback: "This poster is a primary example of Card Tactics")
         
         questionArr.append(posterA)
         questionArr.append(posterB)
         questionArr.append(posterC)
         questionLabel.text = "What principle of propaganda does this poster represent?"
         questionLabel.numberOfLines = 5
+        feedbackText.numberOfLines = 5
         setupQuestion()
     }
     
     private func setupQuestion()
     {
-        if(index >= questionArr.count)
-        {
-            //Display final 
-            return
-        }
+        
         correct = false
         posterImage.image = questionArr[index].image
         
@@ -103,17 +116,36 @@ class QuizController: UIViewController
         }
         if(correct)
         {
+            
+            feedbackOverlay.isHidden = false
+            feedbackText.text = questionArr[index].feedback
+            answerFeedback.text = "You are correct"
+            
+            
             totalCorrect += 1
-            index += 1
-            setupQuestion()
+            
+            
         }
         else
         {
             print("Incorrect")
+            feedbackOverlay.isHidden = false
+            feedbackText.text = questionArr[index].feedback
+            answerFeedback.text = "You are incorrect"
+        
+        }
+        
+        if(index > questionArr.count)
+        {
+            feedbackText.text = "You are finished. Please press continue."
+            answerFeedback.text = ""
+        }
+        else
+        {
             index += 1
             setupQuestion()
         }
-        totalScore.text = String(totalCorrect) + "/10"
+        
             
     }
 }
@@ -122,4 +154,5 @@ struct Poster
 {
     let image:UIImage
     let value: [Int]
+    let feedback: String
 }

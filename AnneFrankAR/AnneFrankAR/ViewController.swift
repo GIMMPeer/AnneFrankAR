@@ -247,13 +247,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             
         }
         if(portalNum == 2) {
-            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
-            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
         
             leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
             leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
@@ -300,11 +300,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(quiz)
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
-            node.addChildNode(topWall!)
+            //node.addChildNode(topWall!)
             node.addChildNode(bottomWall!)
             node.addChildNode(backWall!)
-            node.addChildNode(leftDoorSide!)
-            node.addChildNode(rightDoorSide!)
+            //node.addChildNode(leftDoorSide!)
+            //node.addChildNode(rightDoorSide!)
             
             
             
