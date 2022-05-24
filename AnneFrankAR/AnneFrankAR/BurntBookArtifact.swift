@@ -31,6 +31,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     @IBOutlet weak var backgroundTexture: UIImageView!
     
+    @IBOutlet weak var fireAnim: UIView!
+    @IBOutlet weak var pageTexture: UIImageView!
+    @IBOutlet weak var pageText: UIStackView!
+    
     @IBAction func book1(_ sender: Any) {
         setupReading(bookNum: 1)
         bookButton1.isHidden = true
@@ -57,8 +61,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         bookButton5.isHidden = true
     }
     
-    
-    @IBOutlet weak var fireAnim: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +107,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     {
         let node = SCNNode()
         
-        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/bonfire.scn")!
+        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
 
         node.addChildNode(bonfireScene.rootNode)
         
@@ -159,22 +161,30 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         bookText.numberOfLines = 10
         bookText.sizeToFit()
+        let screen: CGRect = UIScreen.main.bounds
         
-        
-        fireAnim.isHidden = false
+        let pageMask = UIView(frame: CGRect(x: 0, y: 0, width: screen.width, height: screen.height))
+        pageMask.backgroundColor = .blue
+        let textMask = UIView(frame: CGRect(x: 0, y: 0, width: screen.width, height: screen.height))
+        textMask.backgroundColor = .blue
+        view.addSubview(pageMask)
+        view.addSubview(textMask)
+        pageTexture.mask = pageMask
+        bookText.mask = textMask
         
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
-            self.fireAnim.frame.size = CGSize(width: 550, height: 850 )
+            pageMask.frame.size = CGSize(width: 0, height: screen.height )
+            textMask.frame.size = CGSize(width: 0, height: screen.height )
         }, completion: { finished in
-          print("Book has been burned")
-            self.fireAnim.frame.size = CGSize(width:0, height:850 )
+            pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
+            textMask.frame.size = CGSize(width: screen.width, height: screen.height )
         })
         
         let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
+            
             self.bookText.isHidden = true
             self.bookStack.isHidden = false
             self.backgroundTexture.isHidden = false
-            self.fireAnim.isHidden = true
             if(self.index == 1)
             {
                 self.setupGame()
@@ -193,17 +203,5 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupFinalScene()
     {
         backgroundTexture.isHidden = true
-    }
-    
-    func particleLighting() {
-        let node = SCNNode()
-        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/bonfire.scn")!
-        let particles = bonfireScene.rootNode.childNode(withName: "fire", recursively: true)
-        
-        let firePosX = particles!.position.x
-        let firePosZ = particles!.position.z
-        //z: -4, 3
-        particles!.position.x = Float.random(in: -4.0..<3.0)
-        particles!.position.z = Float.random(in: -4.0..<3.0)
     }
 }
