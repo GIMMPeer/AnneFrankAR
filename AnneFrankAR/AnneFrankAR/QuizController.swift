@@ -135,10 +135,11 @@ class QuizController: UIViewController
         
         }
         
-        if(index > questionArr.count)
+        if(index >= questionArr.count - 1)
         {
             feedbackText.text = "You are finished. Please press continue."
             answerFeedback.text = ""
+            finished = true
         }
         else
         {
