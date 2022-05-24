@@ -101,8 +101,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             }
             else if(nodeName! == "blendShapesPoster")
             {
-                let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlendshapesPoster") as! BlendshapesPoster
-                self.navigationController?.pushViewController(bookArtifactScene, animated: false)
+                let blendShapesPosterScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlendshapesPoster") as! BlendshapesPoster
+                self.navigationController?.pushViewController(blendShapesPosterScene, animated: false)
             }
             if(nodeName! == "Paper")
             {

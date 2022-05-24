@@ -576,7 +576,7 @@
         <!--Blendshapes Poster-->
         <scene sceneID="Mcs-2w-VgS">
             <objects>
-                <viewController id="grA-Z9-sxB" userLabel="Blendshapes Poster" customClass="BlendshapesPoster" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlendshapesPoster" useStoryboardIdentifierAsRestorationIdentifier="YES" id="grA-Z9-sxB" userLabel="Blendshapes Poster" customClass="BlendshapesPoster" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="865-GT-Gym">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
