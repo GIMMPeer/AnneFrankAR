@@ -22,7 +22,7 @@ class VideoView: UIViewController {
             //Only going to set up a single video for now as proof. Can easily set up the
             //other videos later once the UI is more fleshed out. May have to find more.
             
-            guard let path = Bundle.main.path(forResource: "video1_Speech", ofType: "mp4") else{
+            guard let path = Bundle.main.path(forResource: "Videos/video1_Speech", ofType: "mp4") else{
                 debugPrint("video1_Speech.mp4 not found")
                 return
             }

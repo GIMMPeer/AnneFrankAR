@@ -195,7 +195,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
 //            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
 //
             //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
-            let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
+            let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
             
             //This is accessing the scn file and then the specific pillar object called "blendShapesPoster"
             let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
@@ -306,7 +306,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(tvNode)
             tvPlayer.play()
             
-            let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
+            let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
             
             let quiz = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
             quiz.position = SCNVector3.init(0.50, -0.5, -0.75)
