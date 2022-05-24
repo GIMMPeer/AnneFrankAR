@@ -67,7 +67,7 @@ func createPoster(image: String) -> SCNNode {
 func createText(text: String, parent: SCNNode) -> SCNNode {
     //root node that will be added to the scene
     let node = SCNNode()
-    
+    //subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
     //creates text object based on given string
     let text = SCNText(string: "Textual Rhetoric label test", extrusionDepth: 1)
     let material = SCNMaterial()
