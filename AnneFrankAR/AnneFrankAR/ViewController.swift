@@ -98,7 +98,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             {
                 let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BurntBookArtifact") as! BurntBookArtifact
                 self.navigationController?.pushViewController(bookArtifactScene, animated: false)
-                
+            }
+            else if(nodeName! == "blendShapesPoster")
+            {
+                let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlendshapesPoster") as! BlendshapesPoster
+                self.navigationController?.pushViewController(bookArtifactScene, animated: false)
             }
         }else{
             print("nil")
@@ -145,6 +149,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         var rightDoorSide:SCNNode?
         
         if(portalNum == 1) {
+            
             leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
             rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
             topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
@@ -173,14 +178,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
             rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
-            //This is not a wall, it's a poster. Works very similar to the walls though
-            //createPoster() is also in Extensions
-            let posterTest = createPoster(image: "art.scnassets/Poster_Base_AR.png")
-            posterTest.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
-            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
-            
+//            //This is not a wall, it's a poster. Works very similar to the walls though
+//            //createPoster() is also in Extensions
+//            let posterTest = createPoster(image: "art.scnassets/Poster_Base_AR.png")
+//            posterTest.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
+//            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
+//
             //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
             let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
+            
+            //This is accessing the scn file and then the specific pillar object called "blendShapesPoster"
+            let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
+            bsPoster.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
+            bsPoster.eulerAngles = SCNVector3.init(0, 90, 0)
             
             //This is accessing the scn file and then the specific pillar object called "Cylinder"
             let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
@@ -200,7 +210,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             burntBook.position = SCNVector3.init(0.50, -0.5, 0.75)
             burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
             
-            posterTest.renderingOrder=200
+            //posterTest.renderingOrder=200
             
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
@@ -210,7 +220,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(leftDoorSide!)
             node.addChildNode(rightDoorSide!)
             
-            node.addChildNode(posterTest)
+            node.addChildNode(bsPoster)
             node.addChildNode(amer)
             node.addChildNode(germ)
             node.addChildNode(textRhet)
