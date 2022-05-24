@@ -31,8 +31,8 @@ class QuizController: UIViewController
         feedbackOverlay.isHidden = true
         if(finished)
         {
-            let arview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            self.navigationController?.pushViewController(arview, animated: false)
+            navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
         }
     }
     
