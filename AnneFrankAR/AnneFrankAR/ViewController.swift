@@ -21,7 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
     
-    
+    var tvPlayer:AVPlayer!
     var made = false;
     private var cbCentralManager: CBCentralManager!
     private var beacon: CBPeripheral!
@@ -98,7 +98,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             {
                 let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BurntBookArtifact") as! BurntBookArtifact
                 self.navigationController?.pushViewController(bookArtifactScene, animated: false)
-                
+            }
+            else if(nodeName! == "blendShapesPoster")
+            {
+                let blendShapesPosterScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlendshapesPoster") as! BlendshapesPoster
+                self.navigationController?.pushViewController(blendShapesPosterScene, animated: false)
+            }
+            if(nodeName! == "Paper")
+            {
+                let quizScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuizController") as! QuizController
+                self.navigationController?.pushViewController(quizScene, animated: false)
+            }
+            if(nodeName! == "Paper")
+            {
+                let quizScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuizController") as! QuizController
+                self.navigationController?.pushViewController(quizScene, animated: false)
             }
         }else{
             print("nil")
@@ -145,6 +159,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         var rightDoorSide:SCNNode?
         
         if(portalNum == 1) {
+            
             leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
             rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
             topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
@@ -173,14 +188,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
             rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
-            //This is not a wall, it's a poster. Works very similar to the walls though
-            //createPoster() is also in Extensions
-            let posterTest = createPoster(image: "art.scnassets/Poster_Base_AR.png")
-            posterTest.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
-            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
-            
+//            //This is not a wall, it's a poster. Works very similar to the walls though
+//            //createPoster() is also in Extensions
+//            let posterTest = createPoster(image: "art.scnassets/Poster_Base_AR.png")
+//            posterTest.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
+//            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
+//
             //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
-            let subScene = SCNScene(named: "art.scnassets/PropagandaScene.scn")!
+            let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
+            
+            //This is accessing the scn file and then the specific pillar object called "blendShapesPoster"
+            let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
+            bsPoster.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
+            bsPoster.eulerAngles = SCNVector3.init(0, 0, 0)
             
             //This is accessing the scn file and then the specific pillar object called "Cylinder"
             let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
@@ -192,15 +212,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
             germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
-            let textRhet = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
-            textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
-            textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
-            
             let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
-            burntBook.position = SCNVector3.init(0.50, -0.5, 0.75)
+            burntBook.position = SCNVector3.init(0.50, -0.5, -0.75)
             burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
             
-            posterTest.renderingOrder=200
+            //posterTest.renderingOrder=200
             
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
@@ -210,10 +226,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(leftDoorSide!)
             node.addChildNode(rightDoorSide!)
             
-            node.addChildNode(posterTest)
+            node.addChildNode(bsPoster)
             node.addChildNode(amer)
             node.addChildNode(germ)
-            node.addChildNode(textRhet)
+            
             node.addChildNode(burntBook)
             
             //create light, otherwise the portal would be black
@@ -226,7 +242,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             light.zFar = 3
             light.castsShadow = true
             light.shadowRadius = 200
-            light.intensity = 400
+            light.intensity = 600
             light.shadowColor = UIColor.black.withAlphaComponent(0.7)
             light.shadowMode = .forward
             //This points the light in a specific direction
@@ -242,13 +258,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             
         }
         if(portalNum == 2) {
-            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
-            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
         
             leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
             leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
@@ -272,15 +288,34 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             
             //This is not a wall, it's a poster. Works very similar to the walls though
             //createPoster() is also in Extensions
+            let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource:"videoplayback", ofType: "mp4")!)
+            tvPlayer = AVPlayer(url: fileURL)
+                        
+            let tvGeo = SCNPlane(width:1.6,height: 0.9)
+            tvGeo.firstMaterial?.diffuse.contents = tvPlayer
+            tvGeo.firstMaterial?.isDoubleSided = true
+                        
+            let tvNode = SCNNode(geometry: tvGeo)
+            tvNode.position.z = -0.9
             
             
+            node.addChildNode(tvNode)
+            tvPlayer.play()
+            
+            let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
+            
+            let quiz = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
+            quiz.position = SCNVector3.init(0.50, -0.5, -0.75)
+            quiz.eulerAngles = SCNVector3.init(0, 0, 0)
+            
+            node.addChildNode(quiz)
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
-            node.addChildNode(topWall!)
+            //node.addChildNode(topWall!)
             node.addChildNode(bottomWall!)
             node.addChildNode(backWall!)
-            node.addChildNode(leftDoorSide!)
-            node.addChildNode(rightDoorSide!)
+            //node.addChildNode(leftDoorSide!)
+            //node.addChildNode(rightDoorSide!)
             
             
             
