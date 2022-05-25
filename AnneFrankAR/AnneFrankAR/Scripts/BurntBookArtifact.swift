@@ -94,7 +94,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         if(nodeName != nil){
             print(nodeName!)
             
-            if(nodeName! == "Book")
+            if(nodeName! == "Book" || nodeName! == "Cube")
             {
                 
                 //Setup Anim
@@ -238,11 +238,12 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         })
         
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
             
             self.bookText.isHidden = true
-            self.bookStack.isHidden = false
             self.backgroundTexture.isHidden = false
+            self.bookStack.isHidden = false
+            
             if(self.index == 1)
             {
                 self.setupGame()
