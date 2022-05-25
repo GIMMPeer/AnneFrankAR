@@ -212,12 +212,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
             germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
-            let textRhet = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
-            textRhet.position = SCNVector3.init(0.75, -0.5, 0.75)
-            textRhet.eulerAngles = SCNVector3.init(0, 45.0.degreesToRadians, 0)
-            
             let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
-            burntBook.position = SCNVector3.init(0.50, -0.5, 0.75)
+            burntBook.position = SCNVector3.init(0.50, -0.5, -0.75)
             burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
             
             //posterTest.renderingOrder=200
@@ -233,7 +229,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             node.addChildNode(bsPoster)
             node.addChildNode(amer)
             node.addChildNode(germ)
-            node.addChildNode(textRhet)
+            
             node.addChildNode(burntBook)
             
             //create light, otherwise the portal would be black
@@ -246,7 +242,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             light.zFar = 3
             light.castsShadow = true
             light.shadowRadius = 200
-            light.intensity = 400
+            light.intensity = 600
             light.shadowColor = UIColor.black.withAlphaComponent(0.7)
             light.shadowMode = .forward
             //This points the light in a specific direction
