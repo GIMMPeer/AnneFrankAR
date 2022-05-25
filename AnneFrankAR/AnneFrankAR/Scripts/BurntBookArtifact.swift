@@ -98,7 +98,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
             {
                 
                 //Setup Anim
-                bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/OpeningBook")!)
+                bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/OpeningBook")!, time: 2)
                 
                 //Timer for few seconds then call setupBook()
                 let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
@@ -117,7 +117,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         }
     }
     
-    func bookAnimation(animScene:SCNScene)
+    func bookAnimation(animScene:SCNScene, time:Int)
     {
         let bookNode = SCNNode()
         let bookOpen = animScene
@@ -127,7 +127,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         self.sceneView.scene!.rootNode.addChildNode(bookNode)
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(time), repeats: false) { timer in
             
             bookNode.removeFromParentNode()
             
@@ -261,6 +261,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupFinalScene()
     {
         backgroundTexture.isHidden = true
-        bookAnimation(animScene: SCNScene(named:"art.scnassets/BookBurning/ClosingAnimation")!)
+        bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/ClosingAnimation")!, time: 5)
     }
 }
