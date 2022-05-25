@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xHe-Yj-dPK">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -42,18 +42,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm" userLabel="Bonfire Scene">
                                 <rect key="frame" x="0.0" y="24" width="820" height="1156"/>
                             </sceneKitView>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ez2-aT-iK4" userLabel="Particle Scene">
+                                <rect key="frame" x="604" y="154" width="76" height="838"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurntPageTexture.png" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-dY-7Za">
                                 <rect key="frame" x="129" y="142" width="550" height="850"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label more label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
-                                <rect key="frame" x="161" y="257" width="487" height="106"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="s2f-wU-FTG">
                                 <rect key="frame" x="212" y="344" width="383.5" height="447"/>
                                 <subviews>
@@ -105,26 +103,30 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
-                                <rect key="frame" x="129" y="142" width="10" height="850"/>
+                                <rect key="frame" x="129" y="142" width="0.0" height="850"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label more label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
+                                <rect key="frame" x="160" y="306" width="500" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yAm-hL-dg9" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="161" id="DID-Oi-czX"/>
                             <constraint firstItem="LcM-dY-7Za" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="129" id="JOM-r4-p0a"/>
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="320" id="JtJ-8W-vXj"/>
                             <constraint firstItem="LcM-dY-7Za" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="118" id="Jz8-sI-1TA"/>
-                            <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="yAm-hL-dg9" secondAttribute="trailing" constant="172" id="Qjs-2o-CFe"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="RKc-Mi-z1l"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="LcM-dY-7Za" secondAttribute="trailing" constant="141" id="SgN-is-liM"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="s2f-wU-FTG" secondAttribute="bottom" constant="319" id="WiD-mV-1fK"/>
                             <constraint firstAttribute="bottom" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="bbT-bv-gKc"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="LcM-dY-7Za" secondAttribute="bottom" constant="118" id="fna-3N-xcE"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="h1M-xD-7AK"/>
-                            <constraint firstItem="yAm-hL-dg9" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="233" id="rZG-WE-rgE"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" id="sB6-Wm-X1i"/>
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="212" id="w0F-q8-bza"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="s2f-wU-FTG" secondAttribute="trailing" constant="224.5" id="xdM-q5-xRS"/>
@@ -142,6 +144,9 @@
                         <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
                         <outlet property="fireAnim" destination="wf2-tF-g7e" id="vjB-Kd-76A"/>
+                        <outlet property="pageText" destination="s2f-wU-FTG" id="qVp-fb-Id8"/>
+                        <outlet property="pageTexture" destination="LcM-dY-7Za" id="pXX-ZH-OoE"/>
+                        <outlet property="particleScene" destination="ez2-aT-iK4" id="wLf-bd-Un9"/>
                         <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
                     </connections>
                 </viewController>
