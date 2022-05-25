@@ -200,7 +200,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             //This is accessing the scn file and then the specific pillar object called "blendShapesPoster"
             let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
             bsPoster.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
-            bsPoster.eulerAngles = SCNVector3.init(0, 90, 0)
+            bsPoster.eulerAngles = SCNVector3.init(0, 0, 0)
             
             //This is accessing the scn file and then the specific pillar object called "Cylinder"
             let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
