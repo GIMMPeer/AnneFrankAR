@@ -9,16 +9,29 @@ import Foundation
 import UIKit
 import SceneKit
 import SpriteKit
+import SwiftUI
+
+class FireScene:SKScene
+{
+    
+    
+    
+}
+
 
 class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 {
     var nodeName:String?
+    
+    
     
     var index:Int32 = 0
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var bookStack: UIStackView!
     
     @IBOutlet weak var particleScene: SKScene!
+    
+    @IBOutlet weak var skView: SKView!
     
     @IBOutlet weak var bookText: UILabel!
     
@@ -37,6 +50,19 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var fireAnim: UIView!
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
+    
+    var spriteScene:SKScene
+    {
+        let scene = FireScene()
+        scene.size = CGSize(width:300, height: 400)
+        scene.scaleMode = .fill
+        
+        let particleNode = SKEmitterNode(fileNamed: "FireParticle")
+        scene.addChild(particleNode!)
+    
+        return scene
+    }
+    
     
     @IBAction func book1(_ sender: Any) {
         setupReading(bookNum: 1)
@@ -82,6 +108,24 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         setupGame()
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
+        
+    
+        let spriteScene = SKScene()
+        let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
+        let cameraNode = SKCameraNode()
+        cameraNode.position = CGPoint(x: spriteScene.size.width / 2, y: spriteScene.size.height / 2)
+        spriteScene.addChild(cameraNode)
+        spriteScene.camera = cameraNode
+        spriteScene.addChild(particleNode)
+        
+        let zoomOutAction = SKAction.scale(to: 150, duration: 0)
+        cameraNode.run(zoomOutAction)
+        
+            //spriteView.addChild(spriteScene)
+        skView.allowsTransparency = true
+        spriteScene.backgroundColor = UIColor.clear
+        skView.presentScene(spriteScene)
+        
     }
     
     @objc func handleTap(_ gesture: UIPanGestureRecognizer){
@@ -136,17 +180,17 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     func setupGame()
     {
+        
         let node = SCNNode()
         let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
-        //let particleScene = SKScene()
-        //let particleNode = SKEmitterNode(fileNamed: "art.scnassets/BookBurning/Bonfire.scn")!
+        
         
         //particleScene.addChild(particleNode)
         //node.addChildNode(particleScene)
-        
         node.addChildNode(bonfireScene.rootNode)
         
         self.sceneView.scene!.rootNode.addChildNode(node)
+        
         
     }
     
