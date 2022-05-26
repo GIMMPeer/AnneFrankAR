@@ -316,6 +316,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             let propagandaLesson = subScene.rootNode.childNode(withName: "cubeydude", recursively: true)!
             propagandaLesson.position = SCNVector3.init(-0.50, -0.5, -0.75)
             
+            let person = subScene.rootNode.childNode(withName: "stan", recursively: true)!
+            person.position = SCNVector3.init(0, -0.95, -0.75)
+            person.eulerAngles = SCNVector3.init(0, Double.pi / 16, 0)
+            
+            
+            
             node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
             node.addChildNode(leftWall!)
@@ -323,6 +329,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             //node.addChildNode(topWall!)
             node.addChildNode(bottomWall!)
             node.addChildNode(backWall!)
+            node.addChildNode(person)
             //node.addChildNode(leftDoorSide!)
             //node.addChildNode(rightDoorSide!)
             
