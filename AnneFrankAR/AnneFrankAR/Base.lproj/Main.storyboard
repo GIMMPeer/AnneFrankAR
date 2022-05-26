@@ -42,9 +42,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm" userLabel="Bonfire Scene">
-                                <rect key="frame" x="0.0" y="24" width="820" height="1156"/>
-                            </sceneKitView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
+                                <rect key="frame" x="129" y="142" width="0.0" height="850"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurntPageTexture.png" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-dY-7Za">
                                 <rect key="frame" x="129" y="142" width="550" height="850"/>
                             </imageView>
@@ -98,15 +100,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
-                                <rect key="frame" x="129" y="142" width="0.0" height="850"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-9L-Jx2">
-                                <rect key="frame" x="611" y="142" width="68" height="850"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </skView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label more label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
                                 <rect key="frame" x="160" y="306" width="500" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,6 +107,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQm-IS-Kgn" userLabel="Bonfire Scene">
+                                <rect key="frame" x="-27" y="0.0" width="847" height="1180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flM-8i-3FB" userLabel="Page Fire">
+                                <rect key="frame" x="129" y="142" width="850" height="850"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,13 +122,9 @@
                             <constraint firstItem="LcM-dY-7Za" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="129" id="JOM-r4-p0a"/>
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="320" id="JtJ-8W-vXj"/>
                             <constraint firstItem="LcM-dY-7Za" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="118" id="Jz8-sI-1TA"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="RKc-Mi-z1l"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="LcM-dY-7Za" secondAttribute="trailing" constant="141" id="SgN-is-liM"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="s2f-wU-FTG" secondAttribute="bottom" constant="319" id="WiD-mV-1fK"/>
-                            <constraint firstAttribute="bottom" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="bbT-bv-gKc"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="LcM-dY-7Za" secondAttribute="bottom" constant="118" id="fna-3N-xcE"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="h1M-xD-7AK"/>
-                            <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" id="sB6-Wm-X1i"/>
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="212" id="w0F-q8-bza"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="s2f-wU-FTG" secondAttribute="trailing" constant="224.5" id="xdM-q5-xRS"/>
                         </constraints>
@@ -143,11 +140,10 @@
                         <outlet property="bookButton5" destination="YVU-FT-nMs" id="4yY-sw-lnG"/>
                         <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
-                        <outlet property="fireAnim" destination="wf2-tF-g7e" id="vjB-Kd-76A"/>
+                        <outlet property="pageFire" destination="flM-8i-3FB" id="hGz-AW-E1G"/>
                         <outlet property="pageText" destination="s2f-wU-FTG" id="qVp-fb-Id8"/>
                         <outlet property="pageTexture" destination="LcM-dY-7Za" id="pXX-ZH-OoE"/>
-                        <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
-                        <outlet property="skView" destination="S3q-9L-Jx2" id="8LP-TE-sLb"/>
+                        <outlet property="sceneView" destination="GQm-IS-Kgn" id="8w4-h6-EDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-fc-0h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

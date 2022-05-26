@@ -29,9 +29,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var bookStack: UIStackView!
     
-    @IBOutlet weak var particleScene: SKScene!
+    //@IBOutlet weak var particleScene: SKScene!
     
-    @IBOutlet weak var skView: SKView!
+    @IBOutlet weak var pageFire: SKView!
     
     @IBOutlet weak var bookText: UILabel!
     
@@ -47,7 +47,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     @IBOutlet weak var backgroundTexture: UIImageView!
     
-    @IBOutlet weak var fireAnim: UIView!
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
     
@@ -96,7 +95,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
-        fireAnim.isHidden = true
+        pageFire.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         
@@ -122,9 +121,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         cameraNode.run(zoomOutAction)
         
             //spriteView.addChild(spriteScene)
-        skView.allowsTransparency = true
+        pageFire.allowsTransparency = true
         spriteScene.backgroundColor = UIColor.clear
-        skView.presentScene(spriteScene)
+        pageFire.presentScene(spriteScene)
         
     }
     
@@ -146,7 +145,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
                 
                 //Timer for few seconds then call setupBook()
                 let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-                    
                     self.setupBook()
                 }
                 
@@ -205,9 +203,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupReading(bookNum:Int32)
     {
         
-        
+        print("Hellooooooooooo?")
         bookStack.isHidden = true
         bookText.isHidden = false
+        pageFire.isHidden = false
        if(bookNum == 1)
         {
            bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
