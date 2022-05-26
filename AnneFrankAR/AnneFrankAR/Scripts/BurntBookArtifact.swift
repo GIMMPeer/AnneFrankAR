@@ -11,12 +11,6 @@ import SceneKit
 import SpriteKit
 import SwiftUI
 
-class FireScene:SKScene
-{
-    
-    
-    
-}
 
 
 class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
@@ -29,7 +23,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var bookStack: UIStackView!
     
-    @IBOutlet weak var particleScene: SKScene!
+    //@IBOutlet weak var particleScene: SKScene!
     
     @IBOutlet weak var skView: SKView!
     
@@ -51,17 +45,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
     
-    var spriteScene:SKScene
-    {
-        let scene = FireScene()
-        scene.size = CGSize(width:300, height: 400)
-        scene.scaleMode = .fill
-        
-        let particleNode = SKEmitterNode(fileNamed: "FireParticle")
-        scene.addChild(particleNode!)
+    let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
     
-        return scene
-    }
+   
     
     
     @IBAction func book1(_ sender: Any) {
@@ -99,7 +85,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         fireAnim.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
-        
+        skView.isHidden = true
         
         let scene = SCNScene()
         
@@ -111,7 +97,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
     
         let spriteScene = SKScene()
-        let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
         let cameraNode = SKCameraNode()
         cameraNode.position = CGPoint(x: spriteScene.size.width / 2, y: spriteScene.size.height / 2)
         spriteScene.addChild(cameraNode)
@@ -251,25 +236,11 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         pageTexture.mask = pageMask
         bookText.mask = textMask
         
-//        let fireParticles = SKEmitterNode(fileNamed: "art.scnassets/BookBurning/FireParticle")
-//        fireParticles?.position.x = pageMask.frame.minX + pageMask.frame.width
-//        view.addSubview(fireParticles)
-        
-//        let sk: SKView = SKView()
-//        sk.frame = fireAnim.bounds
-//        sk.backgroundColor = .clear
-//        fireAnim.addSubview(sk)
-//
-//        let scene: SKScene = SKScene(size: fireAnim.bounds.size)
-//        scene.scaleMode = .aspectFit
-//        scene.backgroundColor = .clear
-//
-//        let en = SKEmitterNode(fileNamed: "art.scnassets/BookBurning/FireParticle.sks")
-//        en?.position = sk.center
-
-//        scene.addChild(en!)
-//        sk.presentScene(scene)
-        
+        skView.isHidden = false
+        particleNode.position = CGPoint(x: 30, y: -15)
+        let wait = SKAction.wait(forDuration: 2.5)
+        let move = SKAction.moveBy(x: -75, y: 0, duration: 8)
+        particleNode.run(SKAction.sequence([wait, move]))
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
             pageMask.frame.size = CGSize(width: 0, height: screen.height )
         }, completion: { finished in
@@ -283,7 +254,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         
         let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
-            
+            self.skView.isHidden = true
             self.bookText.isHidden = true
             self.backgroundTexture.isHidden = false
             self.bookStack.isHidden = false
