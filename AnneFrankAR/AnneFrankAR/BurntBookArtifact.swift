@@ -8,30 +8,14 @@
 import Foundation
 import UIKit
 import SceneKit
-import SpriteKit
-import SwiftUI
-
-class FireScene:SKScene
-{
-    
-    
-    
-}
-
 
 class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 {
     var nodeName:String?
     
-    
-    
     var index:Int32 = 0
     @IBOutlet weak var sceneView: SCNView!
     @IBOutlet weak var bookStack: UIStackView!
-    
-    //@IBOutlet weak var particleScene: SKScene!
-    
-    @IBOutlet weak var pageFire: SKView!
     
     @IBOutlet weak var bookText: UILabel!
     
@@ -47,21 +31,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     @IBOutlet weak var backgroundTexture: UIImageView!
     
+    @IBOutlet weak var fireAnim: UIView!
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
-    
-    var spriteScene:SKScene
-    {
-        let scene = FireScene()
-        scene.size = CGSize(width:300, height: 400)
-        scene.scaleMode = .fill
-        
-        let particleNode = SKEmitterNode(fileNamed: "FireParticle")
-        scene.addChild(particleNode!)
-    
-        return scene
-    }
-    
     
     @IBAction func book1(_ sender: Any) {
         setupReading(bookNum: 1)
@@ -95,7 +67,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
-        pageFire.isHidden = true
+        fireAnim.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         
@@ -107,24 +79,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         setupGame()
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
-        
-    
-        let spriteScene = SKScene()
-        let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
-        let cameraNode = SKCameraNode()
-        cameraNode.position = CGPoint(x: spriteScene.size.width / 2, y: spriteScene.size.height / 2)
-        spriteScene.addChild(cameraNode)
-        spriteScene.camera = cameraNode
-        spriteScene.addChild(particleNode)
-        
-        let zoomOutAction = SKAction.scale(to: 150, duration: 0)
-        cameraNode.run(zoomOutAction)
-        
-            //spriteView.addChild(spriteScene)
-        pageFire.allowsTransparency = true
-        spriteScene.backgroundColor = UIColor.clear
-        pageFire.presentScene(spriteScene)
-        
     }
     
     @objc func handleTap(_ gesture: UIPanGestureRecognizer){
@@ -137,20 +91,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         if(nodeName != nil){
             print(nodeName!)
             
-            if(nodeName! == "Book" || nodeName! == "Cube")
+            if(nodeName! == "Book")
             {
-                
-                //Setup Anim
-                bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/OpeningBook")!, time: 2)
-                
-                //Timer for few seconds then call setupBook()
-                let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-                    self.setupBook()
-                }
-                
-                //Remove animation
-                
-                
+                setupBook()
                 
                 
             }
@@ -159,36 +102,16 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         }
     }
     
-    func bookAnimation(animScene:SCNScene, time:Int)
-    {
-        let bookNode = SCNNode()
-        let bookOpen = animScene
-        
-        
-        bookNode.addChildNode(bookOpen.rootNode)
-        
-        self.sceneView.scene!.rootNode.addChildNode(bookNode)
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(time), repeats: false) { timer in
-            
-            bookNode.removeFromParentNode()
-            
-        }
-    }
     
     func setupGame()
     {
-        
         let node = SCNNode()
+        
         let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
-        
-        
-        //particleScene.addChild(particleNode)
-        //node.addChildNode(particleScene)
+
         node.addChildNode(bonfireScene.rootNode)
         
         self.sceneView.scene!.rootNode.addChildNode(node)
-        
         
     }
     
@@ -203,10 +126,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupReading(bookNum:Int32)
     {
         
-        print("Hellooooooooooo?")
+        
         bookStack.isHidden = true
         bookText.isHidden = false
-        pageFire.isHidden = false
        if(bookNum == 1)
         {
            bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
@@ -250,43 +172,19 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         pageTexture.mask = pageMask
         bookText.mask = textMask
         
-//        let fireParticles = SKEmitterNode(fileNamed: "art.scnassets/BookBurning/FireParticle")
-//        fireParticles?.position.x = pageMask.frame.minX + pageMask.frame.width
-//        view.addSubview(fireParticles)
-        
-//        let sk: SKView = SKView()
-//        sk.frame = fireAnim.bounds
-//        sk.backgroundColor = .clear
-//        fireAnim.addSubview(sk)
-//
-//        let scene: SKScene = SKScene(size: fireAnim.bounds.size)
-//        scene.scaleMode = .aspectFit
-//        scene.backgroundColor = .clear
-//
-//        let en = SKEmitterNode(fileNamed: "art.scnassets/BookBurning/FireParticle.sks")
-//        en?.position = sk.center
-
-//        scene.addChild(en!)
-//        sk.presentScene(scene)
-        
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
             pageMask.frame.size = CGSize(width: 0, height: screen.height )
-        }, completion: { finished in
-            pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
-        })
-        UIView.animate(withDuration: 10.0, delay: 1.0, options: .curveEaseOut, animations: {
             textMask.frame.size = CGSize(width: 0, height: screen.height )
         }, completion: { finished in
+            pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
             textMask.frame.size = CGSize(width: screen.width, height: screen.height )
         })
         
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { timer in
             
             self.bookText.isHidden = true
-            self.backgroundTexture.isHidden = false
             self.bookStack.isHidden = false
-            
+            self.backgroundTexture.isHidden = false
             if(self.index == 1)
             {
                 self.setupGame()
@@ -305,6 +203,5 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupFinalScene()
     {
         backgroundTexture.isHidden = true
-        bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/ClosingAnimation")!, time: 5)
     }
 }
