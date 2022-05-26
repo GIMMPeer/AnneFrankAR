@@ -468,6 +468,23 @@
                                                         <rect key="frame" x="100" y="10" width="480" height="280"/>
                                                         <imageReference key="image" image="Floor.png" symbolScale="default"/>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwM-fZ-pmJ">
+                                                        <rect key="frame" x="215" y="78" width="250" height="77"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="Watch Video">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="35" name="Helvetica"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="showVideo:" destination="ftG-QF-fXg" eventType="touchUpInside" id="g6z-sd-Pxq"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="TC4-8L-Gnh" secondAttribute="bottom" constant="10" id="EG9-Ay-cfR"/>
@@ -643,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdk-ix-qSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3586.0975609756097" y="98.644067796610173"/>
+            <point key="canvasLocation" x="2521" y="133"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="otX-JW-AcI">
@@ -735,8 +752,98 @@
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
         </scene>
+        <!--Propaganda Lesson-->
+        <scene sceneID="QDJ-rC-w73">
+            <objects>
+                <viewController storyboardIdentifier="PropagandaLesson" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zxT-TD-cWY" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPs-ve-xCE">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77s-hO-UXo">
+                                <rect key="frame" x="273" y="461" width="183" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YaH-JG-G72"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ohX-ff-P3L"/>
+                    <connections>
+                        <segue destination="DTY-hn-c0k" kind="show" identifier="Right" id="SVm-ef-32Z"/>
+                        <segue destination="xaq-I2-kUf" kind="show" identifier="Left" id="ett-VV-R8E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYc-ba-whm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2551" y="-1511"/>
+        </scene>
+        <!--Propaganda Lesson-->
+        <scene sceneID="ZoH-TA-msl">
+            <objects>
+                <viewController id="DTY-hn-c0k" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EGs-pT-fFc">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whk-He-MU2">
+                                <rect key="frame" x="247" y="460" width="191" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pym-yt-uU9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fp4-Sv-hcy"/>
+                    <connections>
+                        <segue destination="zxT-TD-cWY" kind="show" identifier="Left" id="JIB-Ey-Zgh"/>
+                        <segue destination="xaq-I2-kUf" kind="show" identifier="Right" id="6gz-1V-Zfn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkY-NA-PpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3222" y="-1511"/>
+        </scene>
+        <!--Propaganda Lesson-->
+        <scene sceneID="Tcr-CK-oCd">
+            <objects>
+                <viewController id="xaq-I2-kUf" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HxB-KK-sz4">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-M1-tsz">
+                                <rect key="frame" x="247" y="460" width="193" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gRH-Nd-kh9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ibV-Rm-ZX7"/>
+                    <connections>
+                        <segue destination="zxT-TD-cWY" kind="show" identifier="Right" id="kRs-Mm-ZzV"/>
+                        <segue destination="DTY-hn-c0k" kind="show" identifier="Left" id="oYy-z5-2rG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNZ-go-pdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3882" y="-1511"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="6gz-1V-Zfn"/>
+        <segue reference="SVm-ef-32Z"/>
+        <segue reference="JIB-Ey-Zgh"/>
         <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
