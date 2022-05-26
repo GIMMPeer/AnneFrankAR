@@ -317,8 +317,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             propagandaLesson.position = SCNVector3.init(-0.50, -0.5, -0.75)
             
             let person = subScene.rootNode.childNode(withName: "stan", recursively: true)!
-            person.position = SCNVector3.init(0, -0.5, -0.75)
-            person.eulerAngles = SCNVector3.init(136.783, 0, 46.398)
+            person.position = SCNVector3.init(0, -0.95, -0.75)
+            person.eulerAngles = SCNVector3.init(0, Double.pi / 16, 0)
+            
+            
             
             node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
