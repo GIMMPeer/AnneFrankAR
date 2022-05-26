@@ -21,6 +21,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
     
+    @IBOutlet weak var menuButton: UIButton!
+    
     var tvPlayer:AVPlayer!
     var made = false;
     private var cbCentralManager: CBCentralManager!
@@ -48,7 +50,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         let scene = SCNScene()
         sceneView.scene = scene
         
-        
+        let menuImage = UIImage(named: "BookBlack")! as UIImage
+        menuButton.setImage(menuImage, for: .normal)
         
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
@@ -113,6 +116,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             {
                 let quizScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuizController") as! QuizController
                 self.navigationController?.pushViewController(quizScene, animated: false)
+            }
+            if(nodeName! == "Cube")
+            {
+                let lessonScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PropagandaLesson") as! PropagandaLesson
+                self.navigationController?.pushViewController(lessonScene, animated: false)
             }
         }else{
             print("nil")
@@ -308,12 +316,23 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             quiz.position = SCNVector3.init(0.50, -0.5, -0.75)
             quiz.eulerAngles = SCNVector3.init(0, 0, 0)
             
+            let propagandaLesson = subScene.rootNode.childNode(withName: "cubeydude", recursively: true)!
+            propagandaLesson.position = SCNVector3.init(-0.50, -0.5, -0.75)
+            
+            let person = subScene.rootNode.childNode(withName: "stan", recursively: true)!
+            person.position = SCNVector3.init(0, -0.95, -0.75)
+            person.eulerAngles = SCNVector3.init(0, Double.pi / 16, 0)
+            
+            
+            
+            node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
             node.addChildNode(leftWall!)
             node.addChildNode(rightWall!)
             //node.addChildNode(topWall!)
             node.addChildNode(bottomWall!)
             node.addChildNode(backWall!)
+            node.addChildNode(person)
             //node.addChildNode(leftDoorSide!)
             //node.addChildNode(rightDoorSide!)
             

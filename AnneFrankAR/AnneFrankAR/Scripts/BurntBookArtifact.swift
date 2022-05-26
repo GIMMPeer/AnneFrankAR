@@ -12,7 +12,6 @@ import SpriteKit
 import SwiftUI
 
 
-
 class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
 {
     var nodeName:String?
@@ -47,7 +46,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
     
-   
     
     
     @IBAction func book1(_ sender: Any) {
@@ -82,7 +80,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
-        fireAnim.isHidden = true
+        pageFire.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         skView.isHidden = true
@@ -97,6 +95,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
     
         let spriteScene = SKScene()
+
         let cameraNode = SKCameraNode()
         cameraNode.position = CGPoint(x: spriteScene.size.width / 2, y: spriteScene.size.height / 2)
         spriteScene.addChild(cameraNode)
@@ -107,9 +106,11 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         cameraNode.run(zoomOutAction)
         
             //spriteView.addChild(spriteScene)
+
         skView.allowsTransparency = true
         spriteScene.backgroundColor = UIColor.clear
         skView.presentScene(spriteScene)
+
         
     }
     
@@ -131,7 +132,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
                 
                 //Timer for few seconds then call setupBook()
                 let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-                    
+
                     self.setupBook()
                 }
                 
@@ -190,9 +191,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupReading(bookNum:Int32)
     {
         
-        
+        print("Hellooooooooooo?")
         bookStack.isHidden = true
         bookText.isHidden = false
+        pageFire.isHidden = false
        if(bookNum == 1)
         {
            bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
@@ -241,6 +243,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         let wait = SKAction.wait(forDuration: 2.5)
         let move = SKAction.moveBy(x: -75, y: 0, duration: 8)
         particleNode.run(SKAction.sequence([wait, move]))
+
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
             pageMask.frame.size = CGSize(width: 0, height: screen.height )
         }, completion: { finished in
@@ -254,7 +257,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         
         let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
+
             self.skView.isHidden = true
+
             self.bookText.isHidden = true
             self.backgroundTexture.isHidden = false
             self.bookStack.isHidden = false
