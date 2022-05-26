@@ -20,6 +20,7 @@
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
+		842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 842D49FE2840058400F7BCE9 /* BookBlack.png */; };
 		843E4C202832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C212832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C222832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
@@ -69,6 +70,7 @@
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITests.swift; sourceTree = "<group>"; };
 		27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		842D49FE2840058400F7BCE9 /* BookBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BookBlack.png; sourceTree = "<group>"; };
 		843E4C1F2832BAD300103576 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		84984483283E9636006FE056 /* PropagandaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropagandaLesson.swift; sourceTree = "<group>"; };
 		84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurntBookArtifact.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
+				842D49FE2840058400F7BCE9 /* BookBlack.png */,
 				84CEF4E5283D3FB90087869E /* videoplayback.mp4 */,
 				92140201283ED462003A2DFA /* FireParticle.sks */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
@@ -285,6 +288,7 @@
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
 				27CAC76327D296A700013FD5 /* Main.storyboard in Resources */,
+				842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */,
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
@@ -506,7 +510,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HQSKCJ5WSH;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -524,7 +528,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-
+				PRODUCT_BUNDLE_IDENTIFIER = anne.frank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -540,7 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HQSKCJ5WSH;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -558,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-
+				PRODUCT_BUNDLE_IDENTIFIER = anne.frank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
