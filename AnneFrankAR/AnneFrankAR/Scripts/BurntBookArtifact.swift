@@ -80,7 +80,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         backgroundTexture.isHidden = true
         bookStack.isHidden = true
         bookText.isHidden = true
-        pageFire.isHidden = true
+        skView.isHidden = true
         //bookText.lineBreakMode = .byCharWrapping
         sceneView.delegate = self
         skView.isHidden = true
@@ -194,7 +194,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         print("Hellooooooooooo?")
         bookStack.isHidden = true
         bookText.isHidden = false
-        pageFire.isHidden = false
+        skView.isHidden = false
        if(bookNum == 1)
         {
            bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
