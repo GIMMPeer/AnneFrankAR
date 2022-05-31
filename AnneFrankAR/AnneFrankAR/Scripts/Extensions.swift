@@ -87,6 +87,93 @@ func createText(text: String, parent: SCNNode) -> SCNNode {
     return node
 }
 
+// used to be reused code in the create portal function
+ func buildRoom(num: Int, node: SCNNode) {
+     var leftWall: SCNNode?
+
+     var rightWall: SCNNode?
+
+     var topWall: SCNNode?
+
+     var bottomWall: SCNNode?
+
+     var backWall: SCNNode?
+
+     var leftDoorSide: SCNNode?
+
+     var rightDoorSide: SCNNode?
+
+     if num == 1 {
+         leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
+         rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
+         topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+         bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+         backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
+         leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+         rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+     } else if num == 2 {
+         leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+         rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+         topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+         bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
+         backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+         leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+         rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
+     }
+
+     leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
+     leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
+
+     rightWall!.position = SCNVector3.init((length / 2) - width, 0, 0)
+
+     topWall!.position = SCNVector3.init(0, (height / 2) - width, 0)
+     topWall!.eulerAngles = SCNVector3.init(0, 0, 90.0.degreesToRadians)
+
+     bottomWall!.position = SCNVector3.init(0, (-height / 2) + width, 0)
+     bottomWall!.eulerAngles = SCNVector3.init(0, 0, -90.0.degreesToRadians)
+
+     backWall!.position = SCNVector3.init(0, 0, (-length / 2) + width)
+     backWall!.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
+
+     leftDoorSide!.position = SCNVector3.init((-length / 2 + width) + (doorLength / 2), 0, (length / 2) - width)
+     leftDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+
+     rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
+     rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+
+     node.addChildNode(leftWall!)
+     node.addChildNode(rightWall!)
+     node.addChildNode(topWall!)
+     node.addChildNode(bottomWall!)
+     node.addChildNode(backWall!)
+     node.addChildNode(leftDoorSide!)
+     node.addChildNode(rightDoorSide!)
+
+     // create light, otherwise the portal would be black
+     let light = SCNLight()
+     // omni has worked the best on image textures, but could be better
+     light.type = .omni
+     light.spotInnerAngle = 70
+     light.spotOuterAngle = 120
+     light.zNear = 0.00001
+     light.zFar = 3
+     light.castsShadow = true
+     light.shadowRadius = 200
+     light.intensity = 400
+     light.shadowColor = UIColor.black.withAlphaComponent(0.7)
+     light.shadowMode = .forward
+     // This points the light in a specific direction
+     let constraint = SCNLookAtConstraint(target: bottomWall)
+     constraint.isGimbalLockEnabled = true
+
+     // This is what actually places the light in the scene
+     let lightNode = SCNNode()
+     lightNode.light = light
+     lightNode.position = SCNVector3.init(0, 4, 0)
+     lightNode.constraints = [constraint]
+     node.addChildNode(lightNode)
+ }
+
 //couple helper functions for rotation
 extension FloatingPoint {
     var degreesToRadians : Self {
