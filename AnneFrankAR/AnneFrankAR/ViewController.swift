@@ -63,11 +63,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
           button_2.setTitle("Portal 2", for: .normal)
           button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
+        let button_3 = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+          button_3.backgroundColor = .blue
+          button_3.setTitle("Annex", for: .normal)
+          button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
         
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
-        
+        self.view.addSubview(button_3)
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
@@ -84,6 +88,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     @objc func buttonAction2(sender: UIButton!) {
         
       setupPortal(portalNum: 2)
+    }
+    @objc func buttonAction3(sender: UIButton!) {
+        
+      setupAnnex()
     }
   
     
@@ -246,6 +254,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         self.sceneView.scene.rootNode.addChildNode(node)
     }
     
+    func setupAnnex()
+    {
+        let node = SCNNode()
+        
+        node.position = camPos!
+        node.eulerAngles = camRot!
+        
+        let scene = SCNScene(named: "art.scnassets/Scenes/AnneFrankAnnex.scn")!
+        
+        node.addChildNode(scene.rootNode)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+        
+    }
     
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
