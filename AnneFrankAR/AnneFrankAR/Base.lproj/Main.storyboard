@@ -21,35 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="820" height="1179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-Ej-YU2">
-                                <rect key="frame" x="274" y="855" width="273" height="284.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="1vo-74-JOV" kind="show" id="wLU-oo-nMv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLJ-Vg-iIw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Lds-Ej-YU2" firstAttribute="top" secondItem="GLJ-Vg-iIw" secondAttribute="top" constant="781" id="CdL-mB-nQy"/>
-                            <constraint firstItem="Lds-Ej-YU2" firstAttribute="leading" secondItem="GLJ-Vg-iIw" secondAttribute="leading" constant="274" id="EPv-S5-UYr"/>
-                            <constraint firstItem="GLJ-Vg-iIw" firstAttribute="trailing" secondItem="Lds-Ej-YU2" secondAttribute="trailing" constant="273" id="kHJ-vb-EKS"/>
-                            <constraint firstItem="GLJ-Vg-iIw" firstAttribute="bottom" secondItem="Lds-Ej-YU2" secondAttribute="bottom" constant="20.5" id="xfy-6n-8yc"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LnW-YH-u8c"/>
                     <connections>
-                        <outlet property="menuButton" destination="Lds-Ej-YU2" id="McH-xA-K2z"/>
                         <outlet property="sceneView" destination="5Uk-iS-aUo" id="vuG-eL-o1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.56097560975604" y="132.71186440677968"/>
+            <point key="canvasLocation" x="1667" y="-301"/>
         </scene>
         <!--Burnt Book Artifact-->
         <scene sceneID="bU5-EL-3Ui">
@@ -62,11 +45,6 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-NI-fgm" userLabel="Bonfire Scene">
                                 <rect key="frame" x="0.0" y="24" width="820" height="1156"/>
                             </sceneKitView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
-                                <rect key="frame" x="129" y="142" width="0.0" height="850"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurntPageTexture.png" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-dY-7Za">
                                 <rect key="frame" x="129" y="142" width="550" height="850"/>
                             </imageView>
@@ -120,7 +98,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
                                 <rect key="frame" x="129" y="142" width="0.0" height="850"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -129,14 +106,12 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label more label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
                                 <rect key="frame" x="160" y="306" width="500" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-9L-Jx2">
                                 <rect key="frame" x="-40" y="117" width="900" height="900"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </skView>
                         </subviews>
@@ -147,13 +122,12 @@
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="320" id="JtJ-8W-vXj"/>
                             <constraint firstItem="LcM-dY-7Za" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" constant="118" id="Jz8-sI-1TA"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" id="RKc-Mi-z1l"/>
-
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="LcM-dY-7Za" secondAttribute="trailing" constant="141" id="SgN-is-liM"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="s2f-wU-FTG" secondAttribute="bottom" constant="319" id="WiD-mV-1fK"/>
+                            <constraint firstAttribute="bottom" secondItem="xrS-NI-fgm" secondAttribute="bottom" id="bbT-bv-gKc"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="bottom" secondItem="LcM-dY-7Za" secondAttribute="bottom" constant="118" id="fna-3N-xcE"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="trailing" secondItem="Wep-tI-R2f" secondAttribute="trailing" id="h1M-xD-7AK"/>
                             <constraint firstItem="xrS-NI-fgm" firstAttribute="top" secondItem="Wep-tI-R2f" secondAttribute="top" id="sB6-Wm-X1i"/>
-
                             <constraint firstItem="s2f-wU-FTG" firstAttribute="leading" secondItem="Wep-tI-R2f" secondAttribute="leading" constant="212" id="w0F-q8-bza"/>
                             <constraint firstItem="Wep-tI-R2f" firstAttribute="trailing" secondItem="s2f-wU-FTG" secondAttribute="trailing" constant="224.5" id="xdM-q5-xRS"/>
                         </constraints>
@@ -169,13 +143,11 @@
                         <outlet property="bookButton5" destination="YVU-FT-nMs" id="4yY-sw-lnG"/>
                         <outlet property="bookStack" destination="s2f-wU-FTG" id="NGZ-DI-55F"/>
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
-
                         <outlet property="fireAnim" destination="wf2-tF-g7e" id="vjB-Kd-76A"/>
                         <outlet property="pageText" destination="s2f-wU-FTG" id="qVp-fb-Id8"/>
                         <outlet property="pageTexture" destination="LcM-dY-7Za" id="pXX-ZH-OoE"/>
                         <outlet property="sceneView" destination="xrS-NI-fgm" id="l0H-b6-IM5"/>
                         <outlet property="skView" destination="S3q-9L-Jx2" id="8LP-TE-sLb"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-fc-0h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -500,23 +472,6 @@
                                                         <rect key="frame" x="100" y="10" width="480" height="280"/>
                                                         <imageReference key="image" image="Floor.png" symbolScale="default"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwM-fZ-pmJ">
-                                                        <rect key="frame" x="215" y="78" width="250" height="77"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Watch Video">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="35" name="Helvetica"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="showVideo:" destination="ftG-QF-fXg" eventType="touchUpInside" id="g6z-sd-Pxq"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="TC4-8L-Gnh" secondAttribute="bottom" constant="10" id="EG9-Ay-cfR"/>
@@ -692,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdk-ix-qSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521" y="133"/>
+            <point key="canvasLocation" x="3586.0975609756097" y="98.644067796610173"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="otX-JW-AcI">
@@ -746,11 +701,12 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="backToAr:" destination="1vo-74-JOV" eventType="touchUpInside" id="FH6-yj-QFN"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="YOD-ZI-uOd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u1R-xw-6d1"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="CxN-jy-1M8" firstAttribute="centerY" secondItem="Mb3-mB-ecL" secondAttribute="centerY" constant="300" id="YiG-2f-4DI"/>
                             <constraint firstItem="ant-pP-vQ1" firstAttribute="centerX" secondItem="Mb3-mB-ecL" secondAttribute="centerX" id="gkG-dS-2uc"/>
@@ -763,7 +719,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8F-6V-mh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="CQe-fm-lZN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-273"/>
+            <point key="canvasLocation" x="815.85365853658539" y="132.71186440677968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5z0-Lm-WEL">
@@ -776,106 +732,16 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JsL-O2-mYi"/>
+                        <segue destination="1vo-74-JOV" kind="relationship" relationship="rootViewController" id="x84-Gv-IA3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsP-l5-gpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
         </scene>
-        <!--Propaganda Lesson-->
-        <scene sceneID="QDJ-rC-w73">
-            <objects>
-                <viewController storyboardIdentifier="PropagandaLesson" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zxT-TD-cWY" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kPs-ve-xCE">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77s-hO-UXo">
-                                <rect key="frame" x="273" y="461" width="183" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="YaH-JG-G72"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ohX-ff-P3L"/>
-                    <connections>
-                        <segue destination="DTY-hn-c0k" kind="show" identifier="Right" id="SVm-ef-32Z"/>
-                        <segue destination="xaq-I2-kUf" kind="show" identifier="Left" id="ett-VV-R8E"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oYc-ba-whm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2551" y="-1511"/>
-        </scene>
-        <!--Propaganda Lesson-->
-        <scene sceneID="ZoH-TA-msl">
-            <objects>
-                <viewController id="DTY-hn-c0k" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EGs-pT-fFc">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whk-He-MU2">
-                                <rect key="frame" x="247" y="460" width="191" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="pym-yt-uU9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Fp4-Sv-hcy"/>
-                    <connections>
-                        <segue destination="zxT-TD-cWY" kind="show" identifier="Left" id="JIB-Ey-Zgh"/>
-                        <segue destination="xaq-I2-kUf" kind="show" identifier="Right" id="6gz-1V-Zfn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vkY-NA-PpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3222" y="-1511"/>
-        </scene>
-        <!--Propaganda Lesson-->
-        <scene sceneID="Tcr-CK-oCd">
-            <objects>
-                <viewController id="xaq-I2-kUf" customClass="PropagandaLesson" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HxB-KK-sz4">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-M1-tsz">
-                                <rect key="frame" x="247" y="460" width="193" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gRH-Nd-kh9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ibV-Rm-ZX7"/>
-                    <connections>
-                        <segue destination="zxT-TD-cWY" kind="show" identifier="Right" id="kRs-Mm-ZzV"/>
-                        <segue destination="DTY-hn-c0k" kind="show" identifier="Left" id="oYy-z5-2rG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gNZ-go-pdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3882" y="-1511"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6gz-1V-Zfn"/>
-        <segue reference="SVm-ef-32Z"/>
-        <segue reference="JIB-Ey-Zgh"/>
-        <segue reference="JsL-O2-mYi"/>
+        <segue reference="YOD-ZI-uOd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BurntPageTexture.png" width="132" height="204"/>
@@ -889,6 +755,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

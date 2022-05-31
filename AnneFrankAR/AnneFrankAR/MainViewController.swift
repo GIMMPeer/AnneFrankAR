@@ -35,19 +35,6 @@ class MainViewController: UIViewController {
     
     @IBAction func unwindToMainViewController(_ sender: UIStoryboardSegue){}
     
-    @IBAction func showVideo(_ sender: Any)
-    {
-        if let path = Bundle.main.path(forResource: "videoplayback", ofType: "mp4")
-        {
-            let video = AVPlayer(url: URL(fileURLWithPath: path))
-            let videoPlayer = AVPlayerViewController()
-            videoPlayer.player = video
-            
-            present(videoPlayer, animated: true, completion: {
-                video.play()
-            })
-        }
-    }
     
     override func viewDidLoad(){
         super.viewDidLoad()

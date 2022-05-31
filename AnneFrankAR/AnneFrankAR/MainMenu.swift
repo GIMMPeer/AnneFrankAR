@@ -13,10 +13,7 @@ class MainMenu: UIViewController
 {
     var cameraNode: SCNNode!
     
-    @IBAction func backToAr(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
+   
     override func viewDidLoad(){
         super.viewDidLoad()
         //print("loaded")
