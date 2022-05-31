@@ -42,6 +42,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d35-MH-hsn" userLabel="Bonfire Scene">
+                                <rect key="frame" x="-14" y="0.0" width="847" height="1180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf2-tF-g7e">
                                 <rect key="frame" x="129" y="142" width="0.0" height="850"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,10 +111,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQm-IS-Kgn" userLabel="Bonfire Scene">
-                                <rect key="frame" x="-27" y="0.0" width="847" height="1180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </sceneKitView>
                             <skView contentMode="scaleToFill" fixedFrame="YES" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flM-8i-3FB" userLabel="Page Fire">
                                 <rect key="frame" x="129" y="142" width="850" height="850"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,7 +142,7 @@
                         <outlet property="bookText" destination="yAm-hL-dg9" id="iXa-id-HP3"/>
                         <outlet property="pageText" destination="s2f-wU-FTG" id="qVp-fb-Id8"/>
                         <outlet property="pageTexture" destination="LcM-dY-7Za" id="pXX-ZH-OoE"/>
-                        <outlet property="sceneView" destination="GQm-IS-Kgn" id="8w4-h6-EDb"/>
+                        <outlet property="sceneView" destination="d35-MH-hsn" id="xwd-h9-0og"/>
                         <outlet property="skView" destination="flM-8i-3FB" id="kVm-nj-c3U"/>
                     </connections>
                 </viewController>
