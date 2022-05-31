@@ -44,6 +44,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
     
+    let node = SCNNode()
     let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
     
     
@@ -105,7 +106,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         let zoomOutAction = SKAction.scale(to: 150, duration: 0)
         cameraNode.run(zoomOutAction)
         
-            //spriteView.addChild(spriteScene)
 
         skView.allowsTransparency = true
         spriteScene.backgroundColor = UIColor.clear
@@ -166,13 +166,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     func setupGame()
     {
-        
-        let node = SCNNode()
         let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
-        
-        
-        //particleScene.addChild(particleNode)
-        //node.addChildNode(particleScene)
         node.addChildNode(bonfireScene.rootNode)
         
         self.sceneView.scene!.rootNode.addChildNode(node)
@@ -195,8 +189,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         skView.isHidden = false
        if(bookNum == 1)
         {
+           //let location = ""
+           //var fileContent = try? NSString(contentsOfFile: location, encoding: String.Encoding.utf8.rawValue); catch do { fileContent = ":(" }
+           //bookText.text = fileContent.
            bookText.text = "A Farewell to Arms follows one Frederic Henry, an American Lieutenant working with the Italian Ambulance service during WWI. The book includes many autobiographical details of Hemingway’s own life, focusing heavily on real accounts of the war. The violence is not glorified, and the tragedies that befall the characters were all too real for the Lost Generation - those who came of age during the war. Hemingway was targeted among other authors as 'corrupting foreign influences.' His works on and about the war were considered by the Nazi party to disrespect the memories of those who fought and died in WWI."
-           
            index = index + 1
            
                
@@ -242,20 +238,23 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         skView.isHidden = false
         particleNode.position = CGPoint(x: 30, y: -15)
-        let wait = SKAction.wait(forDuration: 2.5)
-        let move = SKAction.moveBy(x: -75, y: 0, duration: 8)
+        let wait = SKAction.wait(forDuration: 1.2)
+        let move = SKAction.moveBy(x: -75, y: 0, duration: 10)
+        move.timingMode = .easeOut
         particleNode.run(SKAction.sequence([wait, move]))
 
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
             pageMask.frame.size = CGSize(width: 0, height: screen.height )
-        }, completion: { finished in
-            pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
-        })
-        UIView.animate(withDuration: 10.0, delay: 1.0, options: .curveEaseOut, animations: {
             textMask.frame.size = CGSize(width: 0, height: screen.height )
         }, completion: { finished in
+            pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
             textMask.frame.size = CGSize(width: screen.width, height: screen.height )
         })
+//        UIView.animate(withDuration: 10.0, delay: 1.0, options: .curveEaseOut, animations: {
+//            textMask.frame.size = CGSize(width: 0, height: screen.height )
+//        }, completion: { finished in
+//            textMask.frame.size = CGSize(width: screen.width, height: screen.height )
+//        })
         
         
         let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
@@ -285,5 +284,9 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     {
         backgroundTexture.isHidden = true
         bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/ClosingAnimation")!, time: 5)
+        
+        node.childNode(withName: "Bonfire", recursively: true)?.removeFromParentNode()
+        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/BonfireBig.scn")!
+        node.addChildNode(bonfireScene.rootNode)
     }
 }
