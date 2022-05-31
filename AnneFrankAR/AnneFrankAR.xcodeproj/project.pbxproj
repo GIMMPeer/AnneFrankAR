@@ -29,7 +29,6 @@
 		84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF4E5283D3FB90087869E /* videoplayback.mp4 */; };
 		84CEF4E8283D44C40087869E /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4E7283D44C40087869E /* QuizController.swift */; };
 		921401FE283EA551003A2DFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921401FC283EA551003A2DFA /* Assets.xcassets */; };
-		92140202283ED462003A2DFA /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92140201283ED462003A2DFA /* FireParticle.sks */; };
 		92206A452846B006007A6FC1 /* bookTextTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92206A442846B006007A6FC1 /* bookTextTest.txt */; };
 		92206A472846C4DC007A6FC1 /* BurningBookData.json in Resources */ = {isa = PBXBuildFile; fileRef = 92206A462846C4DC007A6FC1 /* BurningBookData.json */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
@@ -77,7 +76,6 @@
 		84CEF4E5283D3FB90087869E /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		84CEF4E7283D44C40087869E /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		921401FC283EA551003A2DFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		92140201283ED462003A2DFA /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = art.scnassets/BookBurning/FireParticle.sks; sourceTree = "<group>"; };
 		92206A442846B006007A6FC1 /* bookTextTest.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = bookTextTest.txt; sourceTree = "<group>"; };
 		92206A462846C4DC007A6FC1 /* BurningBookData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BurningBookData.json; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				842D49FE2840058400F7BCE9 /* BookBlack.png */,
 				84CEF4E5283D3FB90087869E /* videoplayback.mp4 */,
-				92140201283ED462003A2DFA /* FireParticle.sks */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
 				27CAC75D27D296A700013FD5 /* ViewController.swift */,
 				27A56C6827F7A67F00322039 /* MainViewController.swift */,
@@ -288,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
-				92140202283ED462003A2DFA /* FireParticle.sks in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
 				92206A452846B006007A6FC1 /* bookTextTest.txt in Resources */,

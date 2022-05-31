@@ -239,7 +239,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         skView.isHidden = false
         particleNode.position = CGPoint(x: 30, y: -15)
         let wait = SKAction.wait(forDuration: 1.2)
-        let move = SKAction.moveBy(x: -75, y: 0, duration: 10)
+        let move = SKAction.moveBy(x: -100, y: 0, duration: 10)
         move.timingMode = .easeOut
         particleNode.run(SKAction.sequence([wait, move]))
 
