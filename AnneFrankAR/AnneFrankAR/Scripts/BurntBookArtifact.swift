@@ -190,8 +190,6 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     func setupReading(bookNum:Int32)
     {
-        
-        print("Hellooooooooooo?")
         bookStack.isHidden = true
         bookText.isHidden = false
         skView.isHidden = false
