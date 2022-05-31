@@ -40,7 +40,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     @IBOutlet weak var backgroundTexture: UIImageView!
     
-    @IBOutlet weak var fireAnim: UIView!
+    //@IBOutlet weak var fireAnim: UIView!
     @IBOutlet weak var pageTexture: UIImageView!
     @IBOutlet weak var pageText: UIStackView!
     
