@@ -68,10 +68,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
           button_3.setTitle("Annex", for: .normal)
           button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
         
+        let button_4 = UIButton(frame: CGRect(x: 100, y: 550, width: 100, height: 50))
+          button_4.backgroundColor = .red
+          button_4.setTitle("Chamber", for: .normal)
+          button_4.addTarget(self, action: #selector(buttonAction4), for: .touchUpInside)
+        
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
         self.view.addSubview(button_3)
+        self.view.addSubview(button_4)
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
@@ -92,6 +98,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     @objc func buttonAction3(sender: UIButton!) {
         
       setupAnnex()
+    }
+    @objc func buttonAction4(sender: UIButton!)
+    {
+        setupChamber()
     }
   
     
@@ -268,7 +278,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         self.sceneView.scene.rootNode.addChildNode(node)
         
     }
-    
+    func setupChamber()
+    {
+        let node = SCNNode()
+        
+        node.position = camPos!
+        node.eulerAngles = SCNVector3(x:Float(Double.pi) / 2, y:0, z:0)
+        node.scale = SCNVector3(x:0.1, y:0.1, z:0.1)
+        
+        let scene = SCNScene(named: "art.scnassets/Scenes/Chamber.scn")!
+        
+        node.addChildNode(scene.rootNode)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+    }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         let transform = frame.camera.transform
