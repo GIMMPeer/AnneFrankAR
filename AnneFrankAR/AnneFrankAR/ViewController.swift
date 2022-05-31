@@ -21,8 +21,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     //Connection to the AR Scene View
     @IBOutlet weak var sceneView: ARSCNView!
     
-    @IBOutlet weak var menuButton: UIButton!
-    
     var tvPlayer:AVPlayer!
     var made = false;
     private var cbCentralManager: CBCentralManager!
@@ -50,8 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         let scene = SCNScene()
         sceneView.scene = scene
         
-        let menuImage = UIImage(named: "BookBlack")! as UIImage
-        menuButton.setImage(menuImage, for: .normal)
+        
         
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
