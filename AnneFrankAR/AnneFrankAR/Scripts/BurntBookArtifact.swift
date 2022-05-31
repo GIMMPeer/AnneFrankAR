@@ -195,7 +195,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         skView.isHidden = false
        if(bookNum == 1)
         {
-           bookText.text = "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin. But both are the refuge of political and economic opportunists. —Notes on the Next War, Esquire magazine, Ernest Hemingway, September 1935"
+           bookText.text = "A Farewell to Arms follows one Frederic Henry, an American Lieutenant working with the Italian Ambulance service during WWI. The book includes many autobiographical details of Hemingway’s own life, focusing heavily on real accounts of the war. The violence is not glorified, and the tragedies that befall the characters were all too real for the Lost Generation - those who came of age during the war. Hemingway was targeted among other authors as 'corrupting foreign influences.' His works on and about the war were considered by the Nazi party to disrespect the memories of those who fought and died in WWI."
            
            index = index + 1
            
@@ -203,22 +203,26 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
            }
         if(bookNum == 2)
         {
-            bookText.text = "I am young, I am twenty years old; yet I know nothing of life but despair, death, fear, and fatuous superficiality cast over an abyss of sorrow. I see how peoples are set against one another, and in silence, unknowingly, foolishly, obediently, innocently slay one another."
+            bookText.text = "Titled “Im Westen nichts Neues” in the original German, this book’s main character joins the German army in WWI after being swayed by patriotic propaganda. He is quickly disillusioned by the horrors of reality shattering the romanticized version of war he had come to expect. In the end, the protagonist regrets returning home as he has become irrevocably changed by what he encountered on the front.Remarque’s work was described as “a literary betrayal of the soldiers of the World War.” His unflinching look at the horrors of war did nothing to build up the romanticized views of war and were therefore dangerous to the Nazi’s end goals."
+            
             index = index + 1
         }
         if(bookNum == 3)
         {
-            bookText.text = "We will grind you revolutionists down under our heel, and we shall walk upon your faces. The world is ours, we are its lords, and ours it shall remain. As for the host of labor, it has been in the dirt since history began, and I read history aright. And in the dirt it shall remain so long as I and mine and those that come after us have the power. There is the word. It is the king of words—Power. Not God, not Mammon, but Power. Pour it over your tongue till it tingles with it. Power."
+            bookText.text = "Almansor takes place in the 1500s, following Almansor, an Arabic man returning from exile to find his lover. The book grapples with the character’s painful relationship with the dominant religion of Christianity. Most famously, it contains the line “Dort, wo man Bücher verbrennt, verbrennt man am Ende auch Menschen”: “Where they burn books, they will also ultimately burn people.Jewish authors such as Heinrich Heine were targeted heavily by the book burnings. The contents of the book didn’t matter so much as the fact that they were written by Jewish people to begin with. Any and all Jewish publications were seen as corrupting influences."
+            
             index = index + 1
         }
         if(bookNum == 4)
         {
-            bookText.text = "Is it not astonishing that, in the course of history, all human types except [the soulful human who possesses fantasy] have been in power?...Instead of expecting such a person to come along, we must expect gas warfare! And the culprit will be the philistine nature of the political and economical world powers. Everything evil or stupid in this world is not supernatural destiny, but rather a deadly form of lack of fantasy..."
+            bookText.text = "Out of the Dark is a collection of essays by Helen Keller, discussing among other things, socialism, activism as a blind person, and preventative care for children.While Helen Keller is famous for her condition, having been blinded and deafened at a young age, she went on to write many books and campaign for women’s suffrage, disability rights, labor rights, and peace. Keller was also an active socalist, a political ideology despised by the Nazi party. While her disabilities alone would have been enough for the Nazis to condemn her and her works to the pyre, her feminist and political ideologies sealed her books’ fate as staunchly un-German."
+            
             index = index + 1
         }
         if(bookNum == 5)
         {
-            bookText.text = "But one who understands will not judge, and will have no pride. Before him I shall not be ashamed. Whoever has found himself can never again lose anything in this world. He who has grasped the human in himself understands all mankind."
+            bookText.text = "When it was first released, The Picture of Dorian Gray was called immoral and heavily criticized. Now considered a classic, the book follows the titular Dorian Gray and his foray into evil as a painting of himself molders and grows old in his attic, preserving his own youthful beauty and allowing him to avoid the responsibility of his reprehensible actions.The contents of the book aren’t as important as the author himself. Oscar Wilde was persecuted in his lifetime for his homosexuality. The Nazi regime did their best to erase homosexuality, and sent many gay men to death camps marked by pink triangles. The first Institute for Sexual Science founded by Magnus Hirschfeld in 1919 was razed in 1933, and housed a wealth of early queer theory before its distruction. Germany didn’t decriminalize homosexuality until 1969."
+
             index = index + 1
             
         }
