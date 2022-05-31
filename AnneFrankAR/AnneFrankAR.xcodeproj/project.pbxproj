@@ -32,6 +32,8 @@
 		92140202283ED462003A2DFA /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92140201283ED462003A2DFA /* FireParticle.sks */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
 		DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */; };
+		EE1F23452846851100483F38 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F23442846851100483F38 /* GameKit.framework */; };
+		EE1F23482846855F00483F38 /* MultiplayerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F23472846855F00483F38 /* MultiplayerSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		92140201283ED462003A2DFA /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = art.scnassets/BookBurning/FireParticle.sks; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendshapesPoster.swift; sourceTree = "<group>"; };
+		EE1F23442846851100483F38 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		EE1F23472846855F00483F38 /* MultiplayerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1F23452846851100483F38 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 				27CAC77027D296AB00013FD5 /* AnneFrankARTests */,
 				27CAC77A27D296AB00013FD5 /* AnneFrankARUITests */,
 				27CAC75927D296A700013FD5 /* Products */,
+				EE1F23432846851100483F38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +134,7 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
+				EE1F23462846854100483F38 /* Multiplayer */,
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				842D49FE2840058400F7BCE9 /* BookBlack.png */,
@@ -175,6 +182,22 @@
 				921401FC283EA551003A2DFA /* Assets.xcassets */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		EE1F23432846851100483F38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE1F23442846851100483F38 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE1F23462846854100483F38 /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				EE1F23472846855F00483F38 /* MultiplayerSetup.swift */,
+			);
+			path = Multiplayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +343,7 @@
 				84CEF4E8283D44C40087869E /* QuizController.swift in Sources */,
 				27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */,
 				27396CCC280A218B0034828A /* Models.swift in Sources */,
+				EE1F23482846855F00483F38 /* MultiplayerSetup.swift in Sources */,
 				DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */,
 				27A56C6927F7A67F00322039 /* MainViewController.swift in Sources */,
 				27CAC75C27D296A700013FD5 /* AppDelegate.swift in Sources */,
@@ -506,7 +530,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "arkit gamekit";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -540,7 +564,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "arkit gamekit";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
