@@ -112,11 +112,11 @@ func createText(text: String, parent: SCNNode) -> SCNNode {
          leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
          rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
      } else if num == 2 {
-         leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
-         rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+         leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
+         rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
          topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-         bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-         backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/TestWall.png")
+         bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
+         backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
          leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
          rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
      }

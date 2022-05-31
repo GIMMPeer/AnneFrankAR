@@ -148,7 +148,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
         //node is the spawn point of everything in the scene
         let node = SCNNode()
-       //
+        
+        
         node.position = camPos!
         node.eulerAngles = camRot!
         
@@ -225,6 +226,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             // add nodes to scene
             node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
+            node.addChildNode(person)
         }
         
         //node is the main scene node in the center of the scene
