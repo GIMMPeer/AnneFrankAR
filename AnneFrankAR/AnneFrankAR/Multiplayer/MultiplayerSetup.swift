@@ -7,7 +7,7 @@
 import Foundation
 import GameKit
 
-protocol GameCenterHelperDelegate: class {
+protocol GameCenterHelperDelegate: AnyObject {
     func didChangeAuthStatus(isAuthenticated: Bool)
     func presentGameCenterAuth(viewController: UIViewController?)
     func presentMatchmaking(viewController: UIViewController?)
@@ -17,8 +17,8 @@ protocol GameCenterHelperDelegate: class {
 final class GameCenterHelper: NSObject, GKLocalPlayerListener {
     weak var delegate: GameCenterHelperDelegate?
     
-    private let minPlayers: Int = 2
-    private let maxPlayers: Int = 3
+    private let minPlayers: Int = 1
+    private let maxPlayers: Int = 40
     private let inviteMessage = "Anne Frank Memorial invites you to open their app"
     
     private var currentVC: GKMatchmakerViewController?
