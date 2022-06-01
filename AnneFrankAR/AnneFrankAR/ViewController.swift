@@ -5,6 +5,8 @@
 //  Created by Tri Nguyen on 3/4/22.
 //
 
+// :)
+
 import UIKit
 import RealityKit
 import SceneKit
@@ -14,7 +16,7 @@ import CoreBluetooth
 
 
 
-class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate, ARSessionDelegate {
+class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate {
     
     
     //@IBOutlet var arView: ARView!
@@ -36,6 +38,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     var camPos:SCNVector3?
     var camRot:SCNVector3?
     @IBAction func unwindARView(_ sender:UIStoryboardSegue){}
+    
+    var canUseErase = false
+    
+    //Width and height of a node. To get the full width and height, multiply these by however many nodes there are going down and right. Change these to change the full width and height.
+    let width = 0.06096
+    let height = 0.04572
+    
+    //This is the 2D array where all arrays filled with nodes will go
+    var arrScn = [[SCNNode]]()
+    
+    //Number of array generated is the same as the rows. Do 1 less than you want
+    let numArrays = 59
     
     
     override func viewDidLoad() {
@@ -76,8 +90,76 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
         
+        setUpSceneView()
+        //Adds in the pangesture, otherwise known as the erasing function
+        sceneView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:))))
     }
     
+    func setUpSceneView() {
+        let configuration = ARWorldTrackingConfiguration()
+        //Sets up detecting the vertical planes
+        if #available(iOS 11.3, *) {
+            configuration.planeDetection = .vertical
+        }
+        sceneView.session.run(configuration)
+        
+        sceneView.delegate = self
+        
+        //Get rid of yellow dots by deleting this
+        //sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        
+        configureLighting()
+        
+        //Creates the arrays to go into the main array
+        for _ in 0...numArrays{
+            let nodes = [SCNNode]()
+            arrScn.append(nodes)
+        }
+                
+    }
+    //Configures lighting
+    func configureLighting() {
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
+    }
+    
+    @objc func panGesture(_ gesture: UIPanGestureRecognizer) {
+        //Only works after the plane is placed
+        if(canUseErase == true){
+            //Gets location of gesture
+            let location = gesture.location(in: sceneView)
+            
+            //Uses location to see where the gesture hit
+            guard let results = self.sceneView.hitTest(location, options: nil).first else { return }
+
+            //The row and column of the node tapped is found here
+            var y = 0
+            var x = 0
+            for i in  0...numArrays{
+                for j in 0...numArrays{
+                    if(arrScn[i][j].name == results.node.name){
+                        y = i + 1
+                        x = j + 1
+                    }
+                }
+            }
+            
+            //Hides the node
+            results.node.isHidden = true
+            
+            //Hides the node above it using the row and column as found above
+            sceneView.scene.rootNode.childNode(withName: "row-\(y + 1)-column-\(x)", recursively: false)?.isHidden = true
+            
+            //Hides the node below it
+            sceneView.scene.rootNode.childNode(withName: "row-\(y - 1)-column-\(x)", recursively: false)?.isHidden = true
+            
+            //Hides the node to the right
+            sceneView.scene.rootNode.childNode(withName: "row-\(y)-column-\(x + 1)", recursively: false)?.isHidden = true
+            
+            //Hides the node to the left
+            sceneView.scene.rootNode.childNode(withName: "row-\(y)-column-\(x - 1)", recursively: false)?.isHidden = true
+        }
+    }
 
     
     @objc func buttonAction(sender: UIButton!) {
@@ -243,6 +325,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         self.sceneView.scene.rootNode.addChildNode(node)
         
     }
+    
     func setupChamber()
     {
         let node = SCNNode()
@@ -357,5 +440,61 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print(beacon)
         print(beacon.readRSSI())
   
+    }
+}
+
+extension ViewController: ARSCNViewDelegate{
+    //Hover over a wall then after a couple seconds, it will place it
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor){
+        if canUseErase == false{
+            
+            //Columns and rows
+            let rows = 60
+            let columns = 60
+            
+            //Gets the anchor point where it will be placed
+            guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
+            let y = CGFloat(planeAnchor.center.y)
+
+            let base_z = y
+            //Left to right. If you change the width or height, make sure to move it around so the full picture is centered on the screen
+            let base_x = CGFloat(-1.7675)
+            //Up and Down
+            let base_y = CGFloat(0.88385)
+            
+            //Places all the planes
+            for j in 1...rows{
+                
+                //Moves it down
+                let moveY = base_y - (height * Double(j))
+                
+                for i in 1...columns{
+                    //Moves it right
+                    let moveX = base_x + (width * Double(i))
+                    
+                    //Sets up the plane
+                    let pic2 = SCNPlane(width: width, height: height)
+                    
+                    //Makes the image into the plane
+                    pic2.materials.first?.diffuse.contents = UIImage.init(named: "row-\(j)-column-\(i)")
+                    
+                    //Node for the picture
+                    let p2N = SCNNode(geometry: pic2)
+                    
+                    //This is how you see if you hit the node above
+                    p2N.name = "row-\(j)-column-\(i)"
+                    
+                    //Places the node next to the previous
+                    p2N.position = SCNVector3(moveX, moveY, base_z)
+                    
+                    arrScn[j - 1].append(p2N)
+                    //Adds to the scene
+                    sceneView.scene.rootNode.addChildNode(p2N)
+                }
+            }
+            
+            //Can't place another one
+            canUseErase = true
+        }
     }
 }
