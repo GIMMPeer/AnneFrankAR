@@ -14,8 +14,6 @@ import ARKit
 import CoreBluetooth
 
 
-
-
 class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate {
     
     
@@ -58,7 +56,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         
 
         //init things for scene
-        sceneView.delegate = self
+        //sceneView.delegate = self
         //show statistics shows framerate in corner, could probably be removed in future
         sceneView.showsStatistics = true
         let scene = SCNScene()
@@ -90,12 +88,6 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
         
-        setUpSceneView()
-        //Adds in the pangesture, otherwise known as the erasing function
-        sceneView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:))))
-    }
-    
-    func setUpSceneView() {
         let configuration = ARWorldTrackingConfiguration()
         //Sets up detecting the vertical planes
         if #available(iOS 11.3, *) {
@@ -105,9 +97,14 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         
         sceneView.delegate = self
         
+        setupGraffiti()
+        //Adds in the pangesture, otherwise known as the erasing function
+        sceneView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:))))
+    }
+    
+    func setupGraffiti() {
         //Get rid of yellow dots by deleting this
         //sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
-        
         configureLighting()
         
         //Creates the arrays to go into the main array
@@ -117,6 +114,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         }
                 
     }
+    
     //Configures lighting
     func configureLighting() {
         sceneView.autoenablesDefaultLighting = true
@@ -218,14 +216,14 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        sceneView.session.delegate = self             // ARSESSION DELEGATE
-        let configuration = ARWorldTrackingConfiguration()
-        sceneView.session.run(configuration)
+        //sceneView.session.delegate = self             // ARSESSION DELEGATE
+        //let configuration = ARWorldTrackingConfiguration()
+        //sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        sceneView.session.pause()
+        //sceneView.session.pause()
     }
     
     override func didReceiveMemoryWarning() {
@@ -446,6 +444,7 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
 extension ViewController: ARSCNViewDelegate{
     //Hover over a wall then after a couple seconds, it will place it
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor){
+        print("Waiting")
         if canUseErase == false{
             
             //Columns and rows
