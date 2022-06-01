@@ -183,17 +183,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-c8-TXf">
-                                <rect key="frame" x="86" y="88" width="639" height="496"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
+                                <rect key="frame" x="86" y="592" width="639" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
-                                <rect key="frame" x="86" y="609" width="639" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-c8-TXf">
+                                <rect key="frame" x="58" y="88" width="694" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-xI-mJq">
+                                <rect key="frame" x="58" y="678" width="694" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-LO-grl" userLabel="Button1">
                                 <rect key="frame" x="86" y="699" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,7 +208,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Bandwagon">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -219,7 +226,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Scapegoating">
                                             <attributes>
-                                                <font key="NSFont" size="34" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="34" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -236,7 +244,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Glittering Generally">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -253,7 +262,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Transfer Device">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -270,7 +280,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Testimonials">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -287,7 +298,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="“Plain folk” Device">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -304,7 +316,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Card Tactics">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                                 <real key="NSKern" value="0.0"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                     <tabStops>
@@ -334,7 +347,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Fear Mongering">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -363,7 +377,8 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Continue">
                                                     <attributes>
-                                                        <font key="NSFont" size="26" name="Helvetica"/>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="26" name="IM_FELL_Great_Primer_SC"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -380,11 +395,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IK7-lP-thK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -558,7 +573,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled">
                                                             <attributedString key="attributedTitle">
-                                                                <fragment content="Conseal">
+                                                                <fragment content="Conceal">
                                                                     <attributes>
                                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
@@ -899,6 +914,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
