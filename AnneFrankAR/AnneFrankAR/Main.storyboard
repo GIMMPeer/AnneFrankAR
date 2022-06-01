@@ -728,7 +728,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Timeline">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -751,7 +751,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="AR">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
