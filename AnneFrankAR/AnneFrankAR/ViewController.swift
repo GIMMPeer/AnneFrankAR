@@ -55,29 +55,23 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
-          button.setTitle("Portal 1", for: .normal)
+          button.setTitle("Propaganda", for: .normal)
           button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
         let button_2 = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 50))
           button_2.backgroundColor = .blue
-          button_2.setTitle("Portal 2", for: .normal)
+          button_2.setTitle("Annex", for: .normal)
           button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
         let button_3 = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-          button_3.backgroundColor = .blue
-          button_3.setTitle("Annex", for: .normal)
+          button_3.backgroundColor = .red
+          button_3.setTitle("Chamber", for: .normal)
           button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
-        
-        let button_4 = UIButton(frame: CGRect(x: 100, y: 550, width: 100, height: 50))
-          button_4.backgroundColor = .red
-          button_4.setTitle("Chamber", for: .normal)
-          button_4.addTarget(self, action: #selector(buttonAction4), for: .touchUpInside)
         
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
         self.view.addSubview(button_3)
-        self.view.addSubview(button_4)
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
@@ -92,14 +86,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     }
     
     @objc func buttonAction2(sender: UIButton!) {
-        
-      setupPortal(portalNum: 2)
-    }
-    @objc func buttonAction3(sender: UIButton!) {
-        
       setupAnnex()
     }
-    @objc func buttonAction4(sender: UIButton!)
+    @objc func buttonAction3(sender: UIButton!)
     {
         setupChamber()
     }
@@ -175,39 +164,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         buildRoom(num: portalNum, node: node)
         
         if(portalNum == 1) {
-            //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
-            let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
             
-            //This is accessing the scn file and then the specific pillar object called "blendShapesPoster"
-            let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
-            bsPoster.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
-            bsPoster.eulerAngles = SCNVector3.init(0, 0, 0)
-            
-            //This is accessing the scn file and then the specific pillar object called "Cylinder"
-            let amer = subScene.rootNode.childNode(withName: "Cylinder", recursively: true)!
-            amer.position = SCNVector3.init(0.75, -0.1, (-length / 2) + width * 3)
-            amer.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-            //This is accessing the scn file and then the specific pillar object called "Cylinder2"
-            let germ = subScene.rootNode.childNode(withName: "Cylinder2", recursively: true)!
-            germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
-            germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-            // addng the burnt book
-            let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
-            burntBook.position = SCNVector3.init(0.50, -0.5, -0.75)
-            burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
-            
-            //posterTest.renderingOrder=200
-            
-            // add nodes to scene
-            node.addChildNode(bsPoster)
-            node.addChildNode(amer)
-            node.addChildNode(germ)
-            node.addChildNode(burntBook)
-        }
-        if(portalNum == 2) {
-            // create video
             let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource:"videoplayback", ofType: "mp4")!)
             tvPlayer = AVPlayer(url: fileURL)
             
@@ -236,29 +193,37 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             let propagandaLesson = subScene.rootNode.childNode(withName: "cubeydude", recursively: true)!
             propagandaLesson.position = SCNVector3.init(-0.50, -0.5, -0.75)
             
+            let germ = subScene.rootNode.childNode(withName: "Cylinder2", recursively: true)!
+            germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
+            germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+            
+            let germ_2 = subScene.rootNode.childNode(withName: "Cylinder2_2", recursively: true)!
+            germ_2.position = SCNVector3.init(0.75, -0.1, (-length / 2) + width * 3)
+            germ_2.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
+            
             // <b>s t a n</b>
             let person = subScene.rootNode.childNode(withName: "stan", recursively: true)!
             person.position = SCNVector3.init(0, -0.95, -0.75)
             person.eulerAngles = SCNVector3.init(0, Double.pi / 16, 0)
             
+            // addng the burnt book
+            let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
+            burntBook.position = SCNVector3.init(0.30, -0.5, -0.75)
+            burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
+            
+            let bsPoster = subScene.rootNode.childNode(withName: "blendShapesPoster", recursively: true)!
+            bsPoster.position = SCNVector3.init(0.90, 0, (length / 10) + width * 2)
+            bsPoster.eulerAngles = SCNVector3.init(0, Double.pi / 2, 0)
+            
             // add nodes to scene
             node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
             node.addChildNode(person)
+            node.addChildNode(germ)
+            node.addChildNode(germ_2)
+            node.addChildNode(burntBook)
+            node.addChildNode(bsPoster)
         }
-        
-        //node is the main scene node in the center of the scene
-        //If you add something and it's not showing up in the scene, chances are you need to add it to node
-        //let pov = self.sceneView.pointOfView
-        //let position = pov?.position
-        //let angle = pov?.eulerAngles
-        //let posx = position?.x
-        //let posy = position?.y
-        //let posz = position?.z
-        //let angx = angle?.x
-        //let angy = angle?.y
-        //let angz = angle?.z
-        //self.sceneView.pointOfView?.addChildNode(node)
         
         //This is the final step, officially adding node to the scene itself
         self.sceneView.scene.rootNode.addChildNode(node)
