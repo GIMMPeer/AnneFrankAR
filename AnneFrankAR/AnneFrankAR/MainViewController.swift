@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var VideoPlayerUI: UIView!
     @IBOutlet weak var ToPrevPageUI: UIView!
     @IBOutlet weak var ToNextPageUI: UIView!
+    
     //Decleare Instances
     var currentTimeLine:UIButton!
     var currentPage = 0;
