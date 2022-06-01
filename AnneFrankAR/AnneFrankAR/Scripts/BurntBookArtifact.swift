@@ -46,6 +46,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     let node = SCNNode()
     let particleNode = SKEmitterNode (fileNamed: "art.scnassets/BookBurning/FireParticle.sks")!
+    let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
     
     
     
@@ -128,8 +129,11 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
             {
                 
                 //Setup Anim
-                bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/OpeningBook")!, time: 2)
-                
+                //bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/BookAnimBefore")!, time: 2)
+                let book = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
+                book?.isHidden = false
+                let anim = book?.animation(forKey: book)
+                anim?.repeatCount = 1
                 //Timer for few seconds then call setupBook()
                 let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
 
@@ -166,12 +170,12 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     
     func setupGame()
     {
-        let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/Bonfire.scn")!
         node.addChildNode(bonfireScene.rootNode)
         
         self.sceneView.scene!.rootNode.addChildNode(node)
         
-        
+        let anim = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
+        anim?.isHidden = true
     }
     
     func setupBook()
@@ -237,12 +241,19 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         bookText.mask = textMask
         
         skView.isHidden = false
-        particleNode.position = CGPoint(x: 30, y: -15)
-        let wait = SKAction.wait(forDuration: 1.2)
-        let move = SKAction.moveBy(x: -100, y: 0, duration: 10)
+        particleNode.position = CGPoint(x: 30, y: -10)
+        particleNode.particleBirthRate = 5
+        let wait = SKAction.wait(forDuration: 1.5)
+        let move = SKAction.moveBy(x: -85, y: 0, duration: 10)
         move.timingMode = .easeOut
         particleNode.run(SKAction.sequence([wait, move]))
-
+        var growthSpeed = 10.0
+        _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { growTimer in
+            self.particleNode.particleBirthRate += growthSpeed
+            if self.particleNode.particleBirthRate >= 450 {
+                growthSpeed = -5.0
+            }
+        }
         UIView.animate(withDuration: 10.0, delay: 1.2, options: .curveEaseOut, animations: {
             pageMask.frame.size = CGSize(width: 0, height: screen.height )
             textMask.frame.size = CGSize(width: 0, height: screen.height )
@@ -250,15 +261,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
             pageMask.frame.size = CGSize(width: screen.width, height: screen.height )
             textMask.frame.size = CGSize(width: screen.width, height: screen.height )
         })
-//        UIView.animate(withDuration: 10.0, delay: 1.0, options: .curveEaseOut, animations: {
-//            textMask.frame.size = CGSize(width: 0, height: screen.height )
-//        }, completion: { finished in
-//            textMask.frame.size = CGSize(width: screen.width, height: screen.height )
-//        })
         
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
-
+        Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { timer in
+            self.particleNode.particleBirthRate = 5
             self.skView.isHidden = true
 
             self.bookText.isHidden = true
