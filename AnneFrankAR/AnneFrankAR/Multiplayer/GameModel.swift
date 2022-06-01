@@ -12,7 +12,7 @@ import GameKit
 struct GameModel: Codable {
     public var state: String = ""
     public var players: [Player] = []
-    public var chat: [Player: String] = [:]
+    public var chat: [ChatMessage] = []
 }
 
 extension GameModel {
@@ -25,6 +25,12 @@ extension GameModel {
     }
 }
 
-struct Player: Codable, Hashable {
+struct Player: Codable {
     public var name: String = ""
+}
+
+struct ChatMessage: Codable, Identifiable {
+    public var id: UUID
+    public var player: Player
+    public var message: String
 }

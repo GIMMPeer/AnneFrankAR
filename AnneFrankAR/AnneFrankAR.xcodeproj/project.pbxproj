@@ -33,6 +33,7 @@
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
 		DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */; };
 		EE0403382847BF490089C72C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0403372847BF490089C72C /* GameModel.swift */; };
+		EE04033C2847CCD80089C72C /* MultiplayerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */; };
 		EE1F23452846851100483F38 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F23442846851100483F38 /* GameKit.framework */; };
 		EE1F23482846855F00483F38 /* MultiplayerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F23472846855F00483F38 /* MultiplayerSetup.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendshapesPoster.swift; sourceTree = "<group>"; };
 		EE0403372847BF490089C72C /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerTestView.swift; sourceTree = "<group>"; };
 		EE1F23442846851100483F38 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		EE1F23472846855F00483F38 /* MultiplayerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				842D4A00284021AE00F7BCE9 /* Main.storyboard */,
 				27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */,
 				27396CC6280A12820034828A /* data.json */,
+				EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */,
 			);
 			path = AnneFrankAR;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				843E4C202832BAD300103576 /* MainMenu.swift in Sources */,
 				84CEF4E8283D44C40087869E /* QuizController.swift in Sources */,
 				27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */,
+				EE04033C2847CCD80089C72C /* MultiplayerTestView.swift in Sources */,
 				27396CCC280A218B0034828A /* Models.swift in Sources */,
 				EE1F23482846855F00483F38 /* MultiplayerSetup.swift in Sources */,
 				DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */,

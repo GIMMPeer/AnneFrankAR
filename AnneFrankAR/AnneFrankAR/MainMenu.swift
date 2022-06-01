@@ -8,6 +8,7 @@
 import UIKit
 import SceneKit
 import Foundation
+import SwiftUI
 
 class MainMenu: UIViewController
 {
@@ -17,10 +18,17 @@ class MainMenu: UIViewController
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func testChat(_ sender: Any) {
+        var helper = GameCenterHelper()
+        helper.authenticatePlayer()
+        helper.presentMatchmaker()
+        navigationController?.pushViewController(UIHostingController(rootView: MultiplayerTestView()), animated: true)
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         //print("loaded")
-        let scene = SCNScene(named: "art.scnassets/bookNoAnim.dae")!
+        let scene = SCNScene(named: "art.scnassets/Objects/bookNoAnim.dae")!
         
         cameraNode = setupCamera(for: scene)
         setupLighting(for: scene)
@@ -87,7 +95,7 @@ class MainMenu: UIViewController
     
    
     @IBAction func TimelineAnimation(_ sender: Any) {
-        let scene = SCNScene(named: "art.scnassets/bookFinal.dae")!
+        let scene = SCNScene(named: "art.scnassets/Objects/bookFinal.dae")!
         
         setupSceneView(with: scene, layer:1, remove:true)
         
