@@ -37,17 +37,17 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     var camRot:SCNVector3?
     @IBAction func unwindARView(_ sender:UIStoryboardSegue){}
     
-    var canUseErase = false
+    var canUseErase = true
     
     //Width and height of a node. To get the full width and height, multiply these by however many nodes there are going down and right. Change these to change the full width and height.
-    let width = 0.06096
-    let height = 0.04572
+    let width = 0.06096 * 9
+    let height = 0.04572 * 9
     
     //This is the 2D array where all arrays filled with nodes will go
     var arrScn = [[SCNNode]]()
     
     //Number of array generated is the same as the rows. Do 1 less than you want
-    let numArrays = 59
+    let numArrays = 2
     
     
     override func viewDidLoad() {
@@ -81,9 +81,15 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
           button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
         
         
+        let button_4 = UIButton(frame: CGRect(x: 100, y: 550, width: 100, height: 50))
+          button_4.backgroundColor = .red
+          button_4.setTitle("Graffiti", for: .normal)
+          button_4.addTarget(self, action: #selector(buttonAction4), for: .touchUpInside)
+        
         self.view.addSubview(button)
         self.view.addSubview(button_2)
         self.view.addSubview(button_3)
+        self.view.addSubview(button_4)
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
@@ -135,6 +141,9 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
             var x = 0
             for i in  0...numArrays{
                 for j in 0...numArrays{
+                    print(i)
+                    print(j)
+                    
                     if(arrScn[i][j].name == results.node.name){
                         y = i + 1
                         x = j + 1
@@ -172,7 +181,11 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     {
         setupChamber()
     }
-  
+    @objc func buttonAction4(sender: UIButton!)
+    {
+        canUseErase = false
+
+    }
     
     @objc func handleTap(_ gesture: UIPanGestureRecognizer){
         let location = gesture.location(in: self.sceneView)
@@ -448,8 +461,8 @@ extension ViewController: ARSCNViewDelegate{
         if canUseErase == false{
             
             //Columns and rows
-            let rows = 60
-            let columns = 60
+            let rows = 3
+            let columns = 3
             
             //Gets the anchor point where it will be placed
             guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
