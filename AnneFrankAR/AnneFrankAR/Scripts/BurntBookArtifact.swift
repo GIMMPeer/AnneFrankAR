@@ -127,44 +127,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
             
             if(nodeName! == "Book" || nodeName! == "Cube")
             {
-                
-                //Setup Anim
-                //bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/BookAnimBefore")!, time: 2)
-                let book = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
-                book?.isHidden = false
-                let anim = book?.animation(forKey: book)
-                anim?.repeatCount = 1
-                //Timer for few seconds then call setupBook()
-                let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-
-                    self.setupBook()
-                }
-                
-                //Remove animation
-                
-                
-                
-                
+                self.openBook()
             }
         }else{
             print("nil")
-        }
-    }
-    
-    func bookAnimation(animScene:SCNScene, time:Int)
-    {
-        let bookNode = SCNNode()
-        let bookOpen = animScene
-        
-        
-        bookNode.addChildNode(bookOpen.rootNode)
-        
-        self.sceneView.scene!.rootNode.addChildNode(bookNode)
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(time), repeats: false) { timer in
-            
-            bookNode.removeFromParentNode()
-            
         }
     }
     
@@ -174,15 +140,28 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         self.sceneView.scene!.rootNode.addChildNode(node)
         
-        let anim = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
-        anim?.isHidden = true
+        let openingBook = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
+        //openingBook?.isHidden = true
     }
     
-    func setupBook()
-    {
-        bookStack.isHidden = false
-        backgroundTexture.isHidden = false
-        bookText.isHidden = true
+    func openBook() {
+        //Setup Anim
+        let book = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
+        let bookAnim = book?.animationPlayer(forKey: "")
+        bookAnim?.stop()
+        let bookEndPos = SCNVector3Make(36.25, 24.0, 0.5)
+        //let bookEndRot = SCNVector4Make(Float(70.0.degreesToRadians), Float(85.0.degreesToRadians), 0.0, 1.0)
+        book?.isHidden = false
+        let moveBook = SCNAction.move(to: bookEndPos, duration: 0.75)
+        book?.runAction(moveBook)
+        //Timer for few seconds then call setupBook()
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) { timer in
+            self.bookStack.isHidden = false
+            self.backgroundTexture.isHidden = false
+            self.bookText.isHidden = true
+            book?.isHidden = true
+        }
+        
         
     }
     
@@ -289,7 +268,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
     func setupFinalScene()
     {
         backgroundTexture.isHidden = true
-        bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/ClosingAnimation")!, time: 5)
+        //bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/ClosingAnimation")!, time: 5)
         
         node.childNode(withName: "Bonfire", recursively: true)?.removeFromParentNode()
         let bonfireScene = SCNScene(named: "art.scnassets/BookBurning/BonfireBig.scn")!

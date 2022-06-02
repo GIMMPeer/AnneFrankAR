@@ -15,7 +15,7 @@ class MainMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // print("loaded")
-        let scene = SCNScene(named: "art.scnassets/bookNoAnim.dae")!
+        let scene = SCNScene(named: "art.scnassets/Objects/bookNoAnim.dae")!
 
         cameraNode = setupCamera(for: scene)
         setupLighting(for: scene)
