@@ -32,6 +32,9 @@
 		92206A452846B006007A6FC1 /* bookTextTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92206A442846B006007A6FC1 /* bookTextTest.txt */; };
 		92206A472846C4DC007A6FC1 /* BurningBookData.json in Resources */ = {isa = PBXBuildFile; fileRef = 92206A462846C4DC007A6FC1 /* BurningBookData.json */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
+		C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */; };
+		C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */; };
+		C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */; };
 		DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		92206A442846B006007A6FC1 /* bookTextTest.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = bookTextTest.txt; sourceTree = "<group>"; };
 		92206A462846C4DC007A6FC1 /* BurningBookData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BurningBookData.json; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IMFellGreatPrimerSC-Regular.ttf"; path = "../../../../../Downloads/IMFellGreatPrimerSC-Regular.ttf"; sourceTree = "<group>"; };
+		C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IMFellGreatPrimer-Regular.ttf"; path = "../../../../../Downloads/IMFellGreatPrimer-Regular.ttf"; sourceTree = "<group>"; };
+		C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IMFellGreatPrimer-Italic.ttf"; path = "../../../../../Downloads/IMFellGreatPrimer-Italic.ttf"; sourceTree = "<group>"; };
 		DC1AD04727F75920004EE3BE /* BlendshapesPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendshapesPoster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				92206A442846B006007A6FC1 /* bookTextTest.txt */,
+				C96862D32846C64100FFBD0B /* Font */,
 				27CAC75A27D296A700013FD5 /* AnneFrankAR */,
 				27CAC77027D296AB00013FD5 /* AnneFrankARTests */,
 				27CAC77A27D296AB00013FD5 /* AnneFrankARUITests */,
@@ -178,6 +185,16 @@
 				921401FC283EA551003A2DFA /* Assets.xcassets */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		C96862D32846C64100FFBD0B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */,
+				C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */,
+				C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,11 +306,14 @@
 				27396CC7280A12820034828A /* data.json in Resources */,
 				92206A452846B006007A6FC1 /* bookTextTest.txt in Resources */,
 				842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */,
+				C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */,
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
 				92206A472846C4DC007A6FC1 /* BurningBookData.json in Resources */,
+				C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
+				C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

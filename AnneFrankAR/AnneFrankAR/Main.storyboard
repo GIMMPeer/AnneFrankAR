@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IMFellGreatPrimer-Regular.ttf">
+            <string>IM_FELL_Great_Primer_Roman</string>
+        </array>
+        <array key="IMFellGreatPrimerSC-Regular.ttf">
+            <string>IM_FELL_Great_Primer_SC</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
@@ -18,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-iS-aUo">
-                                <rect key="frame" x="0.0" y="0.0" width="820" height="1179"/>
+                                <rect key="frame" x="0.0" y="0.0" width="820" height="1175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-Ej-YU2">
@@ -183,17 +191,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-c8-TXf">
-                                <rect key="frame" x="86" y="88" width="639" height="496"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
+                                <rect key="frame" x="86" y="592" width="639" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
-                                <rect key="frame" x="86" y="609" width="639" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-c8-TXf">
+                                <rect key="frame" x="58" y="88" width="694" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-xI-mJq">
+                                <rect key="frame" x="58" y="678" width="694" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-LO-grl" userLabel="Button1">
                                 <rect key="frame" x="86" y="699" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,7 +216,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Bandwagon">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -219,7 +234,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Scapegoating">
                                             <attributes>
-                                                <font key="NSFont" size="34" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="34" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -236,7 +252,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Glittering Generally">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -253,7 +270,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Transfer Device">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -270,7 +288,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Testimonials">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -287,7 +306,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="“Plain folk” Device">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -304,7 +324,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Card Tactics">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                                 <real key="NSKern" value="0.0"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                     <tabStops>
@@ -334,7 +355,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Fear Mongering">
                                             <attributes>
-                                                <font key="NSFont" size="33" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -348,8 +370,8 @@
                                 <rect key="frame" x="221" y="421" width="378" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-V6-wSH" userLabel="AnswerFeedback">
-                                        <rect key="frame" x="117" y="123" width="145" height="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Results]" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-V6-wSH" userLabel="AnswerFeedback">
+                                        <rect key="frame" x="118" y="120" width="145" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -363,7 +385,8 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Continue">
                                                     <attributes>
-                                                        <font key="NSFont" size="26" name="Helvetica"/>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="26" name="IM_FELL_Great_Primer_SC"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -372,19 +395,19 @@
                                             <action selector="continue:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="qcV-qz-wiN"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agd-8u-wOq">
-                                        <rect key="frame" x="82" y="43" width="214" height="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Commentary]" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agd-8u-wOq">
+                                        <rect key="frame" x="59" y="56" width="260" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IK7-lP-thK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -416,6 +439,8 @@
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-yd-p80">
                                                 <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
+                                                <color key="backgroundColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.13333332540000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -440,18 +465,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoC-i8-VuC">
                                 <rect key="frame" x="70" y="190" width="680" height="800"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TornPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="6TX-9v-1Fe">
+                                        <rect key="frame" x="-47" y="-46" width="764" height="880"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sRV-eW-G6s">
                                         <rect key="frame" x="0.0" y="0.0" width="680" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeI-jE-6i2">
                                                 <rect key="frame" x="0.0" y="0.0" width="680" height="150"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCQ-DW-SPq">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Title]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCQ-DW-SPq">
                                                         <rect key="frame" x="0.0" y="25" width="680" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
+                                                        <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_SC" family="IM FELL Great Primer SC" pointSize="40"/>
+                                                        <color key="textColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="highlightedColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.062745101750000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
                                                 </subviews>
                                                 <accessibility key="accessibilityConfiguration">
@@ -464,22 +494,24 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-up-d6U">
                                                 <rect key="frame" x="0.0" y="150" width="680" height="200"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlp-6V-UL9">
-                                                        <rect key="frame" x="80" y="0.0" width="520" height="200"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlp-6V-UL9">
+                                                        <rect key="frame" x="120" y="0.0" width="440" height="200"/>
+                                                        <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <string key="text">This is just filler text to show the constraints and margins of the lablle. This is exactly why we need filler text because right now it's spilling over into the video box and looks super weird. </string>
+                                                        <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="20"/>
+                                                        <color key="textColor" red="0.12549020350000001" green="0.070588238540000001" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="highlightedColor" red="0.1294117719" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
                                                 </subviews>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstItem="Rlp-6V-UL9" firstAttribute="leading" secondItem="kK2-up-d6U" secondAttribute="leading" constant="80" id="GAc-bd-cyx"/>
+                                                    <constraint firstItem="Rlp-6V-UL9" firstAttribute="leading" secondItem="kK2-up-d6U" secondAttribute="leading" constant="120" id="GAc-bd-cyx"/>
                                                     <constraint firstAttribute="height" constant="200" id="OJS-Rt-IKP"/>
                                                     <constraint firstItem="Rlp-6V-UL9" firstAttribute="top" secondItem="kK2-up-d6U" secondAttribute="top" id="Zr8-sX-PDX"/>
                                                     <constraint firstAttribute="bottom" secondItem="Rlp-6V-UL9" secondAttribute="bottom" id="hh1-gh-e23"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Rlp-6V-UL9" secondAttribute="trailing" constant="80" id="u6B-rf-1Cx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rlp-6V-UL9" secondAttribute="trailing" constant="120" id="u6B-rf-1Cx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL6-iQ-JsK">
@@ -501,7 +533,8 @@
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Watch Video">
                                                                     <attributes>
-                                                                        <font key="NSFont" size="35" name="Helvetica"/>
+                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <font key="NSFont" size="35" name="IM_FELL_Great_Primer_SC"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -534,7 +567,8 @@
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Reveal">
                                                                     <attributes>
-                                                                        <font key="NSFont" size="24" name="Helvetica"/>
+                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -547,23 +581,25 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled">
                                                             <attributedString key="attributedTitle">
-                                                                <fragment content="Conseal">
+                                                                <fragment content="Conceal">
                                                                     <attributes>
-                                                                        <font key="NSFont" size="24" name="Helvetica"/>
+                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBu-Sd-gts">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Dates]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBu-Sd-gts">
                                                         <rect key="frame" x="120" y="70" width="440" height="80"/>
+                                                        <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="QAk-Gj-2zb"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
+                                                        <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="29"/>
+                                                        <color key="textColor" red="0.1294117719" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="highlightedColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
                                                 </subviews>
                                                 <accessibility key="accessibilityConfiguration">
@@ -579,7 +615,13 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iok-4r-Ktd">
                                         <rect key="frame" x="15" y="50" width="50" height="700"/>
-                                        <color key="backgroundColor" red="0.86185461279999998" green="0.62779480219999995" blue="0.36648941039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ArrowDrawn-2" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-d3-EGa">
+                                                <rect key="frame" x="-13" y="286" width="82" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="jfu-x8-nlW"/>
                                             <constraint firstAttribute="height" constant="700" id="l46-KB-Hvp"/>
@@ -587,14 +629,20 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fw-pY-GHV">
                                         <rect key="frame" x="615" y="50" width="50" height="700"/>
-                                        <color key="backgroundColor" red="0.85016447309999998" green="0.6199465394" blue="0.36282110210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ArrowDrawnRight-2" translatesAutoresizingMaskIntoConstraints="NO" id="lG7-cP-fOr">
+                                                <rect key="frame" x="-21" y="286" width="83" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="VMV-ud-lDP"/>
                                             <constraint firstAttribute="height" constant="700" id="qI3-m6-WWD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15807113049999999" green="0.21187442540000001" blue="0.095206208530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="iok-4r-Ktd" firstAttribute="centerX" secondItem="sRV-eW-G6s" secondAttribute="centerX" constant="-300" id="3RV-7u-Fx7"/>
                                     <constraint firstItem="1fw-pY-GHV" firstAttribute="top" secondItem="iok-4r-Ktd" secondAttribute="top" id="879-EG-cdk"/>
@@ -608,20 +656,9 @@
                                     <constraint firstItem="1fw-pY-GHV" firstAttribute="centerX" secondItem="sRV-eW-G6s" secondAttribute="centerX" constant="300" id="yy5-YN-7aC"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fd-w9-FtI">
-                                <rect key="frame" x="667" y="51" width="110" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="camera.metering.center.weighted" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Rdv-0t-cxd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xdV-eG-jia"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HoC-i8-VuC" firstAttribute="centerX" secondItem="ui8-M4-pWj" secondAttribute="centerX" id="MGu-AT-GXa"/>
                             <constraint firstItem="xdV-eG-jia" firstAttribute="bottom" secondItem="yly-JX-xEe" secondAttribute="bottom" constant="30" id="ODS-FK-Kcw"/>
@@ -633,15 +670,19 @@
                     <navigationItem key="navigationItem" id="2hS-Oj-vUl"/>
                     <connections>
                         <outlet property="ButtonUIView" destination="yly-JX-xEe" id="1FQ-wK-v3F"/>
+                        <outlet property="ConsealButton" destination="qst-9o-H54" id="CH9-SD-Aso"/>
                         <outlet property="ContentPageUI" destination="lBu-Sd-gts" id="rgL-jQ-4Su"/>
                         <outlet property="ContentTextUI" destination="Rlp-6V-UL9" id="rsx-CH-x68"/>
                         <outlet property="ContentTitleUI" destination="YCQ-DW-SPq" id="f5o-8Q-glZ"/>
                         <outlet property="ContentUI" destination="HoC-i8-VuC" id="PTB-Kh-Yk0"/>
                         <outlet property="HorizonalStackButtons" destination="1IF-yd-p80" id="aFD-ee-JOj"/>
                         <outlet property="ImageViewUI" destination="TC4-8L-Gnh" id="pmV-sR-ugf"/>
+                        <outlet property="RevealButton" destination="bch-CS-SCN" id="6z3-DG-Fms"/>
                         <outlet property="ToNextPageUI" destination="1fw-pY-GHV" id="DdL-Mi-Iqm"/>
                         <outlet property="ToPrevPageUI" destination="iok-4r-Ktd" id="FCB-Ho-MY4"/>
                         <outlet property="VideoPlayerUI" destination="UEX-qt-5U0" id="05c-2T-xpI"/>
+                        <outlet property="WatchVideoButton" destination="iwM-fZ-pmJ" id="VWe-Tp-HxQ"/>
+                        <outlet property="backgroundImage" destination="6TX-9v-1Fe" id="qdS-aT-eE3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdB-lo-LW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -710,7 +751,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Timeline">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -733,7 +774,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="AR">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -868,12 +910,13 @@
         <segue reference="6gz-1V-Zfn"/>
         <segue reference="SVm-ef-32Z"/>
         <segue reference="JIB-Ey-Zgh"/>
-        <segue reference="JsL-O2-mYi"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="ArrowDrawn-2" width="444" height="935"/>
+        <image name="ArrowDrawnRight-2" width="444" height="935"/>
         <image name="BurntPageTexture.png" width="132" height="204"/>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>
-        <image name="camera.metering.center.weighted" catalog="system" width="128" height="93"/>
+        <image name="TornPage.png" width="616" height="733"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -883,8 +926,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

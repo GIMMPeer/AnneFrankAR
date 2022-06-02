@@ -10,6 +10,7 @@ import SceneKit
 import ARKit
 import AVKit
 import AVFoundation
+import SwiftUI
 
 class MainViewController: UIViewController {
     
@@ -17,6 +18,12 @@ class MainViewController: UIViewController {
     //Button UI references
     @IBOutlet weak var ButtonUIView: UIView!
     @IBOutlet weak var HorizonalStackButtons: UIStackView!
+    
+    //Timeline Assets within UI
+    @IBOutlet var RevealButton: UIButton!
+    @IBOutlet var WatchVideoButton: UIButton!
+    @IBOutlet var backgroundImage: UIImageView!
+    @IBOutlet var ConsealButton: UIButton!
     
     //Content UI references
     @IBOutlet weak var ContentUI: UIView!
@@ -27,6 +34,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var VideoPlayerUI: UIView!
     @IBOutlet weak var ToPrevPageUI: UIView!
     @IBOutlet weak var ToNextPageUI: UIView!
+    
     //Decleare Instances
     var currentTimeLine:UIButton!
     var currentPage = 0;
@@ -53,6 +61,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         parseJson()
         setUpUI()
+        
+        
     }
     
     
@@ -74,7 +84,15 @@ class MainViewController: UIViewController {
                 HorizonalStackButtons.spacing = 80
                 HorizonalStackButtons.addArrangedSubview(button)
                 contentDictionary[button] = contentItem
-
+                
+                //Timeline Buttons UI Setup
+                WatchVideoButton.layer.borderWidth = 2
+                WatchVideoButton.layer.borderColor = UIColor.brown.cgColor
+                RevealButton.layer.borderWidth = 2
+                RevealButton.layer.borderColor = UIColor.brown.cgColor
+                ConsealButton.layer.borderWidth = 2
+                ConsealButton.layer.borderColor = UIColor.brown.cgColor
+                
             }
             currentTimeLine = Array(contentDictionary)[0].key
             UpdateContentPage()

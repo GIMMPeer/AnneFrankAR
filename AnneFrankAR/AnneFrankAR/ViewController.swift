@@ -63,11 +63,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
           button_2.setTitle("Portal 2", for: .normal)
           button_2.addTarget(self, action: #selector(buttonAction2), for: .touchUpInside)
         
+        let button_3 = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+          button_3.backgroundColor = .blue
+          button_3.setTitle("Annex", for: .normal)
+          button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
+        
+        let button_4 = UIButton(frame: CGRect(x: 100, y: 550, width: 100, height: 50))
+          button_4.backgroundColor = .red
+          button_4.setTitle("Chamber", for: .normal)
+          button_4.addTarget(self, action: #selector(buttonAction4), for: .touchUpInside)
         
         
         self.view.addSubview(button)
         self.view.addSubview(button_2)
-        
+        self.view.addSubview(button_3)
+        self.view.addSubview(button_4)
         
         sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         //sceneView.addGestureRecognizer(UIPanGestureRecognizer()
@@ -84,6 +94,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     @objc func buttonAction2(sender: UIButton!) {
         
       setupPortal(portalNum: 2)
+    }
+    @objc func buttonAction3(sender: UIButton!) {
+        
+      setupAnnex()
+    }
+    @objc func buttonAction4(sender: UIButton!)
+    {
+        setupChamber()
     }
   
     
@@ -148,60 +166,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         
         //node is the spawn point of everything in the scene
         let node = SCNNode()
-       //
+        
+        
         node.position = camPos!
         node.eulerAngles = camRot!
         
-        var leftWall:SCNNode?
-        
-        var rightWall:SCNNode?
-        
-        var topWall:SCNNode?
-        
-        var bottomWall:SCNNode?
-        
-        var backWall:SCNNode?
-        
-        var leftDoorSide:SCNNode?
-        
-        var rightDoorSide:SCNNode?
+        // broke some of the code out to another function
+        buildRoom(num: portalNum, node: node)
         
         if(portalNum == 1) {
-            
-            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
-            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
-            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Floor.png")
-            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Wall_1.png")
-            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
-            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Floor.png")
-        
-            leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
-            leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
-            
-            rightWall!.position = SCNVector3.init((length / 2) - width, 0, 0)
-            
-            topWall!.position = SCNVector3.init(0, (height / 2) - width, 0)
-            topWall!.eulerAngles = SCNVector3.init(0, 0, 90.0.degreesToRadians)
-            
-            bottomWall!.position = SCNVector3.init(0, (-height / 2) + width, 0)
-            bottomWall!.eulerAngles = SCNVector3.init(0, 0, -90.0.degreesToRadians)
-            
-            backWall!.position = SCNVector3.init(0, 0, (-length / 2) + width)
-            backWall!.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
-            
-            leftDoorSide!.position = SCNVector3.init((-length / 2 + width) + (doorLength / 2), 0, (length / 2) - width)
-            leftDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-            rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
-            rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-//            //This is not a wall, it's a poster. Works very similar to the walls though
-//            //createPoster() is also in Extensions
-//            let posterTest = createPoster(image: "art.scnassets/Poster_Base_AR.png")
-//            posterTest.position = SCNVector3.init(0, 0, (-length / 2) + width * 2)
-//            posterTest.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
-//
             //This is accessing the AmericanPillar.scn file which has 2 pillar objects in it
             let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
             
@@ -220,149 +193,60 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
             germ.position = SCNVector3.init(-0.75, -0.1, (-length / 2) + width * 3)
             germ.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
             
+            // addng the burnt book
             let burntBook = subScene.rootNode.childNode(withName: "BurntBook reference", recursively: true)!
             burntBook.position = SCNVector3.init(0.50, -0.5, -0.75)
             burntBook.eulerAngles = SCNVector3.init(0, 0, 0)
             
             //posterTest.renderingOrder=200
             
-            node.addChildNode(leftWall!)
-            node.addChildNode(rightWall!)
-            node.addChildNode(topWall!)
-            node.addChildNode(bottomWall!)
-            node.addChildNode(backWall!)
-            node.addChildNode(leftDoorSide!)
-            node.addChildNode(rightDoorSide!)
-            
+            // add nodes to scene
             node.addChildNode(bsPoster)
             node.addChildNode(amer)
             node.addChildNode(germ)
-            
             node.addChildNode(burntBook)
-            
-            //create light, otherwise the portal would be black
-            let light = SCNLight()
-            //omni has worked the best on image textures, but could be better
-            light.type = .omni
-            light.spotInnerAngle = 70
-            light.spotOuterAngle = 120
-            light.zNear = 0.00001
-            light.zFar = 3
-            light.castsShadow = true
-            light.shadowRadius = 200
-            light.intensity = 600
-            light.shadowColor = UIColor.black.withAlphaComponent(0.7)
-            light.shadowMode = .forward
-            //This points the light in a specific direction
-            let constraint = SCNLookAtConstraint(target: bottomWall)
-            constraint.isGimbalLockEnabled = true
-            
-            //This is what actually places the light in the scene
-            let lightNode = SCNNode()
-            lightNode.light = light
-            lightNode.position = SCNVector3.init(0, 4, 0)
-            lightNode.constraints = [constraint]
-            node.addChildNode(lightNode)
-            
         }
         if(portalNum == 2) {
-            leftWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
-            rightWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
-            topWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
-            bottomWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
-            backWall = createBox(isDoor: false, img: "art.scnassets/Wall Textures/wand4.png")
-            leftDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
-            rightDoorSide = createBox(isDoor: true, img: "art.scnassets/Wall Textures/Walkway_Dark_2.png")
-        
-            leftWall!.position = SCNVector3.init((-length / 2) + width, 0, 0)
-            leftWall!.eulerAngles = SCNVector3.init(0, 180.0.degreesToRadians, 0)
-            
-            rightWall!.position = SCNVector3.init((length / 2) - width, 0, 0)
-            
-            topWall!.position = SCNVector3.init(0, (height / 2) - width, 0)
-            topWall!.eulerAngles = SCNVector3.init(0, 0, 90.0.degreesToRadians)
-            
-            bottomWall!.position = SCNVector3.init(0, (-height / 2) + width, 0)
-            bottomWall!.eulerAngles = SCNVector3.init(0, 0, -90.0.degreesToRadians)
-            
-            backWall!.position = SCNVector3.init(0, 0, (-length / 2) + width)
-            backWall!.eulerAngles = SCNVector3.init(0, 90.0.degreesToRadians, 0)
-            
-            leftDoorSide!.position = SCNVector3.init((-length / 2 + width) + (doorLength / 2), 0, (length / 2) - width)
-            leftDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-            rightDoorSide!.position = SCNVector3.init((length / 2 - width) - (doorLength / 2), 0, (length / 2) - width)
-            rightDoorSide!.eulerAngles = SCNVector3.init(0, -90.0.degreesToRadians, 0)
-            
-            //This is not a wall, it's a poster. Works very similar to the walls though
-            //createPoster() is also in Extensions
+            // create video
             let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource:"videoplayback", ofType: "mp4")!)
             tvPlayer = AVPlayer(url: fileURL)
-                        
+            
+            // add video to plane
             let tvGeo = SCNPlane(width:1.6,height: 0.9)
             tvGeo.firstMaterial?.diffuse.contents = tvPlayer
             tvGeo.firstMaterial?.isDoubleSided = true
-                        
+            
+            // create node containing plane
             let tvNode = SCNNode(geometry: tvGeo)
             tvNode.position.z = -0.9
             
-            
+            // play video
             node.addChildNode(tvNode)
             tvPlayer.play()
             
+            // add subscene stuff
             let subScene = SCNScene(named: "art.scnassets/Scenes/PropagandaScene.scn")!
             
+            // more subscene stuff
             let quiz = subScene.rootNode.childNode(withName: "TextualRhetoric", recursively: true)!
             quiz.position = SCNVector3.init(0.50, -0.5, -0.75)
             quiz.eulerAngles = SCNVector3.init(0, 0, 0)
             
+            // subscene subscene subscene
             let propagandaLesson = subScene.rootNode.childNode(withName: "cubeydude", recursively: true)!
             propagandaLesson.position = SCNVector3.init(-0.50, -0.5, -0.75)
             
+            // <b>s t a n</b>
             let person = subScene.rootNode.childNode(withName: "stan", recursively: true)!
             person.position = SCNVector3.init(0, -0.95, -0.75)
             person.eulerAngles = SCNVector3.init(0, Double.pi / 16, 0)
             
-            
-            
+            // add nodes to scene
             node.addChildNode(propagandaLesson)
             node.addChildNode(quiz)
-            node.addChildNode(leftWall!)
-            node.addChildNode(rightWall!)
-            //node.addChildNode(topWall!)
-            node.addChildNode(bottomWall!)
-            node.addChildNode(backWall!)
             node.addChildNode(person)
-            //node.addChildNode(leftDoorSide!)
-            //node.addChildNode(rightDoorSide!)
-            
-            
-            
-            //create light, otherwise the portal would be black
-            let light = SCNLight()
-            //omni has worked the best on image textures, but could be better
-            light.type = .omni
-            light.spotInnerAngle = 70
-            light.spotOuterAngle = 120
-            light.zNear = 0.00001
-            light.zFar = 3
-            light.castsShadow = true
-            light.shadowRadius = 200
-            light.intensity = 400
-            light.shadowColor = UIColor.black.withAlphaComponent(0.7)
-            light.shadowMode = .forward
-            //This points the light in a specific direction
-            let constraint = SCNLookAtConstraint(target: bottomWall)
-            constraint.isGimbalLockEnabled = true
-            
-            //This is what actually places the light in the scene
-            let lightNode = SCNNode()
-            lightNode.light = light
-            lightNode.position = SCNVector3.init(0, 4, 0)
-            lightNode.constraints = [constraint]
-            node.addChildNode(lightNode)
-            
         }
+        
         //node is the main scene node in the center of the scene
         //If you add something and it's not showing up in the scene, chances are you need to add it to node
         //let pov = self.sceneView.pointOfView
@@ -380,7 +264,34 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
         self.sceneView.scene.rootNode.addChildNode(node)
     }
     
-    
+    func setupAnnex()
+    {
+        let node = SCNNode()
+        
+        node.position = camPos!
+        node.eulerAngles = camRot!
+        
+        let scene = SCNScene(named: "art.scnassets/Scenes/AnneFrankAnnex.scn")!
+        
+        node.addChildNode(scene.rootNode)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+        
+    }
+    func setupChamber()
+    {
+        let node = SCNNode()
+        
+        node.position = camPos!
+        node.eulerAngles = SCNVector3(x:Float(Double.pi) / 2, y:0, z:0)
+        node.scale = SCNVector3(x:0.1, y:0.1, z:0.1)
+        
+        let scene = SCNScene(named: "art.scnassets/Scenes/Chamber.scn")!
+        
+        node.addChildNode(scene.rootNode)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+    }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         let transform = frame.camera.transform
