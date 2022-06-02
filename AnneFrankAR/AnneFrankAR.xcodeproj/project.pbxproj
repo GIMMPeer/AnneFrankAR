@@ -204,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27CAC78127D296AB00013FD5 /* Build configuration list for PBXNativeTarget "AnneFrankAR" */;
 			buildPhases = (
+				EE75C9EB2836E67200369E51 /* ShellScript */,
 				27CAC75427D296A700013FD5 /* Sources */,
 				27CAC75527D296A700013FD5 /* Frameworks */,
 				27CAC75627D296A700013FD5 /* Resources */,
@@ -332,6 +333,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE75C9EB2836E67200369E51 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n~/SwiftLint/.build/universal/swiftlint --fix && ~/SwiftLint/.build/universal/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27CAC75427D296A700013FD5 /* Sources */ = {

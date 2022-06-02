@@ -8,24 +8,23 @@
 import Foundation
 import RealityKit
 
-
 /*
  Constructor for parsing Json Data
  Naming in struct have to match with json object
 */
-struct ContentData:Codable{
-    let data:[ContentItem]
+struct ContentData: Codable {
+    let data: [ContentItem]
 }
 
-struct ContentItem:Codable{
-    let title:String
+struct ContentItem: Codable {
+    let title: String
     let unlocked: Bool
-    let pageData:[PageItem]
+    let pageData: [PageItem]
 }
 
-struct PageItem:Codable{
-    let title:String
-    let context:String
-    let image:String
-    let video:String
+struct PageItem: Codable {
+    let title: String
+    let context: String
+    let image: String
+    let video: String
 }
