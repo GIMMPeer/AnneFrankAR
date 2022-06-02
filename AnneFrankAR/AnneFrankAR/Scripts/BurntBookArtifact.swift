@@ -132,11 +132,10 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
                 //bookAnimation(animScene: SCNScene(named: "art.scnassets/BookBurning/BookAnimBefore")!, time: 2)
                 let book = bonfireScene.rootNode.childNode(withName: "BookAnim", recursively: true)
                 book?.isHidden = false
-                let anim = book?.animation(forKey: book)
-                anim?.repeatCount = 1
+                
                 //Timer for few seconds then call setupBook()
                 let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-
+                    book?.isHidden = true
                     self.setupBook()
                 }
                 

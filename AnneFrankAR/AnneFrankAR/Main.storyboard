@@ -59,6 +59,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flM-8i-3FB" userLabel="Page Fire">
+                                <rect key="frame" x="0.0" y="0.0" width="979" height="1180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQm-IS-Kgn" userLabel="Bonfire Scene">
                                 <rect key="frame" x="-27" y="0.0" width="847" height="1180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,12 +78,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="s2f-wU-FTG">
                                 <rect key="frame" x="212" y="344" width="383.5" height="447"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-eK-Vtx" userLabel="Book1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzS-eK-Vtx" userLabel="Book Button1">
                                         <rect key="frame" x="0.0" y="0.0" width="383.5" height="31"/>
-                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="A Farewell to Arms - Earnest Hemingway"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="A Farewell to Arms - Earnest Hemingway">
+                                            <backgroundConfiguration key="background">
+                                                <color key="strokeColor" systemColor="labelColor"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="book1:" destination="9ey-0E-jSP" eventType="touchUpInside" id="da7-To-SFq"/>
                                         </connections>
@@ -127,16 +134,12 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label more label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
-                                <rect key="frame" x="174" y="250" width="460" height="300"/>
+                                <rect key="frame" x="174" y="250" width="460" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <skView contentMode="scaleToFill" fixedFrame="YES" allowsTransparency="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flM-8i-3FB" userLabel="Page Fire">
-                                <rect key="frame" x="0.0" y="0.0" width="979" height="1180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </skView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wep-tI-R2f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
