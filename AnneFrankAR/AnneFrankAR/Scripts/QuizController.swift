@@ -10,6 +10,17 @@ import UIKit
 
 class QuizController: UIViewController
 {
+    //Button UI References
+    @IBOutlet var continueButton: UIButton!
+    @IBOutlet var ans1Button: UIButton!
+    @IBOutlet var ans2Button: UIButton!
+    @IBOutlet var ans3Button: UIButton!
+    @IBOutlet var ans4Button: UIButton!
+    @IBOutlet var ans5Button: UIButton!
+    @IBOutlet var ans6Button: UIButton!
+    @IBOutlet var ans7Button: UIButton!
+    @IBOutlet var ans8Button: UIButton!
+    
     var questionArr = [Poster]()
     
     @IBOutlet weak var feedbackOverlay: UIView!
@@ -89,6 +100,29 @@ class QuizController: UIViewController
         questionLabel.numberOfLines = 5
         feedbackText.numberOfLines = 5
         setupQuestion()
+        setUpUI()
+    }
+    
+    func setUpUI(){
+        //Button Appearance
+        continueButton.layer.borderWidth = 2
+        continueButton.layer.borderColor = UIColor.black.cgColor
+        ans1Button.layer.borderWidth = 2
+        ans1Button.layer.borderColor = UIColor.black.cgColor
+        ans2Button.layer.borderWidth = 2
+        ans2Button.layer.borderColor = UIColor.black.cgColor
+        ans3Button.layer.borderWidth = 2
+        ans3Button.layer.borderColor = UIColor.black.cgColor
+        ans4Button.layer.borderWidth = 2
+        ans4Button.layer.borderColor = UIColor.black.cgColor
+        ans5Button.layer.borderWidth = 2
+        ans5Button.layer.borderColor = UIColor.black.cgColor
+        ans6Button.layer.borderWidth = 2
+        ans6Button.layer.borderColor = UIColor.black.cgColor
+        ans7Button.layer.borderWidth = 2
+        ans7Button.layer.borderColor = UIColor.black.cgColor
+        ans8Button.layer.borderWidth = 2
+        ans8Button.layer.borderColor = UIColor.black.cgColor
     }
     
     private func setupQuestion()

@@ -61,8 +61,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         parseJson()
         setUpUI()
-        
-        
     }
     
     
@@ -87,11 +85,11 @@ class MainViewController: UIViewController {
                 
                 //Timeline Buttons UI Setup
                 WatchVideoButton.layer.borderWidth = 2
-                WatchVideoButton.layer.borderColor = UIColor.brown.cgColor
+                WatchVideoButton.layer.borderColor = UIColor.black.cgColor
                 RevealButton.layer.borderWidth = 2
-                RevealButton.layer.borderColor = UIColor.brown.cgColor
+                RevealButton.layer.borderColor = UIColor.black.cgColor
                 ConsealButton.layer.borderWidth = 2
-                ConsealButton.layer.borderColor = UIColor.brown.cgColor
+                ConsealButton.layer.borderColor = UIColor.black.cgColor
                 
             }
             currentTimeLine = Array(contentDictionary)[0].key
