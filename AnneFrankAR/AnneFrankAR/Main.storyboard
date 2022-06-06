@@ -183,220 +183,156 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
-                                <rect key="frame" x="86" y="592" width="639" height="82"/>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SmallTornPage" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-xI-mJq">
+                                <rect key="frame" x="-131" y="630" width="1082" height="512"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                <nil key="textColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-1H-5Mh">
+                                <rect key="frame" x="86" y="583" width="639" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_SC" family="IM FELL Great Primer SC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-c8-TXf">
                                 <rect key="frame" x="58" y="88" width="694" height="496"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-xI-mJq">
-                                <rect key="frame" x="58" y="678" width="694" height="392"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54k-Xv-Eb5">
+                                <rect key="frame" x="91" y="709" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-LO-grl" userLabel="Button1">
-                                <rect key="frame" x="86" y="699" width="315" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Bandwagon">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Bandwagon">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerBandwagon:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="6xs-kS-xfz"/>
+                                    <action selector="answerBandwagon:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="on3-dm-XCO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgd-f7-r6E" userLabel="Button2">
-                                <rect key="frame" x="409" y="699" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDl-Yq-fGO">
+                                <rect key="frame" x="92" y="798" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Scapegoating">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="34" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Glittering Generally">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerScapegoating:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="09L-ca-SDh"/>
+                                    <action selector="answerGlittering:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="ECR-JE-SmC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ho-wM-pXL" userLabel="Button3">
-                                <rect key="frame" x="86" y="787" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6i-yA-KEK">
+                                <rect key="frame" x="92" y="885" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Glittering Generally">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Testimonials">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerGlittering:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="anF-7z-Il7"/>
+                                    <action selector="answerTestimonials:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="Kwh-Eg-cf8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Da-gI-oHg" userLabel="Button4">
-                                <rect key="frame" x="410" y="787" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-lH-iNA">
+                                <rect key="frame" x="415" y="710" width="315" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Transfer Device">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Scapegoating">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerTransfer:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="ob4-6g-IRT"/>
+                                    <action selector="answerScapegoating:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="oil-1w-cfx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HF-tK-HIk" userLabel="Button5">
-                                <rect key="frame" x="86" y="875" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-Da-qcA">
+                                <rect key="frame" x="415" y="798" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Testimonials">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Transfer Device">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerTestimonials:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="cQe-Na-nPY"/>
+                                    <action selector="answerTransfer:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="hoU-jS-Ygx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDX-75-QVF" userLabel="Button6">
-                                <rect key="frame" x="410" y="875" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-pe-hIF">
+                                <rect key="frame" x="410" y="886" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="“Plain folk” Device">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="“Plain folk” Device">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerPlainFolk:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="3qT-sL-qxj"/>
+                                    <action selector="answerPlainFolk:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="DTD-bw-STE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7o-Xt-fBn" userLabel="Button7">
-                                <rect key="frame" x="86" y="963" width="315" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myU-79-uIA">
+                                <rect key="frame" x="415" y="974" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Card Tactics">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                                <real key="NSKern" value="0.0"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                    <tabStops>
-                                                        <textTab alignment="left" location="11">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="natural" location="36">
-                                                            <options/>
-                                                        </textTab>
-                                                    </tabStops>
-                                                </paragraphStyle>
-                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <real key="NSStrokeWidth" value="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="plain" title="Fear Mongering">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="answerCard:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="2gM-JP-5bd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LD-Cp-rvd" userLabel="Button8">
-                                <rect key="frame" x="410" y="963" width="315" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Fear Mongering">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="answerFear:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="c35-nO-ld0"/>
+                                    <action selector="answerFear:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="R0Z-ml-r0s"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tM-d8-DJa" userLabel="FeedbackOverlay">
-                                <rect key="frame" x="221" y="421" width="378" height="338"/>
+                                <rect key="frame" x="188" y="380" width="445" height="421"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Results]" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-V6-wSH" userLabel="AnswerFeedback">
-                                        <rect key="frame" x="118" y="120" width="145" height="56"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaperScrap3.png" translatesAutoresizingMaskIntoConstraints="NO" id="8dM-jN-83P">
+                                        <rect key="frame" x="-178" y="-42" width="800" height="505"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agd-8u-wOq">
+                                        <rect key="frame" x="38" y="80" width="370" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">[Sample text to test the limits:] This picture is a prime example of nothing, or what the youth say "like the void in my heart/etc". Other examples of voidness include colors like black, dark blue, or dark purple. All are charactized as darker themes in the color palette due to the fact it is what the human eye can see in the darkness. There is more to this topic as well, a well known scientist...</string>
+                                        <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-zW-eGT">
-                                        <rect key="frame" x="118" y="226" width="144" height="43"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-Bx-8u1">
+                                        <rect key="frame" x="139" y="367" width="167" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Continue">
-                                                    <attributes>
-                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="26" name="IM_FELL_Great_Primer_SC"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="CONTINUE">
+                                            <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="24"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="continue:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="qcV-qz-wiN"/>
+                                            <action selector="continue:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="Udb-fD-29a"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Commentary]" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agd-8u-wOq">
-                                        <rect key="frame" x="59" y="56" width="260" height="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Results:] Great job/ So close!" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-V6-wSH" userLabel="AnswerFeedback">
+                                        <rect key="frame" x="38" y="16" width="370" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_SC" family="IM FELL Great Primer SC" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6k-rn-khE">
+                                <rect key="frame" x="92" y="974" width="315" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Card Tactics">
+                                    <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="35"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="answerCard:" destination="Zpb-Dh-bb9" eventType="touchUpInside" id="erJ-IA-9ww"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IK7-lP-thK"/>
                         <color key="backgroundColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -404,7 +340,16 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ans1Button" destination="54k-Xv-Eb5" id="rzp-Qv-4zN"/>
+                        <outlet property="ans2Button" destination="SDl-Yq-fGO" id="7Uo-Go-9qr"/>
+                        <outlet property="ans3Button" destination="i6i-yA-KEK" id="0Lf-9a-6cm"/>
+                        <outlet property="ans4Button" destination="o6k-rn-khE" id="xdf-Ei-Poi"/>
+                        <outlet property="ans5Button" destination="4UF-lH-iNA" id="Esl-38-LCG"/>
+                        <outlet property="ans6Button" destination="1Yh-Da-qcA" id="2ow-Wx-H45"/>
+                        <outlet property="ans7Button" destination="BtP-pe-hIF" id="gv0-Rp-prJ"/>
+                        <outlet property="ans8Button" destination="myU-79-uIA" id="Ete-ag-3Yg"/>
                         <outlet property="answerFeedback" destination="2XE-V6-wSH" id="zmh-26-1lG"/>
+                        <outlet property="continueButton" destination="qzI-Bx-8u1" id="PEL-WB-t1Q"/>
                         <outlet property="feedbackOverlay" destination="3tM-d8-DJa" id="w6C-k1-9Ct"/>
                         <outlet property="feedbackText" destination="agd-8u-wOq" id="QAk-Tb-wtl"/>
                         <outlet property="posterImage" destination="pZW-c8-TXf" id="K4z-xJ-RR2"/>
@@ -423,37 +368,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yly-JX-xEe">
-                                <rect key="frame" x="0.0" y="1030" width="820" height="100"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-Gn-xrN">
-                                        <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-yd-p80">
-                                                <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
-                                                <color key="backgroundColor" red="0.92549026010000002" green="0.87450981139999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" red="0.13333332540000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="1IF-yd-p80" secondAttribute="bottom" id="CRu-iB-A7X"/>
-                                            <constraint firstItem="1IF-yd-p80" firstAttribute="centerX" secondItem="vM9-Gn-xrN" secondAttribute="centerX" placeholder="YES" id="KYJ-ou-eZl"/>
-                                            <constraint firstAttribute="trailing" secondItem="1IF-yd-p80" secondAttribute="trailing" id="Qyg-UK-uby"/>
-                                            <constraint firstItem="1IF-yd-p80" firstAttribute="leading" secondItem="vM9-Gn-xrN" secondAttribute="leading" id="Vw4-sq-rpr"/>
-                                            <constraint firstItem="1IF-yd-p80" firstAttribute="top" secondItem="vM9-Gn-xrN" secondAttribute="top" id="hMp-fu-1FQ"/>
-                                            <constraint firstItem="1IF-yd-p80" firstAttribute="height" secondItem="vM9-Gn-xrN" secondAttribute="height" id="ieD-GW-xGm"/>
-                                        </constraints>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="M6h-4I-NAi"/>
-                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="top" secondItem="yly-JX-xEe" secondAttribute="top" id="Mzj-pe-zac"/>
-                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="centerY" secondItem="yly-JX-xEe" secondAttribute="centerY" id="VIn-wr-bYl"/>
-                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="leading" secondItem="yly-JX-xEe" secondAttribute="leading" id="g1R-XD-Y5i"/>
-                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="centerX" secondItem="yly-JX-xEe" secondAttribute="centerX" id="iyj-hl-d99"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoC-i8-VuC">
                                 <rect key="frame" x="70" y="190" width="680" height="800"/>
                                 <subviews>
@@ -467,12 +381,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeI-jE-6i2">
                                                 <rect key="frame" x="0.0" y="0.0" width="680" height="150"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Title]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCQ-DW-SPq">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Title:] Sample Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCQ-DW-SPq">
                                                         <rect key="frame" x="0.0" y="25" width="680" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_SC" family="IM FELL Great Primer SC" pointSize="40"/>
-                                                        <color key="textColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" red="0.1294117719" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="highlightedColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.062745101750000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
                                                 </subviews>
@@ -489,9 +403,9 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlp-6V-UL9">
                                                         <rect key="frame" x="120" y="0.0" width="440" height="200"/>
                                                         <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <string key="text">This is just filler text to show the constraints and margins of the lablle. This is exactly why we need filler text because right now it's spilling over into the video box and looks super weird. </string>
+                                                        <string key="text">[Sample text to test the limits:] The video that is pictured down below is a floor texture that is created by someone in GIMM Dev team. Although it is not actually a video, if it were it would probably be a time laspe. There are several alterfications of the same floor texture in the drive. </string>
                                                         <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="20"/>
-                                                        <color key="textColor" red="0.12549020350000001" green="0.070588238540000001" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" red="0.13333332540000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="highlightedColor" red="0.1294117719" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
                                                 </subviews>
@@ -517,22 +431,16 @@
                                                         <rect key="frame" x="100" y="10" width="480" height="280"/>
                                                         <imageReference key="image" image="Floor.png" symbolScale="default"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwM-fZ-pmJ">
-                                                        <rect key="frame" x="215" y="78" width="250" height="77"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me8-ow-Z4X">
+                                                        <rect key="frame" x="215" y="114" width="250" height="72"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Watch Video">
-                                                                    <attributes>
-                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="35" name="IM_FELL_Great_Primer_SC"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <buttonConfiguration key="configuration" style="plain" title="WATCH VIDEO">
+                                                            <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="24"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="showVideo:" destination="ftG-QF-fXg" eventType="touchUpInside" id="g6z-sd-Pxq"/>
+                                                            <action selector="showVideo:" destination="ftG-QF-fXg" eventType="touchUpInside" id="kDE-Tn-z2f"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -551,41 +459,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-Xd-Oed">
                                                 <rect key="frame" x="0.0" y="650" width="680" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bch-CS-SCN">
-                                                        <rect key="frame" x="73" y="0.0" width="224" height="74"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Reveal">
-                                                                    <attributes>
-                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qst-9o-H54">
-                                                        <rect key="frame" x="373" y="-1" width="224" height="74"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="Conceal">
-                                                                    <attributes>
-                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Dates]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBu-Sd-gts">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Pages:] 1 out of 200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBu-Sd-gts">
                                                         <rect key="frame" x="120" y="70" width="440" height="80"/>
-                                                        <color key="tintColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="QAk-Gj-2zb"/>
                                                         </constraints>
@@ -593,6 +469,24 @@
                                                         <color key="textColor" red="0.1294117719" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="highlightedColor" red="0.12549020350000001" green="0.074509806930000005" blue="0.054901964960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HW-G2-2MF">
+                                                        <rect key="frame" x="106" y="8" width="224" height="72"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="REVEAL">
+                                                            <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="24"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTh-X7-e7k">
+                                                        <rect key="frame" x="351" y="8" width="224" height="72"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" red="0.1294117719" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="CONCEAL">
+                                                            <fontDescription key="titleFontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="24"/>
+                                                        </buttonConfiguration>
+                                                    </button>
                                                 </subviews>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -648,6 +542,41 @@
                                     <constraint firstItem="1fw-pY-GHV" firstAttribute="centerX" secondItem="sRV-eW-G6s" secondAttribute="centerX" constant="300" id="yy5-YN-7aC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yly-JX-xEe">
+                                <rect key="frame" x="0.0" y="1035" width="820" height="100"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-Gn-xrN">
+                                        <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaperScrap4" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-TI-i4H">
+                                                <rect key="frame" x="-1260" y="-22" width="4284" height="198"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-yd-p80">
+                                                <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
+                                                <color key="tintColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93746095895767212" green="0.83456677198410034" blue="0.73048138618469238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="1IF-yd-p80" secondAttribute="bottom" id="CRu-iB-A7X"/>
+                                            <constraint firstItem="1IF-yd-p80" firstAttribute="centerX" secondItem="vM9-Gn-xrN" secondAttribute="centerX" placeholder="YES" id="KYJ-ou-eZl"/>
+                                            <constraint firstAttribute="trailing" secondItem="1IF-yd-p80" secondAttribute="trailing" id="Qyg-UK-uby"/>
+                                            <constraint firstItem="1IF-yd-p80" firstAttribute="leading" secondItem="vM9-Gn-xrN" secondAttribute="leading" id="Vw4-sq-rpr"/>
+                                            <constraint firstItem="1IF-yd-p80" firstAttribute="top" secondItem="vM9-Gn-xrN" secondAttribute="top" id="hMp-fu-1FQ"/>
+                                            <constraint firstItem="1IF-yd-p80" firstAttribute="height" secondItem="vM9-Gn-xrN" secondAttribute="height" id="ieD-GW-xGm"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="M6h-4I-NAi"/>
+                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="top" secondItem="yly-JX-xEe" secondAttribute="top" id="Mzj-pe-zac"/>
+                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="centerY" secondItem="yly-JX-xEe" secondAttribute="centerY" id="VIn-wr-bYl"/>
+                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="leading" secondItem="yly-JX-xEe" secondAttribute="leading" id="g1R-XD-Y5i"/>
+                                    <constraint firstItem="vM9-Gn-xrN" firstAttribute="centerX" secondItem="yly-JX-xEe" secondAttribute="centerX" id="iyj-hl-d99"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xdV-eG-jia"/>
                         <color key="backgroundColor" red="0.13725490870000001" green="0.078431375319999996" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -662,18 +591,18 @@
                     <navigationItem key="navigationItem" id="2hS-Oj-vUl"/>
                     <connections>
                         <outlet property="ButtonUIView" destination="yly-JX-xEe" id="1FQ-wK-v3F"/>
-                        <outlet property="ConsealButton" destination="qst-9o-H54" id="CH9-SD-Aso"/>
+                        <outlet property="ConsealButton" destination="kTh-X7-e7k" id="ACu-j7-ko0"/>
                         <outlet property="ContentPageUI" destination="lBu-Sd-gts" id="rgL-jQ-4Su"/>
                         <outlet property="ContentTextUI" destination="Rlp-6V-UL9" id="rsx-CH-x68"/>
                         <outlet property="ContentTitleUI" destination="YCQ-DW-SPq" id="f5o-8Q-glZ"/>
                         <outlet property="ContentUI" destination="HoC-i8-VuC" id="PTB-Kh-Yk0"/>
                         <outlet property="HorizonalStackButtons" destination="1IF-yd-p80" id="aFD-ee-JOj"/>
                         <outlet property="ImageViewUI" destination="TC4-8L-Gnh" id="pmV-sR-ugf"/>
-                        <outlet property="RevealButton" destination="bch-CS-SCN" id="6z3-DG-Fms"/>
+                        <outlet property="RevealButton" destination="6HW-G2-2MF" id="of6-3e-SO0"/>
                         <outlet property="ToNextPageUI" destination="1fw-pY-GHV" id="DdL-Mi-Iqm"/>
                         <outlet property="ToPrevPageUI" destination="iok-4r-Ktd" id="FCB-Ho-MY4"/>
                         <outlet property="VideoPlayerUI" destination="UEX-qt-5U0" id="05c-2T-xpI"/>
-                        <outlet property="WatchVideoButton" destination="iwM-fZ-pmJ" id="VWe-Tp-HxQ"/>
+                        <outlet property="WatchVideoButton" destination="Me8-ow-Z4X" id="g89-Xb-WDU"/>
                         <outlet property="backgroundImage" destination="6TX-9v-1Fe" id="qdS-aT-eE3"/>
                     </connections>
                 </viewController>
@@ -908,6 +837,9 @@
         <image name="ArrowDrawnRight-2" width="444" height="935"/>
         <image name="BurntPageTexture.png" width="132" height="204"/>
         <image name="Floor.png" width="770.15997314453125" height="598.79998779296875"/>
+        <image name="PaperScrap3.png" width="2386" height="2226"/>
+        <image name="PaperScrap4" width="6760" height="706"/>
+        <image name="SmallTornPage" width="616" height="455"/>
         <image name="TornPage.png" width="616" height="733"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
