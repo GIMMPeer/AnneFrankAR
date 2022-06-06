@@ -89,8 +89,8 @@ class QuizController: UIViewController
         
         feedbackOverlay.isHidden = true
        
-        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [1,3], feedback: "This poster is a primary example of Scapegoating")
-        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [2,4], feedback: "This poster is a primary example of Fearmongering")
+        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [2], feedback: "This poster is a primary example of Scapegoating")
+        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [8], feedback: "This poster is a primary example of Fearmongering")
         let posterC = Poster(image: UIImage(named:"thirdContent")!, value:[7], feedback: "This poster is a primary example of Card Tactics")
         
         questionArr.append(posterA)
