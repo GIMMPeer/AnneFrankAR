@@ -104,25 +104,16 @@ class QuizController: UIViewController
     }
     
     func setUpUI(){
-        //Button Appearance
+        //Button UI Beautify
         continueButton.layer.borderWidth = 2
-        continueButton.layer.borderColor = UIColor.black.cgColor
         ans1Button.layer.borderWidth = 2
-        ans1Button.layer.borderColor = UIColor.black.cgColor
         ans2Button.layer.borderWidth = 2
-        ans2Button.layer.borderColor = UIColor.black.cgColor
         ans3Button.layer.borderWidth = 2
-        ans3Button.layer.borderColor = UIColor.black.cgColor
         ans4Button.layer.borderWidth = 2
-        ans4Button.layer.borderColor = UIColor.black.cgColor
         ans5Button.layer.borderWidth = 2
-        ans5Button.layer.borderColor = UIColor.black.cgColor
         ans6Button.layer.borderWidth = 2
-        ans6Button.layer.borderColor = UIColor.black.cgColor
         ans7Button.layer.borderWidth = 2
-        ans7Button.layer.borderColor = UIColor.black.cgColor
         ans8Button.layer.borderWidth = 2
-        ans8Button.layer.borderColor = UIColor.black.cgColor
     }
     
     private func setupQuestion()
