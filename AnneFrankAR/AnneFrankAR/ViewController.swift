@@ -137,8 +137,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sceneView.session.delegate = self             // ARSESSION DELEGATE
+        
         let configuration = ARWorldTrackingConfiguration()
+        
+        configuration.frameSemantics.insert(.personSegmentationWithDepth)
+        configuration.planeDetection = [.horizontal, .vertical]
+        //Before starting session, put this option in configuration
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+                configuration.sceneReconstruction = .mesh
+        } else {
+                // Handle device that doesn't support scene reconstruction
+        }
+        
         sceneView.session.run(configuration)
+        
+        //sceneView.environment.sceneUnderstanding.options.insert(.occlusion)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -278,6 +292,68 @@ class ViewController: UIViewController, ARSCNViewDelegate, CBPeripheralDelegate,
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let meshAnchor = anchor as? ARMeshAnchor else {
+                return nil
+            }
+
+        let geometry = createGeometryFromAnchor(meshAnchor: meshAnchor)
+
+        //apply occlusion material
+        geometry.firstMaterial?.colorBufferWriteMask = []
+        geometry.firstMaterial?.writesToDepthBuffer = true
+        geometry.firstMaterial?.readsFromDepthBuffer = true
+            
+
+        let node = SCNNode(geometry: geometry)
+        //change rendering order so it renders before  our virtual object
+        node.renderingOrder = -1
+        
+        
+        
+        return node
+    }
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+            guard let meshAnchor = anchor as? ARMeshAnchor else {
+                    return
+                }
+            let geometry = createGeometryFromAnchor(meshAnchor: meshAnchor)
+
+                // Optionally hide the node from rendering as well
+                geometry.firstMaterial?.colorBufferWriteMask = []
+                geometry.firstMaterial?.writesToDepthBuffer = true
+                geometry.firstMaterial?.readsFromDepthBuffer = true
+                
+
+            node.geometry = geometry
+        }
+    
+    func createGeometryFromAnchor(meshAnchor: ARMeshAnchor) -> SCNGeometry {
+        let meshGeometry = meshAnchor.geometry
+        let vertices = meshGeometry.vertices
+        let normals = meshGeometry.normals
+        let faces = meshGeometry.faces
+        
+        // use the MTL buffer that ARKit gives us
+        let vertexSource = SCNGeometrySource(buffer: vertices.buffer, vertexFormat: vertices.format, semantic: .vertex, vertexCount: vertices.count, dataOffset: vertices.offset, dataStride: vertices.stride)
+        
+        let normalsSource = SCNGeometrySource(buffer: normals.buffer, vertexFormat: normals.format, semantic: .normal, vertexCount: normals.count, dataOffset: normals.offset, dataStride: normals.stride)
+        // Copy bytes as we may use them later
+        let faceData = Data(bytes: faces.buffer.contents(), count: faces.buffer.length)
+        
+        // create the geometry element
+        let geometryElement = SCNGeometryElement(data: faceData, primitiveType: primitiveType(type: faces.primitiveType), primitiveCount: faces.count, bytesPerIndex: faces.bytesPerIndex)
+        
+        return SCNGeometry(sources: [vertexSource, normalsSource], elements: [geometryElement])
+    }
+
+    func primitiveType(type: ARGeometryPrimitiveType) -> SCNGeometryPrimitiveType {
+            switch type {
+                case .line: return .line
+                case .triangle: return .triangles
+            default : return .triangles
+            }
     }
     
     
