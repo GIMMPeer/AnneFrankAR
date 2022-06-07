@@ -17,8 +17,8 @@ protocol GameCenterHelperDelegate: AnyObject {
 final class GameCenterHelper: NSObject, GKLocalPlayerListener {
     weak var delegate: GameCenterHelperDelegate?
     
-    private let minPlayers: Int = 1
-    private let maxPlayers: Int = 40
+    private let minPlayers: Int = 2
+    private let maxPlayers: Int = 4
     private let inviteMessage = "Anne Frank Memorial invites you to open their app"
     
     private var currentVC: GKMatchmakerViewController?
@@ -70,7 +70,6 @@ final class GameCenterHelper: NSObject, GKLocalPlayerListener {
         return request
     }
 }
-
 
 extension GameCenterHelper: GKMatchmakerViewControllerDelegate {
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {

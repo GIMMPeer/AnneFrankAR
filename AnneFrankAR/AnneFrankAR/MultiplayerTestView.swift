@@ -6,14 +6,25 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct MultiplayerTestView: View {
     @State var text: String = ""
-    var me: Player = Player(name: "Jimmy")
-    @State var model: GameModel = GameModel(chat: [.init(id:.init(), player:.init(name: "Jeff"), message: "hello people"), .init(id:.init(), player:.init(name: "Bob"), message: "shut up"), .init(id:.init(), player:.init(name: "Jeff"), message: "you shut up"),.init(id:.init(), player:.init(name: "Moderator"), message: "Calm down, this is a memorial not a Discord chat."),.init(id:.init(), player:.init(name: "Jeff"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Jeff"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Bob"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Jeff"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Bob"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Jeff"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Bob"), message: "never tyrant"), .init(id:.init(), player:.init(name: "Jeff"), message: "never tyrant we should dethrone the mods")])
+    var me: Player = Player(id:.init(), name: GKLocalPlayer.local.alias)
+    @State var model: GameModel = GameModel()
+    @State var match: GKMatch
+    var gkm = GameKitManager()
     var body: some View {
+        GeometryReader() { geometry in
+        HStack(alignment: .top) {
+            List {
+                ForEach(model.players) { player in
+                    Text(player.name)
+                }
+            }
+            .frame(maxWidth: geometry.size.width / 3)
         VStack(alignment: .leading) {
-                ScrollViewReader() { value in
+            ScrollViewReader() { value in
                         ScrollView(Axis.Set.vertical,   showsIndicators: true) {
                             VStack(alignment: .leading) {
                             ForEach(model.chat) { message in
@@ -43,15 +54,37 @@ struct MultiplayerTestView: View {
                 .textFieldStyle(.roundedBorder)
                 .onSubmit {
                     model.chat.append(.init(id:.init(), player:me, message:text))
+                    do {
+                        try match.sendData(toAllPlayers: model.encode()!, with: .reliable)
+                    }
+                    catch {
+                        print("Error")
+                    }
                     text = ""
                 }
+        }
+        }
+        .onLoad {
+            model.players.append(me)
+            gkm.gM = model
+            gkm.mtv = self
+            match.delegate = gkm
+            do {
+                try match.sendData(toAllPlayers: model.encode()!, with: .reliable)
+            }
+            catch {
+                print("Error")
+            }
+        }
         }
     }
 }
 
 struct MultiplayerTestView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiplayerTestView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+        Group {
+            MultiplayerTestView(match: GKMatch())
+                .previewInterfaceOrientation(.portraitUpsideDown)
+        }
     }
 }

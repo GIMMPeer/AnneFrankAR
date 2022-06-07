@@ -25,11 +25,12 @@ extension GameModel {
     }
 }
 
-struct Player: Codable {
+struct Player: Codable, Equatable, Identifiable {
+    public var id: UUID
     public var name: String = ""
 }
 
-struct ChatMessage: Codable, Identifiable {
+struct ChatMessage: Codable, Identifiable, Equatable {
     public var id: UUID
     public var player: Player
     public var message: String

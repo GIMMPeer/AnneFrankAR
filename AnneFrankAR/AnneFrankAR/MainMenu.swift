@@ -9,6 +9,7 @@ import UIKit
 import SceneKit
 import Foundation
 import SwiftUI
+import GameKit
 
 class MainMenu: UIViewController
 {
@@ -20,9 +21,10 @@ class MainMenu: UIViewController
     
     @IBAction func testChat(_ sender: Any) {
         var helper = GameCenterHelper()
+        helper.delegate = self
         helper.authenticatePlayer()
         helper.presentMatchmaker()
-        navigationController?.pushViewController(UIHostingController(rootView: MultiplayerTestView()), animated: true)
+        //navigationController?.pushViewController(UIHostingController(rootView: MultiplayerTestView()), animated: true)
     }
     
     override func viewDidLoad(){
@@ -110,3 +112,23 @@ class MainMenu: UIViewController
     }
 }
 
+extension MainMenu: GameCenterHelperDelegate {
+    func didChangeAuthStatus(isAuthenticated: Bool) {
+        // do nothing, we don't need this function in this project
+    }
+    
+    func presentGameCenterAuth(viewController: UIViewController?) {
+        self.present(viewController!, animated: true)
+    }
+    
+    func presentMatchmaking(viewController: UIViewController?) {
+        self.present(viewController!, animated: true)
+    }
+    
+    func presentGame(match: GKMatch) {
+        navigationController?.popViewController(animated: true)
+        navigationController?.pushViewController(UIHostingController(rootView: MultiplayerTestView(match: match)), animated: true)
+    }
+    
+    
+}
