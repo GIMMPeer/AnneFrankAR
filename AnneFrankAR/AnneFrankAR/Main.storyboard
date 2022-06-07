@@ -175,9 +175,9 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Text" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAm-hL-dg9">
-                                <rect key="frame" x="174" y="250" width="460" height="300"/>
+                                <rect key="frame" x="174" y="250" width="460" height="550"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="IM_FELL_Great_Primer_Roman" family="IM FELL Great Primer" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
