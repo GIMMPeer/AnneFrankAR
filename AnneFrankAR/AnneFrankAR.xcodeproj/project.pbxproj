@@ -19,12 +19,17 @@
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
+		841822B3284FCBA800930E02 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841822B2284FCBA800930E02 /* Model.swift */; };
+		841822B5284FD44500930E02 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 841822B4284FD44500930E02 /* fender_stratocaster.usdz */; };
+		841822B7284FD44E00930E02 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 841822B6284FD44E00930E02 /* tv_retro.usdz */; };
 		842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 842D49FE2840058400F7BCE9 /* BookBlack.png */; };
 		842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D4A00284021AE00F7BCE9 /* Main.storyboard */; };
 		843E4C202832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C212832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C222832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		84984484283E9636006FE056 /* PropagandaLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84984483283E9636006FE056 /* PropagandaLesson.swift */; };
+		849FAF3A284FC161002CCC52 /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849FAF39284FC161002CCC52 /* RealityViewController.swift */; };
+		849FAF58284FC232002CCC52 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 849FAF57284FC232002CCC52 /* Experience.rcproject */; };
 		84CEF4DC2836B3A60087869E /* BurntBookArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */; };
 		84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF4E5283D3FB90087869E /* videoplayback.mp4 */; };
 		84CEF4E8283D44C40087869E /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4E7283D44C40087869E /* QuizController.swift */; };
@@ -70,10 +75,15 @@
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITests.swift; sourceTree = "<group>"; };
 		27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		841822B2284FCBA800930E02 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		841822B4284FD44500930E02 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
+		841822B6284FD44E00930E02 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
 		842D49FE2840058400F7BCE9 /* BookBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BookBlack.png; sourceTree = "<group>"; };
 		842D4A00284021AE00F7BCE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		843E4C1F2832BAD300103576 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		84984483283E9636006FE056 /* PropagandaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropagandaLesson.swift; sourceTree = "<group>"; };
+		849FAF39284FC161002CCC52 /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
+		849FAF57284FC232002CCC52 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		84CEF4DB2836B3A60087869E /* BurntBookArtifact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurntBookArtifact.swift; sourceTree = "<group>"; };
 		84CEF4E5283D3FB90087869E /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		84CEF4E7283D44C40087869E /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
@@ -135,6 +145,8 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
+				841822B8284FD73500930E02 /* Scenes */,
+				841822B0284FC80F00930E02 /* Models */,
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				842D49FE2840058400F7BCE9 /* BookBlack.png */,
@@ -168,9 +180,36 @@
 			path = AnneFrankARUITests;
 			sourceTree = "<group>";
 		};
+		841822B0284FC80F00930E02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				841822B4284FD44500930E02 /* fender_stratocaster.usdz */,
+				841822B6284FD44E00930E02 /* tv_retro.usdz */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		841822B8284FD73500930E02 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				849FAF57284FC232002CCC52 /* Experience.rcproject */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		849FAF38284FC068002CCC52 /* RealityKitScripts */ = {
+			isa = PBXGroup;
+			children = (
+				849FAF39284FC161002CCC52 /* RealityViewController.swift */,
+				841822B2284FCBA800930E02 /* Model.swift */,
+			);
+			path = RealityKitScripts;
+			sourceTree = "<group>";
+		};
 		84CEF4E9283D8CAB0087869E /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				849FAF38284FC068002CCC52 /* RealityKitScripts */,
 				84984483283E9636006FE056 /* PropagandaLesson.swift */,
 				27CAC75B27D296A700013FD5 /* AppDelegate.swift */,
 				92B0E6232800E009003E33C9 /* VideoView.swift */,
@@ -299,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
+				841822B5284FD44500930E02 /* fender_stratocaster.usdz in Resources */,
 				92140202283ED462003A2DFA /* FireParticle.sks in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
@@ -307,6 +347,7 @@
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
+				841822B7284FD44E00930E02 /* tv_retro.usdz in Resources */,
 				C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
 				C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */,
@@ -339,8 +380,11 @@
 				843E4C202832BAD300103576 /* MainMenu.swift in Sources */,
 				84CEF4E8283D44C40087869E /* QuizController.swift in Sources */,
 				27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */,
+				849FAF58284FC232002CCC52 /* Experience.rcproject in Sources */,
 				27396CCC280A218B0034828A /* Models.swift in Sources */,
+				841822B3284FCBA800930E02 /* Model.swift in Sources */,
 				DC1AD04827F75920004EE3BE /* BlendshapesPoster.swift in Sources */,
+				849FAF3A284FC161002CCC52 /* RealityViewController.swift in Sources */,
 				27A56C6927F7A67F00322039 /* MainViewController.swift in Sources */,
 				27CAC75C27D296A700013FD5 /* AppDelegate.swift in Sources */,
 				84CEF4DC2836B3A60087869E /* BurntBookArtifact.swift in Sources */,
@@ -518,7 +562,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAYH6J5F35;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -536,7 +580,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank.896868;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -553,7 +597,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BAYH6J5F35;
+				DEVELOPMENT_TEAM = T9MQMG8LLF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnneFrankAR/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We scan for beacons";
@@ -571,7 +615,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank.896868;
+				PRODUCT_BUNDLE_IDENTIFIER = GIMM.anneFrank.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

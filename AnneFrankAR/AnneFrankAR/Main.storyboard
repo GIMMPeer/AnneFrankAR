@@ -20,6 +20,7 @@
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2m-g3-DPN">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
@@ -30,14 +31,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-Ej-YU2">
-                                <rect key="frame" x="274" y="855" width="273" height="284.5"/>
+                                <rect key="frame" x="274" y="805" width="273" height="334.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="1vo-74-JOV" kind="show" id="wLU-oo-nMv"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLJ-Vg-iIw"/>
@@ -55,9 +53,8 @@
                         <outlet property="sceneView" destination="5Uk-iS-aUo" id="vuG-eL-o1F"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.56097560975604" y="132.71186440677968"/>
+            <point key="canvasLocation" x="264" y="-762"/>
         </scene>
         <!--Burnt Book Artifact-->
         <scene sceneID="bU5-EL-3Ui">
@@ -672,7 +669,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Timeline">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
+                                                <font key="NSFont" metaFont="system" size="36"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -696,7 +693,7 @@
                                         <fragment content="AR">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
+                                                <font key="NSFont" metaFont="system" size="36"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -732,12 +729,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JsL-O2-mYi"/>
+                        <segue destination="Kzp-eq-zDP" kind="relationship" relationship="rootViewController" id="wrw-oL-n0w"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsP-l5-gpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
+        </scene>
+        <!--Reality ViewVHC-->
+        <scene sceneID="lkF-O2-Fru">
+            <objects>
+                <hostingController modalPresentationStyle="fullScreen" id="Kzp-eq-zDP" customClass="RealityViewVHC" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gGg-PL-u8w"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3s-2g-71b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="144"/>
         </scene>
         <!--Propaganda Lesson-->
         <scene sceneID="QDJ-rC-w73">
