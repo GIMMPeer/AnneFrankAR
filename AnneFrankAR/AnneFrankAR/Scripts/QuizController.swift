@@ -89,16 +89,16 @@ class QuizController: UIViewController
         
         feedbackOverlay.isHidden = true
        
-        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [2], feedback: "This poster is a primary example of Scapegoating")
-        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [8], feedback: "This poster is a primary example of Fearmongering")
-        let posterC = Poster(image: UIImage(named:"thirdContent")!, value:[7], feedback: "This poster is a primary example of Card Tactics")
+        let posterA = Poster(image: UIImage(named: "firstContent")!, value: [2], feedback: "This poster is a primary example of Scapegoating. This happens when a group of people are blamed for wrongdoings. You can see this in the Nazi propaganda by the Jewish man, marked with a star of David, hiding behind ally nation flags, showing direct opposition to Nazi Germany and the other axis powers.")
+        let posterB = Poster(image: UIImage(named: "secondContent")!, value: [8], feedback: "This poster is a primary example of Fearmongering. This is defined as purposeful fear and alarm. The American flag belongs to a nation that is against Nazi regime and one of the three nations that pose the most threat to Nazi Germany at this time. Making the general public feel as if the Jewish people side with the Allies will make people think they are against them and their nation.")
+        let posterC = Poster(image: UIImage(named:"thirdContent")!, value:[7], feedback: "This poster is a primary example of Card Tactics.")
         
         questionArr.append(posterA)
         questionArr.append(posterB)
         questionArr.append(posterC)
         questionLabel.text = "What principle of propaganda does this poster represent?"
         questionLabel.numberOfLines = 5
-        feedbackText.numberOfLines = 5
+        feedbackText.numberOfLines = 20
         setupQuestion()
         setUpUI()
     }
@@ -144,7 +144,7 @@ class QuizController: UIViewController
             
             feedbackOverlay.isHidden = false
             feedbackText.text = questionArr[index].feedback
-            answerFeedback.text = "You are correct"
+            answerFeedback.text = "You are correct!"
             
             
             totalCorrect += 1
@@ -156,14 +156,14 @@ class QuizController: UIViewController
             print("Incorrect")
             feedbackOverlay.isHidden = false
             feedbackText.text = questionArr[index].feedback
-            answerFeedback.text = "You are incorrect"
+            answerFeedback.text = "You are incorrect."
         
         }
         
         if(index >= questionArr.count - 1)
         {
-            feedbackText.text = "You are finished. Please press continue."
-            answerFeedback.text = ""
+            feedbackText.text = "Please press continue. You got \(totalCorrect) out of 3 correct."
+            answerFeedback.text = "You are finished!"
             finished = true
         }
         else
