@@ -334,13 +334,13 @@ func centralManagerDidUpdateState(_ central: CBCentralManager) {
             
             //cbCentralManager?.connect(beacon!, options: nil)
         }
-        //print(made,one,two,three)
-        if (one >= -75 && one != -1 && two >= -75 && two != -1 && three >= -75 && three != -1 && !made){
+        print(made,one,two,three)
+        if (one >= -60 && one != -1 && two >= -60 && two != -1 && /* three >= -75 && three != -1 && */ !made){
             made=true
-            self.sceneView.showsStatistics = true
-            let scene = SCNScene(named: "art.scnassets/ship.scn")!
+            //self.sceneView.showsStatistics = true
+            //let scene = SCNScene(named: "art.scnassets/ship.scn")!
             
-            self.sceneView.scene = scene
+            //self.sceneView.scene = scene
             self.setupPortal(portalNum: 1)
         }
 

@@ -209,7 +209,7 @@
                                         <fragment content="Bandwagon">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -227,7 +227,7 @@
                                         <fragment content="Scapegoating">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="34" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="34"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -245,7 +245,7 @@
                                         <fragment content="Glittering Generally">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -263,7 +263,7 @@
                                         <fragment content="Transfer Device">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -281,7 +281,7 @@
                                         <fragment content="Testimonials">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -299,7 +299,7 @@
                                         <fragment content="“Plain folk” Device">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -317,7 +317,7 @@
                                         <fragment content="Card Tactics">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                                 <real key="NSKern" value="0.0"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                     <tabStops>
@@ -348,7 +348,7 @@
                                         <fragment content="Fear Mongering">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="33" name="IM_FELL_Great_Primer_SC"/>
+                                                <font key="NSFont" metaFont="system" size="33"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -378,7 +378,7 @@
                                                 <fragment content="Continue">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="26" name="IM_FELL_Great_Primer_SC"/>
+                                                        <font key="NSFont" metaFont="system" size="26"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -526,7 +526,7 @@
                                                                 <fragment content="Watch Video">
                                                                     <attributes>
                                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="35" name="IM_FELL_Great_Primer_SC"/>
+                                                                        <font key="NSFont" metaFont="system" size="35"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -560,7 +560,7 @@
                                                                 <fragment content="Reveal">
                                                                     <attributes>
                                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
+                                                                        <font key="NSFont" metaFont="system" size="24"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -576,7 +576,7 @@
                                                                 <fragment content="Conceal">
                                                                     <attributes>
                                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <font key="NSFont" size="24" name="IM_FELL_Great_Primer_SC"/>
+                                                                        <font key="NSFont" metaFont="system" size="24"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -743,7 +743,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Timeline">
                                             <attributes>
-                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
+                                                <font key="NSFont" metaFont="system" size="36"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -767,7 +767,7 @@
                                         <fragment content="AR">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="36" name="IM_FELL_Great_Primer_Roman"/>
+                                                <font key="NSFont" metaFont="system" size="36"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
