@@ -93,9 +93,7 @@ class MainMenu: UIViewController
         
         let timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
             //print("Timer fired!")
-            let timelineVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-            self.navigationController?.pushViewController(timelineVC, animated: false)
-            
+            let scene = SCNScene(named: "art.scnassets/Objects/bookNoAnim.dae")!
         }
         
         

@@ -20,22 +20,24 @@
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2m-g3-DPN">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-iS-aUo">
-                                <rect key="frame" x="0.0" y="0.0" width="820" height="1175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </arscnView>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-4x-YO8">
+                                <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                            </arView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-Ej-YU2">
-                                <rect key="frame" x="274" y="805" width="273" height="334.5"/>
+                                <rect key="frame" x="274" y="855" width="273" height="284.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="unwindARView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nof-f0-lkE"/>
+                                    <segue destination="CY5-LY-49n" kind="unwind" unwindAction="unwindARView:" id="KDu-G5-hRB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLJ-Vg-iIw"/>
@@ -43,18 +45,24 @@
                         <constraints>
                             <constraint firstItem="Lds-Ej-YU2" firstAttribute="top" secondItem="GLJ-Vg-iIw" secondAttribute="top" constant="781" id="CdL-mB-nQy"/>
                             <constraint firstItem="Lds-Ej-YU2" firstAttribute="leading" secondItem="GLJ-Vg-iIw" secondAttribute="leading" constant="274" id="EPv-S5-UYr"/>
+                            <constraint firstAttribute="bottom" secondItem="Gd6-4x-YO8" secondAttribute="bottom" id="Xo2-46-Zjh"/>
+                            <constraint firstItem="Gd6-4x-YO8" firstAttribute="top" secondItem="q2m-g3-DPN" secondAttribute="top" id="cB0-Bq-ytM"/>
                             <constraint firstItem="GLJ-Vg-iIw" firstAttribute="trailing" secondItem="Lds-Ej-YU2" secondAttribute="trailing" constant="273" id="kHJ-vb-EKS"/>
+                            <constraint firstItem="Gd6-4x-YO8" firstAttribute="trailing" secondItem="GLJ-Vg-iIw" secondAttribute="trailing" id="lT5-Lp-OVj"/>
+                            <constraint firstItem="Gd6-4x-YO8" firstAttribute="leading" secondItem="GLJ-Vg-iIw" secondAttribute="leading" id="m1e-7X-Y3Z"/>
                             <constraint firstItem="GLJ-Vg-iIw" firstAttribute="bottom" secondItem="Lds-Ej-YU2" secondAttribute="bottom" constant="20.5" id="xfy-6n-8yc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LnW-YH-u8c"/>
                     <connections>
+                        <outlet property="arView" destination="Gd6-4x-YO8" id="gve-5g-prp"/>
                         <outlet property="menuButton" destination="Lds-Ej-YU2" id="McH-xA-K2z"/>
-                        <outlet property="sceneView" destination="5Uk-iS-aUo" id="vuG-eL-o1F"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="CY5-LY-49n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="264" y="-762"/>
+            <point key="canvasLocation" x="796.82926829268285" y="132.71186440677968"/>
         </scene>
         <!--Burnt Book Artifact-->
         <scene sceneID="bU5-EL-3Ui">
@@ -362,11 +370,11 @@
             <objects>
                 <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" id="ftG-QF-fXg" customClass="MainViewController" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ui8-M4-pWj">
-                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoC-i8-VuC">
-                                <rect key="frame" x="70" y="190" width="680" height="800"/>
+                                <rect key="frame" x="12" y="98" width="680" height="800"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TornPage.png" translatesAutoresizingMaskIntoConstraints="NO" id="6TX-9v-1Fe">
                                         <rect key="frame" x="-47" y="-46" width="764" height="880"/>
@@ -543,14 +551,14 @@
                                 <rect key="frame" x="0.0" y="1035" width="820" height="100"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM9-Gn-xrN">
-                                        <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="100"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PaperScrap4" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-TI-i4H">
                                                 <rect key="frame" x="-1260" y="-22" width="4284" height="198"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-yd-p80">
-                                                <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="704" height="100"/>
                                                 <color key="tintColor" red="0.13333332540000001" green="0.074509806930000005" blue="0.05882352591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </stackView>
                                         </subviews>
@@ -649,7 +657,7 @@
         <!--Main Menu-->
         <scene sceneID="otX-JW-AcI">
             <objects>
-                <viewController id="1vo-74-JOV" customClass="MainMenu" customModule="AnneFrankAR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1vo-74-JOV" customClass="MainMenu" customModule="AnneFrankAR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mb3-mB-ecL">
                         <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -678,6 +686,7 @@
                                 <connections>
                                     <action selector="Timeline:" destination="CQe-fm-lZN" eventType="touchUpInside" id="v2r-fJ-DaH"/>
                                     <action selector="TimelineAnimation:" destination="1vo-74-JOV" eventType="touchUpInside" id="x0z-5Z-7gn"/>
+                                    <segue destination="ftG-QF-fXg" kind="presentation" id="Zqi-8M-oTE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ant-pP-vQ1">
@@ -729,22 +738,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Kzp-eq-zDP" kind="relationship" relationship="rootViewController" id="wrw-oL-n0w"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Z0D-iP-u7Q"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsP-l5-gpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.170731707317072" y="132.71186440677968"/>
-        </scene>
-        <!--Reality ViewVHC-->
-        <scene sceneID="lkF-O2-Fru">
-            <objects>
-                <hostingController modalPresentationStyle="fullScreen" id="Kzp-eq-zDP" customClass="RealityViewVHC" customModule="AnneFrankAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="gGg-PL-u8w"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v3s-2g-71b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="780" y="144"/>
         </scene>
         <!--Propaganda Lesson-->
         <scene sceneID="QDJ-rC-w73">
