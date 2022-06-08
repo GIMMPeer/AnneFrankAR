@@ -19,9 +19,6 @@
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
-		841822B5284FD44500930E02 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 841822B4284FD44500930E02 /* fender_stratocaster.usdz */; };
-		841822B7284FD44E00930E02 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 841822B6284FD44E00930E02 /* tv_retro.usdz */; };
-		842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 842D49FE2840058400F7BCE9 /* BookBlack.png */; };
 		842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842D4A00284021AE00F7BCE9 /* Main.storyboard */; };
 		843E4C202832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
 		843E4C212832BAD300103576 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E4C1F2832BAD300103576 /* MainMenu.swift */; };
@@ -73,9 +70,6 @@
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITests.swift; sourceTree = "<group>"; };
 		27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		841822B4284FD44500930E02 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
-		841822B6284FD44E00930E02 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
-		842D49FE2840058400F7BCE9 /* BookBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BookBlack.png; sourceTree = "<group>"; };
 		842D4A00284021AE00F7BCE9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		843E4C1F2832BAD300103576 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		84984483283E9636006FE056 /* PropagandaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropagandaLesson.swift; sourceTree = "<group>"; };
@@ -142,11 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				841822B8284FD73500930E02 /* Scenes */,
-				841822B0284FC80F00930E02 /* Models */,
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
-				842D49FE2840058400F7BCE9 /* BookBlack.png */,
 				84CEF4E5283D3FB90087869E /* videoplayback.mp4 */,
 				92140201283ED462003A2DFA /* FireParticle.sks */,
 				27CAC75D27D296A700013FD5 /* ViewController.swift */,
@@ -174,15 +166,6 @@
 				27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */,
 			);
 			path = AnneFrankARUITests;
-			sourceTree = "<group>";
-		};
-		841822B0284FC80F00930E02 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				841822B4284FD44500930E02 /* fender_stratocaster.usdz */,
-				841822B6284FD44E00930E02 /* tv_retro.usdz */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		841822B8284FD73500930E02 /* Scenes */ = {
@@ -324,16 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
-				841822B5284FD44500930E02 /* fender_stratocaster.usdz in Resources */,
 				92140202283ED462003A2DFA /* FireParticle.sks in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
-				842D49FF2840058400F7BCE9 /* BookBlack.png in Resources */,
 				C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */,
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
-				841822B7284FD44E00930E02 /* tv_retro.usdz in Resources */,
 				C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
 				C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */,
