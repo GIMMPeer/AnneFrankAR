@@ -28,6 +28,8 @@ extension GameModel {
 struct Player: Codable, Equatable, Identifiable {
     public var id: UUID
     public var name: String = ""
+    public var correctQuestions: Int = 0
+    public var totalQuestions: Int = 0
 }
 
 struct ChatMessage: Codable, Identifiable, Equatable {

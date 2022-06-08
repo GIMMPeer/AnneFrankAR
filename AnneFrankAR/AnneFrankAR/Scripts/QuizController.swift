@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import GameKit
 
 class QuizController: UIViewController
 {
@@ -26,6 +27,9 @@ class QuizController: UIViewController
     @IBOutlet weak var answerFeedback: UILabel!
     
     @IBOutlet weak var questionLabel: UILabel!
+    
+    var gM: GameModel = GameModel()
+    var me: Player = Player(id:.init(), name: GKLocalPlayer.local.alias)
     
     @IBAction func `continue`(_ sender: Any) {
         feedbackOverlay.isHidden = true
@@ -76,6 +80,8 @@ class QuizController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        me.totalQuestions = questionArr.count
+        
         feedbackOverlay.isHidden = true
        
         let posterA = Poster(image: UIImage(named: "firstContent")!, value: [1,3], feedback: "This poster is a primary example of Scapegoating")
@@ -123,7 +129,7 @@ class QuizController: UIViewController
             
             
             totalCorrect += 1
-            
+            me.correctQuestions += 1
             
         }
         else
@@ -137,7 +143,7 @@ class QuizController: UIViewController
         
         if(index >= questionArr.count - 1)
         {
-            feedbackText.text = "You are finished. Please press continue."
+            feedbackText.text = "You are finished. Please press continue.\nYour score was \(me.correctQuestions) out of \(me.totalQuestions)."
             answerFeedback.text = ""
             finished = true
         }
