@@ -110,10 +110,14 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         // Add the box anchor to the scene
         arView.scene.anchors.append(scene)
          
-        
+        // backgroundDetector will add two observers that will wait until the application enters
+        // or exits the background before calling the relevant function
+        // Change enteredBackground and exitedBackground to new functions if necessary
+        let backgroundDetector = NotificationCenter.default
+        backgroundDetector.addObserver(self, selector: #selector(enteredBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        backgroundDetector.addObserver(self, selector: #selector(exitedBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-
     //Need to convert these to Reality Kit try! load expereinces
     @objc func buttonAction(sender: UIButton!) {
         
@@ -143,8 +147,14 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    @objc func enteredBackground() {
+        print("eEÈÉÊËĒĖĘĖĒËÊÉÈEe")
+    }
     
-   
+    @objc func exitedBackground() {
+        print("EeèéêëēėęėēëêéèeE")
+    }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         //Old Scene Kit Setup
