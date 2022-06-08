@@ -18,11 +18,8 @@ class MainViewController: UIViewController {
     //Button UI references
     @IBOutlet weak var ButtonUIView: UIView!
     @IBOutlet weak var HorizonalStackButtons: UIStackView!
-    
-    //Timeline Assets within UI
     @IBOutlet var RevealButton: UIButton!
     @IBOutlet var WatchVideoButton: UIButton!
-    @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var ConsealButton: UIButton!
     
     //Content UI references
@@ -75,22 +72,18 @@ class MainViewController: UIViewController {
                 button.configuration?.image = UIImage(systemName: "rectangle")?.withRenderingMode(.alwaysOriginal)
                 button.configuration?.imagePadding = 10
                 button.configuration?.imagePlacement = .bottom
-                
                 button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+                
                 HorizonalStackButtons.alignment = .center
                 HorizonalStackButtons.distribution = .fillEqually
                 HorizonalStackButtons.spacing = 80
                 HorizonalStackButtons.addArrangedSubview(button)
                 contentDictionary[button] = contentItem
                 
-                //Timeline Buttons UI Setup
+                //UI Buttons Beautify
                 WatchVideoButton.layer.borderWidth = 2
-                WatchVideoButton.layer.borderColor = UIColor.black.cgColor
                 RevealButton.layer.borderWidth = 2
-                RevealButton.layer.borderColor = UIColor.black.cgColor
                 ConsealButton.layer.borderWidth = 2
-                ConsealButton.layer.borderColor = UIColor.black.cgColor
-                
             }
             currentTimeLine = Array(contentDictionary)[0].key
             UpdateContentPage()
