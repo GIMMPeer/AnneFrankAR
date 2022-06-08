@@ -91,7 +91,7 @@ class BurntBookArtifact: UIViewController, SCNSceneRendererDelegate
         
         setupGame()
         
-        sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
+        //sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(_:))))
         
     
         let spriteScene = SKScene()
