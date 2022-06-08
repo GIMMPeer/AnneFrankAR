@@ -68,12 +68,13 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         let menuImage = UIImage(named: "BookBlack")! as UIImage
         menuButton.setImage(menuImage, for: .normal)
         
-        /*
+        
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
-          button.setTitle("Propaganda", for: .normal)
+          button.setTitle("Book Burning", for: .normal)
           button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
 
+        /*
         let button_2 = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 50))
           button_2.backgroundColor = .blue
           button_2.setTitle("Annex", for: .normal)
@@ -83,13 +84,13 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
           button_3.backgroundColor = .red
           button_3.setTitle("Chamber", for: .normal)
           button_3.addTarget(self, action: #selector(buttonAction3), for: .touchUpInside)
-        
+        */
         
         self.view.addSubview(button)
-        self.view.addSubview(button_2)
-        self.view.addSubview(button_3)
+        //self.view.addSubview(button_2)
+        //self.view.addSubview(button_3)
         
-         */
+         
         
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
@@ -120,8 +121,8 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     
     //Need to convert these to Reality Kit try! load expereinces
     @objc func buttonAction(sender: UIButton!) {
-        
-      //setupPortal(portalNum: 1)
+        let bookArtifactScene = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BurntBookArtifact") as! BurntBookArtifact
+        self.navigationController?.pushViewController(bookArtifactScene, animated: false)
     }
     
     @objc func buttonAction2(sender: UIButton!) {
@@ -176,8 +177,6 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         print("Interruption Ended, anchors may reset")
     }
-    
-    
 }
 
 

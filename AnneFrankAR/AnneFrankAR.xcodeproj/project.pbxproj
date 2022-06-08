@@ -15,7 +15,6 @@
 		27A56C6927F7A67F00322039 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A56C6827F7A67F00322039 /* MainViewController.swift */; };
 		27CAC75C27D296A700013FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC75B27D296A700013FD5 /* AppDelegate.swift */; };
 		27CAC75E27D296A700013FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC75D27D296A700013FD5 /* ViewController.swift */; };
-		27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */; };
 		27CAC77227D296AB00013FD5 /* AnneFrankARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */; };
 		27CAC77C27D296AB00013FD5 /* AnneFrankARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77B27D296AB00013FD5 /* AnneFrankARUITests.swift */; };
 		27CAC77E27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC77D27D296AB00013FD5 /* AnneFrankARUITestsLaunchTests.swift */; };
@@ -31,6 +30,21 @@
 		921401FE283EA551003A2DFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921401FC283EA551003A2DFA /* Assets.xcassets */; };
 		92140202283ED462003A2DFA /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92140201283ED462003A2DFA /* FireParticle.sks */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
+		92E677BE28515C0B00E6EFD1 /* Bonfire.scn in Resources */ = {isa = PBXBuildFile; fileRef = 92E677BD28515C0B00E6EFD1 /* Bonfire.scn */; };
+		92E677CE28515C4E00E6EFD1 /* Thirteen Reasons Why burnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677BF28515C4C00E6EFD1 /* Thirteen Reasons Why burnt.png */; };
+		92E677CF28515C4E00E6EFD1 /* The Absolutely True Diary of a Part-Time Indian burnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C028515C4C00E6EFD1 /* The Absolutely True Diary of a Part-Time Indian burnt.png */; };
+		92E677D028515C4E00E6EFD1 /* PaperbackBurnedBook.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C128515C4C00E6EFD1 /* PaperbackBurnedBook.png */; };
+		92E677D128515C4E00E6EFD1 /* The Handmaid's Tale bunt.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C228515C4C00E6EFD1 /* The Handmaid's Tale bunt.png */; };
+		92E677D228515C4E00E6EFD1 /* ThePictureOfDG.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C328515C4C00E6EFD1 /* ThePictureOfDG.png */; };
+		92E677D328515C4E00E6EFD1 /* Fire_Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C428515C4C00E6EFD1 /* Fire_Particle.png */; };
+		92E677D428515C4E00E6EFD1 /* BookAnimTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C528515C4D00E6EFD1 /* BookAnimTexture.png */; };
+		92E677D528515C4E00E6EFD1 /* BurnedBook.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C628515C4D00E6EFD1 /* BurnedBook.png */; };
+		92E677D628515C4E00E6EFD1 /* Smoke_Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C728515C4D00E6EFD1 /* Smoke_Particle.png */; };
+		92E677D728515C4E00E6EFD1 /* OpenBurnedBook.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C828515C4D00E6EFD1 /* OpenBurnedBook.png */; };
+		92E677D828515C4E00E6EFD1 /* BackgroundTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677C928515C4D00E6EFD1 /* BackgroundTexture.png */; };
+		92E677DA28515C4E00E6EFD1 /* The Kite Runner burnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677CB28515C4D00E6EFD1 /* The Kite Runner burnt.png */; };
+		92E677DB28515C4E00E6EFD1 /* BurntBookOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677CC28515C4E00E6EFD1 /* BurntBookOpen.png */; };
+		92E677DC28515C4E00E6EFD1 /* AllQuiet.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E677CD28515C4E00E6EFD1 /* AllQuiet.png */; };
 		C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */; };
 		C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */; };
 		C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */; };
@@ -64,7 +78,6 @@
 		27CAC75827D296A700013FD5 /* AnneFrankAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnneFrankAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC75B27D296A700013FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27CAC75D27D296A700013FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		27CAC76727D296AB00013FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27CAC76D27D296AB00013FD5 /* AnneFrankARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CAC77127D296AB00013FD5 /* AnneFrankARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnneFrankARTests.swift; sourceTree = "<group>"; };
 		27CAC77727D296AB00013FD5 /* AnneFrankARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnneFrankARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +92,31 @@
 		84CEF4E7283D44C40087869E /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		921401FC283EA551003A2DFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92140201283ED462003A2DFA /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = art.scnassets/BookBurning/FireParticle.sks; sourceTree = "<group>"; };
+		9260BB0A285158D100DD58C4 /* PaperScrap4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap4.png; sourceTree = "<group>"; };
+		9260BB0B285158D100DD58C4 /* TornPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TornPage.png; sourceTree = "<group>"; };
+		9260BB0C285158D100DD58C4 /* PaperScrap3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap3.png; sourceTree = "<group>"; };
+		9260BB0D285158D100DD58C4 /* SmallTornPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallTornPage.png; sourceTree = "<group>"; };
+		9260BB0E285158D100DD58C4 /* Book Icon Drawn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book Icon Drawn.png"; sourceTree = "<group>"; };
+		9260BB0F285158D100DD58C4 /* ArrowDrawn-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowDrawn-2.png"; sourceTree = "<group>"; };
+		9260BB10285158D200DD58C4 /* ArrowDrawnRight-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowDrawnRight-2.png"; sourceTree = "<group>"; };
+		9260BB11285158D200DD58C4 /* PaperScrap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap2.png; sourceTree = "<group>"; };
+		9260BB192851596A00DD58C4 /* BonfireBig.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = BonfireBig.scn; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		92E677BD28515C0B00E6EFD1 /* Bonfire.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bonfire.scn; sourceTree = "<group>"; };
+		92E677BF28515C4C00E6EFD1 /* Thirteen Reasons Why burnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Thirteen Reasons Why burnt.png"; path = "AnneFrankAR/art.scnassets/BookBurning/Thirteen Reasons Why burnt.png"; sourceTree = SOURCE_ROOT; };
+		92E677C028515C4C00E6EFD1 /* The Absolutely True Diary of a Part-Time Indian burnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "The Absolutely True Diary of a Part-Time Indian burnt.png"; path = "AnneFrankAR/art.scnassets/BookBurning/The Absolutely True Diary of a Part-Time Indian burnt.png"; sourceTree = SOURCE_ROOT; };
+		92E677C128515C4C00E6EFD1 /* PaperbackBurnedBook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PaperbackBurnedBook.png; path = AnneFrankAR/art.scnassets/BookBurning/PaperbackBurnedBook.png; sourceTree = SOURCE_ROOT; };
+		92E677C228515C4C00E6EFD1 /* The Handmaid's Tale bunt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "The Handmaid's Tale bunt.png"; path = "AnneFrankAR/art.scnassets/BookBurning/The Handmaid's Tale bunt.png"; sourceTree = SOURCE_ROOT; };
+		92E677C328515C4C00E6EFD1 /* ThePictureOfDG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThePictureOfDG.png; path = AnneFrankAR/art.scnassets/BookBurning/ThePictureOfDG.png; sourceTree = SOURCE_ROOT; };
+		92E677C428515C4C00E6EFD1 /* Fire_Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fire_Particle.png; path = AnneFrankAR/art.scnassets/BookBurning/Fire_Particle.png; sourceTree = SOURCE_ROOT; };
+		92E677C528515C4D00E6EFD1 /* BookAnimTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BookAnimTexture.png; path = AnneFrankAR/art.scnassets/BookBurning/BookAnimTexture.png; sourceTree = SOURCE_ROOT; };
+		92E677C628515C4D00E6EFD1 /* BurnedBook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BurnedBook.png; path = AnneFrankAR/art.scnassets/BookBurning/BurnedBook.png; sourceTree = SOURCE_ROOT; };
+		92E677C728515C4D00E6EFD1 /* Smoke_Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Smoke_Particle.png; path = AnneFrankAR/art.scnassets/BookBurning/Smoke_Particle.png; sourceTree = SOURCE_ROOT; };
+		92E677C828515C4D00E6EFD1 /* OpenBurnedBook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenBurnedBook.png; path = AnneFrankAR/art.scnassets/BookBurning/OpenBurnedBook.png; sourceTree = SOURCE_ROOT; };
+		92E677C928515C4D00E6EFD1 /* BackgroundTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackgroundTexture.png; path = AnneFrankAR/art.scnassets/BookBurning/BackgroundTexture.png; sourceTree = SOURCE_ROOT; };
+		92E677CB28515C4D00E6EFD1 /* The Kite Runner burnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "The Kite Runner burnt.png"; path = "AnneFrankAR/art.scnassets/BookBurning/The Kite Runner burnt.png"; sourceTree = SOURCE_ROOT; };
+		92E677CC28515C4E00E6EFD1 /* BurntBookOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BurntBookOpen.png; path = AnneFrankAR/art.scnassets/BookBurning/BurntBookOpen.png; sourceTree = SOURCE_ROOT; };
+		92E677CD28515C4E00E6EFD1 /* AllQuiet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AllQuiet.png; path = AnneFrankAR/art.scnassets/BookBurning/AllQuiet.png; sourceTree = SOURCE_ROOT; };
 		C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimerSC-Regular.ttf"; sourceTree = "<group>"; };
 		C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimer-Regular.ttf"; sourceTree = "<group>"; };
 		C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimer-Italic.ttf"; sourceTree = "<group>"; };
@@ -135,6 +172,8 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
+				9260BB132851591B00DD58C4 /* BookBurningActivity */,
+				9260BB092851589100DD58C4 /* UI */,
 				841822B8284FD73500930E02 /* Scenes */,
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
@@ -144,8 +183,6 @@
 				27CAC75D27D296A700013FD5 /* ViewController.swift */,
 				27A56C6827F7A67F00322039 /* MainViewController.swift */,
 				843E4C1F2832BAD300103576 /* MainMenu.swift */,
-				842D4A00284021AE00F7BCE9 /* Main.storyboard */,
-				27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */,
 				27396CC6280A12820034828A /* data.json */,
 			);
 			path = AnneFrankAR;
@@ -190,6 +227,69 @@
 				921401FC283EA551003A2DFA /* Assets.xcassets */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		9260BB092851589100DD58C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9260BB12285158D700DD58C4 /* Textures */,
+				842D4A00284021AE00F7BCE9 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9260BB12285158D700DD58C4 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				9260BB0F285158D100DD58C4 /* ArrowDrawn-2.png */,
+				9260BB10285158D200DD58C4 /* ArrowDrawnRight-2.png */,
+				9260BB0E285158D100DD58C4 /* Book Icon Drawn.png */,
+				9260BB11285158D200DD58C4 /* PaperScrap2.png */,
+				9260BB0C285158D100DD58C4 /* PaperScrap3.png */,
+				9260BB0A285158D100DD58C4 /* PaperScrap4.png */,
+				9260BB0D285158D100DD58C4 /* SmallTornPage.png */,
+				9260BB0B285158D100DD58C4 /* TornPage.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		9260BB132851591B00DD58C4 /* BookBurningActivity */ = {
+			isa = PBXGroup;
+			children = (
+				9260BB192851596A00DD58C4 /* BonfireBig.scn */,
+				9260BB162851593900DD58C4 /* Textures */,
+				9260BB152851593500DD58C4 /* Models */,
+				92E677BD28515C0B00E6EFD1 /* Bonfire.scn */,
+			);
+			path = BookBurningActivity;
+			sourceTree = "<group>";
+		};
+		9260BB152851593500DD58C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9260BB162851593900DD58C4 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				92E677CD28515C4E00E6EFD1 /* AllQuiet.png */,
+				92E677C928515C4D00E6EFD1 /* BackgroundTexture.png */,
+				92E677C528515C4D00E6EFD1 /* BookAnimTexture.png */,
+				92E677C628515C4D00E6EFD1 /* BurnedBook.png */,
+				92E677CC28515C4E00E6EFD1 /* BurntBookOpen.png */,
+				92E677C428515C4C00E6EFD1 /* Fire_Particle.png */,
+				92E677C828515C4D00E6EFD1 /* OpenBurnedBook.png */,
+				92E677C128515C4C00E6EFD1 /* PaperbackBurnedBook.png */,
+				92E677C728515C4D00E6EFD1 /* Smoke_Particle.png */,
+				92E677C028515C4C00E6EFD1 /* The Absolutely True Diary of a Part-Time Indian burnt.png */,
+				92E677C228515C4C00E6EFD1 /* The Handmaid's Tale bunt.png */,
+				92E677CB28515C4D00E6EFD1 /* The Kite Runner burnt.png */,
+				92E677C328515C4C00E6EFD1 /* ThePictureOfDG.png */,
+				92E677BF28515C4C00E6EFD1 /* Thirteen Reasons Why burnt.png */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 		C96862D32846C64100FFBD0B /* Font */ = {
@@ -306,16 +406,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CAC76827D296AB00013FD5 /* LaunchScreen.storyboard in Resources */,
 				92140202283ED462003A2DFA /* FireParticle.sks in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
+				92E677D328515C4E00E6EFD1 /* Fire_Particle.png in Resources */,
+				92E677D228515C4E00E6EFD1 /* ThePictureOfDG.png in Resources */,
+				92E677DB28515C4E00E6EFD1 /* BurntBookOpen.png in Resources */,
+				92E677CE28515C4E00E6EFD1 /* Thirteen Reasons Why burnt.png in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
+				92E677D028515C4E00E6EFD1 /* PaperbackBurnedBook.png in Resources */,
+				92E677D628515C4E00E6EFD1 /* Smoke_Particle.png in Resources */,
+				92E677DC28515C4E00E6EFD1 /* AllQuiet.png in Resources */,
+				92E677D428515C4E00E6EFD1 /* BookAnimTexture.png in Resources */,
 				C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */,
+				92E677CF28515C4E00E6EFD1 /* The Absolutely True Diary of a Part-Time Indian burnt.png in Resources */,
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */,
+				92E677BE28515C0B00E6EFD1 /* Bonfire.scn in Resources */,
+				92E677DA28515C4E00E6EFD1 /* The Kite Runner burnt.png in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
 				C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */,
+				92E677D728515C4E00E6EFD1 /* OpenBurnedBook.png in Resources */,
+				92E677D828515C4E00E6EFD1 /* BackgroundTexture.png in Resources */,
+				92E677D528515C4E00E6EFD1 /* BurnedBook.png in Resources */,
 				274BC4AD2825BBC7006E533D /* Assets.xcassets in Resources */,
+				92E677D128515C4E00E6EFD1 /* The Handmaid's Tale bunt.png in Resources */,
 				C96862D92846C68F00FFBD0B /* IMFellGreatPrimerSC-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,17 +503,6 @@
 			targetProxy = 27CAC77827D296AB00013FD5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		27CAC76627D296AB00013FD5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27CAC76727D296AB00013FD5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		27CAC77F27D296AB00013FD5 /* Debug */ = {
