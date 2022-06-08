@@ -79,6 +79,7 @@
 		84CEF4E7283D44C40087869E /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		921401FC283EA551003A2DFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92140201283ED462003A2DFA /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = art.scnassets/BookBurning/FireParticle.sks; sourceTree = "<group>"; };
+		92447D29284FDC2F003B4946 /* PropagandaScene.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = PropagandaScene.rcproject; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimerSC-Regular.ttf"; sourceTree = "<group>"; };
 		C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimer-Regular.ttf"; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				849FAF57284FC232002CCC52 /* Experience.rcproject */,
+				92447D29284FDC2F003B4946 /* PropagandaScene.rcproject */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
