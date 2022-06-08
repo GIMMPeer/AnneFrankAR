@@ -101,7 +101,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         
         arView.environment.sceneUnderstanding.options = .occlusion
         
-
+        
         let scene = try! Experience.loadBox()
         
         // Add the box anchor to the scene
