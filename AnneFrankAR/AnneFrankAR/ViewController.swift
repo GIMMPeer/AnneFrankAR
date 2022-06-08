@@ -11,6 +11,20 @@ import SceneKit
 import ARKit
 import CoreBluetooth
 
+/* Old Variables
+var tvPlayer:AVPlayer!
+var made = false;
+private var cbCentralManager: CBCentralManager!
+private var beacon: CBPeripheral!
+var one = -1
+var two = -1
+var three = -1
+var four = 0
+var nodeName:String?
+
+var camPos:SCNVector3?
+var camRot:SCNVector3?
+ */
 
 
 
@@ -20,30 +34,36 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     @IBOutlet var arView: ARView!
     //Connection to the AR Scene View
     //@IBOutlet weak var sceneView: ARSCNView!
-    
-    
-    
     @IBOutlet weak var menuButton: UIButton!
     
-    /* Old Variables
-    var tvPlayer:AVPlayer!
-    var made = false;
-    private var cbCentralManager: CBCentralManager!
-    private var beacon: CBPeripheral!
-    var one = -1
-    var two = -1
-    var three = -1
-    var four = 0
-    var nodeName:String?
-    
-    var camPos:SCNVector3?
-    var camRot:SCNVector3?
-     */
     @IBAction func unwindARView(_ sender:UIStoryboardSegue){
         let menu = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainMenu") as! MainMenu
         self.navigationController?.pushViewController(menu, animated: false)
     }
     
+    var worldMapURL: URL = {
+        do {
+            return try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("worldMapURL")
+        } catch {
+            fatalError("Error getting world map URL from document directory.")
+        }
+    }()
+    
+    var defaultConfiguration: ARWorldTrackingConfiguration {
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.environmentTexturing = .automatic
+        if
+            ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
+        {
+            configuration.sceneReconstruction = .mesh
+        }
+      
+        return configuration
+    }
+    
+    var anchorPos = [SIMD3<Float>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,54 +110,44 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         self.view.addSubview(button_3)
         
          */
-        
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = [.horizontal, .vertical]
-        config.environmentTexturing = .automatic
-        
-        if
-            ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
-        {
-            config.sceneReconstruction = .mesh
-        }
-        arView.session.run(config)
-        
+
         arView.environment.sceneUnderstanding.options = .occlusion
-        
+
+        arView.session.run(defaultConfiguration)
+
         
         let scene = try! Experience.loadBox()
+        scene.name = "Propaganda Lesson"
         
+        //let sceneEntity:entityScenes = scene
         // Add the box anchor to the scene
         arView.scene.anchors.append(scene)
-         
+        //print(arView.scene.anchors)
+        
+        let scenePos = scene.position
+        print("SCENE POS")
+        print(scenePos)
+        anchorPos.append(scenePos)
+        
+        
+        UIApplication.shared.isIdleTimerDisabled = true
         
     }
     
 
-    //Need to convert these to Reality Kit try! load expereinces
-    @objc func buttonAction(sender: UIButton!) {
-        
-      //setupPortal(portalNum: 1)
-    }
-    
-    @objc func buttonAction2(sender: UIButton!) {
-      //setupAnnex()
-    }
-    @objc func buttonAction3(sender: UIButton!)
-    {
-        //setupChamber()
-    }
   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //Reality Kit Setup
-        
+
+        loadWorldMapData()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //arView.session.pause()
+        saveWorldMapData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -154,8 +164,12 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         //print(position.x, position.y, position.z)
         //camPos = SCNVector3(position.x, position.y, position.z)
         //camRot = SCNVector3(rotation.x, rotation.y, rotation.z+1.5)
-    
+        
+       
+        
     }
+    
+    
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
@@ -168,6 +182,76 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
     }
     
     
+
+    // MARK: - Persistence: Saving and Loading
+    
+    func saveWorldMapData() {
+            arView.session.getCurrentWorldMap { (worldMap, error) in
+                guard let worldMap = worldMap else {
+                    return print("Error getting current world map.")
+                }
+                
+                do {
+                    try self.archive(worldMap: worldMap)
+                    DispatchQueue.main.async {
+                        print("World map is saved.")
+                    }
+                } catch {
+                    fatalError("Error saving world map: \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        func loadWorldMapData() {
+            guard let worldMapData = retrieveWorldMapData(from: worldMapURL),
+                let worldMap = unarchive(worldMapData: worldMapData) else { return }
+            resetTrackingConfiguration(with: worldMap)
+        }
+        
+        func resetTrackingConfiguration(with worldMap: ARWorldMap? = nil) {
+            
+    
+            let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
+            if let worldMap = worldMap {
+                defaultConfiguration.initialWorldMap = worldMap
+            
+            } else {
+                print("No World Map")
+            }
+            
+            arView.debugOptions = [.showFeaturePoints]
+            arView.session.run(defaultConfiguration, options: options)
+            print("Loaded Map")
+            
+           
+            
+        }
+        
+       
+        
+        func archive(worldMap: ARWorldMap) throws {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: worldMap, requiringSecureCoding: true)
+            try data.write(to: self.worldMapURL, options: [.atomic])
+        }
+        
+        func retrieveWorldMapData(from url: URL) -> Data? {
+            do {
+                return try Data(contentsOf: self.worldMapURL)
+            } catch {
+                print("Error retrieving world map data.")
+                return nil
+            }
+        }
+        
+        func unarchive(worldMapData data: Data) -> ARWorldMap? {
+            let unarchievedObject = try? NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data)
+            let worldMap = unarchievedObject
+            return worldMap
+        }
+    
+    
+
+  
 }
 
 
@@ -408,3 +492,4 @@ func setupChamber()
       */
  
  */
+
