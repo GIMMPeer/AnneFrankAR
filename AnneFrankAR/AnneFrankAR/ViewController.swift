@@ -68,6 +68,7 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         let menuImage = UIImage(named: "BookBlack")! as UIImage
         menuButton.setImage(menuImage, for: .normal)
         
+        /*
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
           button.backgroundColor = .green
           button.setTitle("Propaganda", for: .normal)
@@ -87,6 +88,8 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         self.view.addSubview(button)
         self.view.addSubview(button_2)
         self.view.addSubview(button_3)
+        
+         */
         
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
