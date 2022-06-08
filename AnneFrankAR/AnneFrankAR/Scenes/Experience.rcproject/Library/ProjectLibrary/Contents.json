@@ -53,5 +53,50 @@
     "libraryIdentifier" : "14d6a32df3b40a73d280193cbfd13e2b",
     "format" : "model",
     "displayName" : "BurnedBook.usdz"
+  },
+  {
+    "libraryIdentifier" : "c09b22937a544a158480adf5ae7a20db",
+    "format" : "model",
+    "displayName" : "Annex.usdz"
+  },
+  {
+    "libraryIdentifier" : "b304389b9e3045c56ed2a6fce4870979",
+    "format" : "model",
+    "displayName" : "crumpled  1.usdz"
+  },
+  {
+    "libraryIdentifier" : "a67c408290b11f2ef976f64ab213dfe9",
+    "format" : "model",
+    "displayName" : "crumpled  4.usdz"
+  },
+  {
+    "libraryIdentifier" : "23f9bf7014ddf628e939be41344dddd1",
+    "format" : "model",
+    "displayName" : "crumpled 0.usdz"
+  },
+  {
+    "libraryIdentifier" : "87513107854eb3fb0ba321e88b837dbd",
+    "format" : "model",
+    "displayName" : "uncrumpled .usdz"
+  },
+  {
+    "libraryIdentifier" : "f10063cfe9186764392beee80ce88749",
+    "format" : "model",
+    "displayName" : "crumpled  2.usdz"
+  },
+  {
+    "libraryIdentifier" : "9db289f7ab3be9bba74ec7f4cc5c92d7",
+    "format" : "model",
+    "displayName" : "crumpled  5.usdz"
+  },
+  {
+    "libraryIdentifier" : "7a203b4f5a39cb5d5192248cdc1d0493",
+    "format" : "model",
+    "displayName" : "crumpled  3.usdz"
+  },
+  {
+    "libraryIdentifier" : "82b1348f0a6d31c86ee43407b6599dec",
+    "format" : "model",
+    "displayName" : "crumpled  1.usdz"
   }
 ]
