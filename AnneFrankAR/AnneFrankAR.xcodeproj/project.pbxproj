@@ -36,6 +36,7 @@
 		EE04033C2847CCD80089C72C /* MultiplayerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */; };
 		EE1F23452846851100483F38 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F23442846851100483F38 /* GameKit.framework */; };
 		EE1F23482846855F00483F38 /* MultiplayerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F23472846855F00483F38 /* MultiplayerSetup.swift */; };
+		EE3B3039285118D70043F5A9 /* LidarSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3B3038285118D70043F5A9 /* LidarSerializer.swift */; };
 		EE89C73F284FB52700CC3F71 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89C73E284FB52700CC3F71 /* ViewDidLoadModifier.swift */; };
 		EE89C741284FBB5700CC3F71 /* GameKitModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89C740284FBB5700CC3F71 /* GameKitModifier.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerTestView.swift; sourceTree = "<group>"; };
 		EE1F23442846851100483F38 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		EE1F23472846855F00483F38 /* MultiplayerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerSetup.swift; sourceTree = "<group>"; };
+		EE3B3038285118D70043F5A9 /* LidarSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidarSerializer.swift; sourceTree = "<group>"; };
 		EE89C73E284FB52700CC3F71 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		EE89C740284FBB5700CC3F71 /* GameKitModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKitModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 				EE04033B2847CCD80089C72C /* MultiplayerTestView.swift */,
 				EE89C73E284FB52700CC3F71 /* ViewDidLoadModifier.swift */,
 				EE89C740284FBB5700CC3F71 /* GameKitModifier.swift */,
+				EE3B3038285118D70043F5A9 /* LidarSerializer.swift */,
 			);
 			path = AnneFrankAR;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			files = (
 				EE89C73F284FB52700CC3F71 /* ViewDidLoadModifier.swift in Sources */,
 				EE89C741284FBB5700CC3F71 /* GameKitModifier.swift in Sources */,
+				EE3B3039285118D70043F5A9 /* LidarSerializer.swift in Sources */,
 				92B0E6242800E009003E33C9 /* VideoView.swift in Sources */,
 				84984484283E9636006FE056 /* PropagandaLesson.swift in Sources */,
 				843E4C202832BAD300103576 /* MainMenu.swift in Sources */,
