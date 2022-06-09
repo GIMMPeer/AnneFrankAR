@@ -110,6 +110,25 @@ class ViewController: UIViewController, CBPeripheralDelegate, ARSessionDelegate 
         // Add the box anchor to the scene
         arView.scene.anchors.append(scene)
          
+        let url = Bundle.main.url(forResource: "videoplayback",
+                                withExtension: "mp4")
+        let asset = AVAsset(url: url!)
+        let playerItem = AVPlayerItem(asset: asset)
+        let avPlayer = AVPlayer()
+            
+        // ENTITY
+        let mesh = MeshResource.generateSphere(radius: 1)
+        let material = VideoMaterial(avPlayer: avPlayer)
+        let entity = ModelEntity(mesh: mesh, materials: [material])
+            
+        // ANCHOR
+        let anchor = AnchorEntity(world: [0,0,-3])
+        anchor.addChild(entity)
+        arView.scene.anchors.append(anchor)
+        
+        // PLAYBACK
+        avPlayer.replaceCurrentItem(with: playerItem)
+        avPlayer.play()
         
     }
     
