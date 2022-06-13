@@ -4,17 +4,14 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2022-06-03T16:40:10Z</created>
-  <modified>2022-06-03T16:40:10Z</modified>
+  <created>2022-06-09T17:31:03Z</created>
+  <modified>2022-06-09T17:31:03Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
  <library_images>
-  <image id="BookTextAnimFirstTry_png_001" name="BookTextAnimFirstTry_png_001">
-   <init_from>BookTextAnimFirstTry.png.001.png</init_from>
-  </image>
   <image id="image1">
-   <init_from>BookAnimTexture.png</init_from>
+   <init_from>../Textures/BookAnimTexture.png</init_from>
   </image>
  </library_images>
  <library_materials>
@@ -37,14 +34,14 @@
  <library_effects>
   <effect id="effect_Material_001-material">
    <profile_COMMON>
-    <newparam sid="ID2_BookTextAnimFirstTry_png_001_surface">
+    <newparam sid="ID2_image1_surface">
      <surface type="2D">
-      <init_from>BookTextAnimFirstTry_png_001</init_from>
+      <init_from>image1</init_from>
      </surface>
     </newparam>
-    <newparam sid="ID2_BookTextAnimFirstTry_png_001">
+    <newparam sid="ID2_image1">
      <sampler2D>
-      <source>ID2_BookTextAnimFirstTry_png_001_surface</source>
+      <source>ID2_image1_surface</source>
       <wrap_s>WRAP</wrap_s>
       <wrap_t>WRAP</wrap_t>
       <minfilter>LINEAR</minfilter>
@@ -55,7 +52,7 @@
     <technique sid="common">
      <lambert>
       <diffuse>
-       <texture texture="ID2_BookTextAnimFirstTry_png_001" texcoord="CHANNEL2"/>
+       <texture texture="ID2_image1" texcoord="CHANNEL2"/>
       </diffuse>
       <transparency>
        <float>1</float>
@@ -113,14 +110,14 @@
   </effect>
   <effect id="effect_Material_004-material">
    <profile_COMMON>
-    <newparam sid="ID4_BookTextAnimFirstTry_png_001_surface">
+    <newparam sid="ID4_image1_surface">
      <surface type="2D">
-      <init_from>BookTextAnimFirstTry_png_001</init_from>
+      <init_from>image1</init_from>
      </surface>
     </newparam>
-    <newparam sid="ID4_BookTextAnimFirstTry_png_001">
+    <newparam sid="ID4_image1">
      <sampler2D>
-      <source>ID4_BookTextAnimFirstTry_png_001_surface</source>
+      <source>ID4_image1_surface</source>
       <wrap_s>WRAP</wrap_s>
       <wrap_t>WRAP</wrap_t>
       <minfilter>LINEAR</minfilter>
@@ -131,7 +128,7 @@
     <technique sid="common">
      <lambert>
       <diffuse>
-       <texture texture="ID4_BookTextAnimFirstTry_png_001" texcoord="CHANNEL2"/>
+       <texture texture="ID4_image1" texcoord="CHANNEL2"/>
       </diffuse>
       <transparency>
        <float>1</float>
@@ -151,14 +148,14 @@
   </effect>
   <effect id="effect_Material_003-material">
    <profile_COMMON>
-    <newparam sid="ID5_BookTextAnimFirstTry_png_001_surface">
+    <newparam sid="ID5_image1_surface">
      <surface type="2D">
-      <init_from>BookTextAnimFirstTry_png_001</init_from>
+      <init_from>image1</init_from>
      </surface>
     </newparam>
-    <newparam sid="ID5_BookTextAnimFirstTry_png_001">
+    <newparam sid="ID5_image1">
      <sampler2D>
-      <source>ID5_BookTextAnimFirstTry_png_001_surface</source>
+      <source>ID5_image1_surface</source>
       <wrap_s>WRAP</wrap_s>
       <wrap_t>WRAP</wrap_t>
       <minfilter>LINEAR</minfilter>
@@ -169,7 +166,7 @@
     <technique sid="common">
      <lambert>
       <diffuse>
-       <texture texture="ID5_BookTextAnimFirstTry_png_001" texcoord="CHANNEL2"/>
+       <texture texture="ID5_image1" texcoord="CHANNEL2"/>
       </diffuse>
       <transparency>
        <float>1</float>
@@ -189,14 +186,14 @@
   </effect>
   <effect id="effect_Material_005-material">
    <profile_COMMON>
-    <newparam sid="ID6_BookTextAnimFirstTry_png_001_surface">
+    <newparam sid="ID6_image1_surface">
      <surface type="2D">
-      <init_from>BookTextAnimFirstTry_png_001</init_from>
+      <init_from>image1</init_from>
      </surface>
     </newparam>
-    <newparam sid="ID6_BookTextAnimFirstTry_png_001">
+    <newparam sid="ID6_image1">
      <sampler2D>
-      <source>ID6_BookTextAnimFirstTry_png_001_surface</source>
+      <source>ID6_image1_surface</source>
       <wrap_s>WRAP</wrap_s>
       <wrap_t>WRAP</wrap_t>
       <minfilter>LINEAR</minfilter>
@@ -207,7 +204,7 @@
     <technique sid="common">
      <lambert>
       <diffuse>
-       <texture texture="ID6_BookTextAnimFirstTry_png_001" texcoord="CHANNEL2"/>
+       <texture texture="ID6_image1" texcoord="CHANNEL2"/>
       </diffuse>
       <transparency>
        <float>1</float>

@@ -28,9 +28,8 @@
 		84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84CEF4E5283D3FB90087869E /* videoplayback.mp4 */; };
 		84CEF4E8283D44C40087869E /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEF4E7283D44C40087869E /* QuizController.swift */; };
 		921401FE283EA551003A2DFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921401FC283EA551003A2DFA /* Assets.xcassets */; };
-		92140202283ED462003A2DFA /* FireParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 92140201283ED462003A2DFA /* FireParticle.sks */; };
 		92B0E6242800E009003E33C9 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0E6232800E009003E33C9 /* VideoView.swift */; };
-		92E677BE28515C0B00E6EFD1 /* Bonfire.scn in Resources */ = {isa = PBXBuildFile; fileRef = 92E677BD28515C0B00E6EFD1 /* Bonfire.scn */; };
+		92B268592852656700EED52E /* BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B268582852656700EED52E /* BookBlack.png */; };
 		92F4ACB6285248AD00D6E1A0 /* BookBurning.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F4ACB5285248AD00D6E1A0 /* BookBurning.scnassets */; };
 		C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */; };
 		C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */; };
@@ -78,7 +77,6 @@
 		84CEF4E5283D3FB90087869E /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		84CEF4E7283D44C40087869E /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		921401FC283EA551003A2DFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		92140201283ED462003A2DFA /* FireParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FireParticle.sks; path = art.scnassets/BookBurning/FireParticle.sks; sourceTree = "<group>"; };
 		9260BB0A285158D100DD58C4 /* PaperScrap4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap4.png; sourceTree = "<group>"; };
 		9260BB0B285158D100DD58C4 /* TornPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TornPage.png; sourceTree = "<group>"; };
 		9260BB0C285158D100DD58C4 /* PaperScrap3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap3.png; sourceTree = "<group>"; };
@@ -87,10 +85,9 @@
 		9260BB0F285158D100DD58C4 /* ArrowDrawn-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowDrawn-2.png"; sourceTree = "<group>"; };
 		9260BB10285158D200DD58C4 /* ArrowDrawnRight-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowDrawnRight-2.png"; sourceTree = "<group>"; };
 		9260BB11285158D200DD58C4 /* PaperScrap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperScrap2.png; sourceTree = "<group>"; };
-		9260BB192851596A00DD58C4 /* BonfireBig.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = BonfireBig.scn; sourceTree = "<group>"; };
 		92B0E6232800E009003E33C9 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
-		92E677BD28515C0B00E6EFD1 /* Bonfire.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bonfire.scn; sourceTree = "<group>"; };
-		92F4ACB5285248AD00D6E1A0 /* BookBurning.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = BookBurning.scnassets; sourceTree = "<group>"; };
+		92B268582852656700EED52E /* BookBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BookBlack.png; path = ../../../../../../../.Trash/BookBlack.png; sourceTree = "<group>"; };
+		92F4ACB5285248AD00D6E1A0 /* BookBurning.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = BookBurning.scnassets; path = BookBurningActivity/BookBurning.scnassets; sourceTree = "<group>"; };
 		C96862D42846C65300FFBD0B /* IMFellGreatPrimerSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimerSC-Regular.ttf"; sourceTree = "<group>"; };
 		C96862D52846C67000FFBD0B /* IMFellGreatPrimer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimer-Regular.ttf"; sourceTree = "<group>"; };
 		C96862D62846C67B00FFBD0B /* IMFellGreatPrimer-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IMFellGreatPrimer-Italic.ttf"; sourceTree = "<group>"; };
@@ -146,14 +143,13 @@
 		27CAC75A27D296A700013FD5 /* AnneFrankAR */ = {
 			isa = PBXGroup;
 			children = (
-				9260BB132851591B00DD58C4 /* BookBurningActivity */,
+				92F4ACB5285248AD00D6E1A0 /* BookBurning.scnassets */,
 				9260BB092851589100DD58C4 /* UI */,
 				841822B8284FD73500930E02 /* Scenes */,
 				84CEF4E9283D8CAB0087869E /* Scripts */,
 				274BC4AC2825BBC7006E533D /* Assets.xcassets */,
 				219428FC27E8EC16009E5250 /* art.scnassets */,
 				84CEF4E5283D3FB90087869E /* videoplayback.mp4 */,
-				92140201283ED462003A2DFA /* FireParticle.sks */,
 				27CAC75D27D296A700013FD5 /* ViewController.swift */,
 				27A56C6827F7A67F00322039 /* MainViewController.swift */,
 				843E4C1F2832BAD300103576 /* MainMenu.swift */,
@@ -215,6 +211,7 @@
 		9260BB12285158D700DD58C4 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				92B268582852656700EED52E /* BookBlack.png */,
 				9260BB0F285158D100DD58C4 /* ArrowDrawn-2.png */,
 				9260BB10285158D200DD58C4 /* ArrowDrawnRight-2.png */,
 				9260BB0E285158D100DD58C4 /* Book Icon Drawn.png */,
@@ -225,16 +222,6 @@
 				9260BB0B285158D100DD58C4 /* TornPage.png */,
 			);
 			path = Textures;
-			sourceTree = "<group>";
-		};
-		9260BB132851591B00DD58C4 /* BookBurningActivity */ = {
-			isa = PBXGroup;
-			children = (
-				9260BB192851596A00DD58C4 /* BonfireBig.scn */,
-				92E677BD28515C0B00E6EFD1 /* Bonfire.scn */,
-				92F4ACB5285248AD00D6E1A0 /* BookBurning.scnassets */,
-			);
-			path = BookBurningActivity;
 			sourceTree = "<group>";
 		};
 		C96862D32846C64100FFBD0B /* Font */ = {
@@ -351,13 +338,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92140202283ED462003A2DFA /* FireParticle.sks in Resources */,
 				219428FD27E8EC16009E5250 /* art.scnassets in Resources */,
 				27396CC7280A12820034828A /* data.json in Resources */,
 				C96862D72846C68A00FFBD0B /* IMFellGreatPrimer-Regular.ttf in Resources */,
+				92B268592852656700EED52E /* BookBlack.png in Resources */,
 				84CEF4E6283D3FB90087869E /* videoplayback.mp4 in Resources */,
 				842D4A01284021AE00F7BCE9 /* Main.storyboard in Resources */,
-				92E677BE28515C0B00E6EFD1 /* Bonfire.scn in Resources */,
 				921401FE283EA551003A2DFA /* Assets.xcassets in Resources */,
 				C96862D82846C68D00FFBD0B /* IMFellGreatPrimer-Italic.ttf in Resources */,
 				92F4ACB6285248AD00D6E1A0 /* BookBurning.scnassets in Resources */,

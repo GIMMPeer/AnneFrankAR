@@ -4,14 +4,14 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2022-05-19T20:45:39Z</created>
-  <modified>2022-05-19T20:45:39Z</modified>
+  <created>2022-06-09T17:31:03Z</created>
+  <modified>2022-06-09T17:31:03Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
  <library_images>
   <image id="image1">
-   <init_from>PaperbackBurnedBook.png</init_from>
+   <init_from>../Textures/BurnedBookPaperback.png</init_from>
   </image>
  </library_images>
  <library_materials>
