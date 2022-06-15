@@ -30,11 +30,6 @@
     "displayName" : "1024px-Flag_of_Germany_(1935–1945).svg.png"
   },
   {
-    "libraryIdentifier" : "d0d01faedf7b76d51bd8a4ba928a0a9a",
-    "format" : "model",
-    "displayName" : "stan.usdz"
-  },
-  {
     "libraryIdentifier" : "3f9413c626d6c062e4f7f660efc9578e",
     "format" : "model",
     "displayName" : "BurnedBook.usdz"
@@ -138,5 +133,15 @@
     "libraryIdentifier" : "79f389fdf696326c7919f95670cd523f",
     "format" : "model",
     "displayName" : "StanButBigger.usdz"
+  },
+  {
+    "libraryIdentifier" : "8af0e6038225471427467f9c6d1cd6ee",
+    "format" : "model",
+    "displayName" : "Pillar.usdz"
+  },
+  {
+    "libraryIdentifier" : "ed17fb176fe1bf370db450fec3c3bd38",
+    "format" : "model",
+    "displayName" : "Textual rhetoric.usdz"
   }
 ]
