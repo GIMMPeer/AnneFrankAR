@@ -4402,21 +4402,21 @@
               "title" : "Box",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.97591882944107056,
+                  0.99635928869247437,
                   -1.4901161193847656e-08,
-                  -0.21813379228115082,
+                  -0.085253193974494934,
                   0,
-                  -0.050209134817123413,
-                  0.97315073013305664,
-                  -0.2246256023645401,
+                  -0.041684102267026901,
+                  0.87232524156570435,
+                  -0.48714578151702881,
                   0,
-                  0.21227781474590302,
-                  0.2301693856716156,
-                  0.94971579313278198,
+                  0.07436930388212204,
+                  0.48892661929130554,
+                  0.86914891004562378,
                   0,
-                  1.2353217601776123,
-                  1.4027400016784668,
-                  0.85217905044555664,
+                  0.72002494335174561,
+                  1.8309636116027832,
+                  1.0181863307952881,
                   1
                 ],
                 "sceneTransform" : [
@@ -4450,7 +4450,464 @@
                 "name" : "surface"
               },
               "behaviors" : [
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "audioType" : "play",
+                                          "filePath" : "audio:com.apple.rc.audio.miscellaneous.happy-chime-fx-03\/Happy%20Chime%20FX%2003.caf",
+                                          "loops" : false,
+                                          "multiplePerformType" : "ignore request",
+                                          "target" : [
+                                            "F40082C4-2034-478C-918C-B8B43C4ECF4D"
+                                          ],
+                                          "volume" : 0.5
+                                        },
+                                        "name" : {
+                                          "type" : "audio"
+                                        }
+                                      },
+                                      "identifier" : "BE76F6FC-5029-4850-8FD2-4DBD063297F4",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "DA70E718-8914-4FEC-A45D-05E69FC69734",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.364705890417099,
+                        0.74117648601531982,
+                        0.69019609689712524,
+                        1
+                      ],
+                      "identifier" : "85790DF1-62C2-43A5-937C-F398EF2498F4",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Spirit Guide",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "target" : [
+                                    "F40082C4-2034-478C-918C-B8B43C4ECF4D"
+                                  ]
+                                },
+                                "name" : "tapTarget"
+                              },
+                              "identifier" : "32D64FB6-5A9F-4049-B33B-A496347E8749",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "animationStyle" : "basic",
+                                          "buildOutAnimationType" : "none",
+                                          "distance" : 1,
+                                          "duration" : 0,
+                                          "fadeOut" : true,
+                                          "linearCoefficient" : 1,
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "75233114-7C85-46F6-B5C6-6748DE0629EE"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "hide"
+                                        }
+                                      },
+                                      "identifier" : "B2305EC3-1125-4716-A10A-044AABEC73EB",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "867A158A-2B5F-47B4-8D55-27EAEF4018EF",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.21568627655506134,
+                        0.72549021244049072,
+                        0.80000001192092896,
+                        1
+                      ],
+                      "identifier" : "2E9CCD68-4317-4111-AC19-1EC42001422C",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Spirit Guide Text (Hidden)",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
 
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "5489D799-4B10-498E-8EFA-89E722907B5D",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "animationStyle" : "basic",
+                                          "buildInAnimationType" : "none",
+                                          "distance" : 1,
+                                          "duration" : 1,
+                                          "fadeIn" : true,
+                                          "linearCoefficient" : 1,
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "75233114-7C85-46F6-B5C6-6748DE0629EE"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "show"
+                                        }
+                                      },
+                                      "identifier" : "33AD0E43-8530-4981-9437-ADAE11926F47",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "5CDD9543-7EBC-4D10-BE64-22D6002897A5",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.49019607901573181,
+                        0.7450980544090271,
+                        0.94901961088180542,
+                        1
+                      ],
+                      "identifier" : "E675706F-84B0-4A96-AB19-E1044261BE2E",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Spirit Guide Text (Show)",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "target" : [
+                                    "F40082C4-2034-478C-918C-B8B43C4ECF4D"
+                                  ]
+                                },
+                                "name" : "tapTarget"
+                              },
+                              "identifier" : "0DBB129E-710E-4B4E-9ABF-D66BF3FA9696",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "animationStyle" : "basic",
+                                          "buildOutAnimationType" : "none",
+                                          "distance" : 1,
+                                          "duration" : 0,
+                                          "fadeOut" : true,
+                                          "linearCoefficient" : 1,
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "16BFEE36-8302-45F0-95A2-AE692041FA01"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "hide"
+                                        }
+                                      },
+                                      "identifier" : "2670AEA7-7B61-43A1-AB9E-B87FCEF64B1D",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "DC40D378-D578-4079-A2C1-F10D65CAB7FA",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.56078433990478516,
+                        0.47058823704719543,
+                        0.80392158031463623,
+                        1
+                      ],
+                      "identifier" : "42D2D675-DB63-4552-B34F-70CEEA3902CD",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Book Text (Hidden)",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "AEA61EFB-C25B-4053-BC34-2954DF7E0C75",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "animationStyle" : "basic",
+                                          "duration" : 1.7699999809265137,
+                                          "emphasisAnimationType" : "jiggle",
+                                          "iterations" : 1,
+                                          "target" : [
+                                            "1BE63F10-7AC8-4A12-B9A5-4F78FF913CA3"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "emphasis"
+                                        }
+                                      },
+                                      "identifier" : "9A5DBB42-D587-4CFA-A602-547CAE6D88CA",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "963ABA99-2A43-4106-9653-B4A760B8B460",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "animationStyle" : "basic",
+                                          "buildInAnimationType" : "none",
+                                          "distance" : 1,
+                                          "duration" : 1,
+                                          "fadeIn" : true,
+                                          "linearCoefficient" : 1,
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "16BFEE36-8302-45F0-95A2-AE692041FA01"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "show"
+                                        }
+                                      },
+                                      "identifier" : "63C2C515-12FE-49F4-BDAD-62A65439A2E2",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "ADBD8FA5-0A7C-4B81-8096-96808C6D3773",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.30980393290519714,
+                        0.56470590829849243,
+                        0.99215686321258545,
+                        1
+                      ],
+                      "identifier" : "0E5F8927-503C-4AE8-BDF3-49DE74FB641C",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Book",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "distance" : 1,
+                                  "target" : [
+                                    "1BE63F10-7AC8-4A12-B9A5-4F78FF913CA3"
+                                  ],
+                                  "type" : 0
+                                },
+                                "name" : "proximity"
+                              },
+                              "identifier" : "0EFAEC4B-23CF-4EF1-BAE9-73BADF3340C6",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                }
               ],
               "gravity" : [
                 0,
@@ -4560,9 +5017,9 @@
                         0,
                         2.5915632247924805,
                         0,
-                        -0.4920712411403656,
+                        -0.49206450581550598,
                         -0.0034999849740415812,
-                        1.1320695877075195,
+                        -0.49765023589134216,
                         1
                       ]
                     }
@@ -4667,9 +5124,9 @@
                         0,
                         4.9077706336975098,
                         0,
-                        0.44141101837158203,
-                        8.3960578194819391e-05,
-                        0.90240770578384399,
+                        0.44141775369644165,
+                        8.3959879702888429e-05,
+                        -0.72731214761734009,
                         1
                       ]
                     }
@@ -4773,9 +5230,9 @@
                         0,
                         2.5915632247924805,
                         0,
-                        0.75400000810623169,
+                        0.75400674343109131,
                         -0.0034999849740415812,
-                        -0.88569772243499756,
+                        -2.5154178142547607,
                         1
                       ]
                     }
@@ -4879,9 +5336,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.36235150694847107,
-                        0.00058460241416469216,
-                        0.6780087947845459,
+                        -0.36234477162361145,
+                        0.0005846017156727612,
+                        -0.95171099901199341,
                         1
                       ]
                     }
@@ -4985,9 +5442,9 @@
                         0,
                         4.0000004768371582,
                         0,
-                        -0.2659623920917511,
-                        5.7533387007424608e-05,
-                        0.69302475452423096,
+                        -0.26595565676689148,
+                        5.7532677601557225e-05,
+                        -0.93669503927230835,
                         1
                       ]
                     }
@@ -5091,9 +5548,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.1313939243555069,
-                        0.00058513885596767068,
-                        0.86184436082839966,
+                        -0.13138718903064728,
+                        0.00058513815747573972,
+                        -0.76787549257278442,
                         1
                       ]
                     }
@@ -5197,9 +5654,158 @@
                         0,
                         5.0000004768371582,
                         0,
-                        0.35140019655227661,
-                        -2.3245813281391747e-05,
-                        -0.2794436514377594,
+                        0.35140693187713623,
+                        -2.3246506316354498e-05,
+                        -1.909163236618042,
+                        1
+                      ]
+                    }
+                  },
+                  "8FE13E77-86A4-4D46-B753-BFE91577D63D" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "boundHeight",
+                          {
+                            "typeName" : "Double",
+                            "value" : 1.5
+                          }
+                        ],
+                        [
+                          "boundWidth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 6
+                          }
+                        ],
+                        [
+                          "depth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.22
+                          }
+                        ],
+                        [
+                          "font",
+                          {
+                            "typeName" : "String",
+                            "value" : "TimesNewRomanPSMT"
+                          }
+                        ],
+                        [
+                          "hasBackground",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "height",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.10000000000000001
+                          }
+                        ],
+                        [
+                          "horizontalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "center"
+                          }
+                        ],
+                        [
+                          "material",
+                          {
+                            "typeName" : "String",
+                            "value" : "standard"
+                          }
+                        ],
+                        [
+                          "materialColor",
+                          {
+                            "typeName" : "double4",
+                            "value" : [
+                              1,
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        ],
+                        [
+                          "oneLine",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "precision",
+                          {
+                            "typeName" : "String",
+                            "value" : "normal"
+                          }
+                        ],
+                        [
+                          "text",
+                          {
+                            "typeName" : "String",
+                            "value" : "Please help me drive those people away!"
+                          }
+                        ],
+                        [
+                          "verticalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "bottom"
+                          }
+                        ],
+                        [
+                          "verticalPosition",
+                          {
+                            "typeName" : "String",
+                            "value" : "middle"
+                          }
+                        ],
+                        [
+                          "wordWrap",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ]
+                      ],
+                      "factory" : {
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.Text",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "75233114-7C85-46F6-B5C6-6748DE0629EE"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0.20016379654407501,
+                        0.3043040931224823,
+                        -0.28664562106132507,
                         1
                       ]
                     }
@@ -5303,9 +5909,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.11123903840780258,
-                        0.00058263546088710427,
-                        0.65693604946136475,
+                        0.1112457737326622,
+                        0.00058263476239517331,
+                        -0.97278374433517456,
                         1
                       ]
                     }
@@ -5409,9 +6015,264 @@
                         0,
                         5.0000004768371582,
                         0,
-                        0.95672512054443359,
-                        0.00010316819680156186,
-                        0.21674217283725739,
+                        0.95673185586929321,
+                        0.00010316747648175806,
+                        -1.4129776954650879,
+                        1
+                      ]
+                    }
+                  },
+                  "13E979CE-B76D-43F4-AF0C-B639F520152F" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "boundHeight",
+                          {
+                            "typeName" : "Double",
+                            "value" : 1.5
+                          }
+                        ],
+                        [
+                          "boundWidth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 6
+                          }
+                        ],
+                        [
+                          "depth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.22
+                          }
+                        ],
+                        [
+                          "font",
+                          {
+                            "typeName" : "String",
+                            "value" : "TimesNewRomanPSMT"
+                          }
+                        ],
+                        [
+                          "hasBackground",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "height",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.050000000000000003
+                          }
+                        ],
+                        [
+                          "horizontalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "center"
+                          }
+                        ],
+                        [
+                          "material",
+                          {
+                            "typeName" : "String",
+                            "value" : "standard"
+                          }
+                        ],
+                        [
+                          "materialColor",
+                          {
+                            "typeName" : "double4",
+                            "value" : [
+                              1,
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        ],
+                        [
+                          "oneLine",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "precision",
+                          {
+                            "typeName" : "String",
+                            "value" : "normal"
+                          }
+                        ],
+                        [
+                          "text",
+                          {
+                            "typeName" : "String",
+                            "value" : "On May 10, 1933, university students in Nazi Germany burned nearly 25,000 books that were considered “un-German”. This included Jewish works, anti-war, feminism, communism, and many other topics."
+                          }
+                        ],
+                        [
+                          "verticalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "bottom"
+                          }
+                        ],
+                        [
+                          "verticalPosition",
+                          {
+                            "typeName" : "String",
+                            "value" : "middle"
+                          }
+                        ],
+                        [
+                          "wordWrap",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ]
+                      ],
+                      "factory" : {
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.Text",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "16BFEE36-8302-45F0-95A2-AE692041FA01"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        0.46904665231704712,
+                        0,
+                        -0.88317292928695679,
+                        0,
+                        0,
+                        0.99999970197677612,
+                        0,
+                        0,
+                        0.88317298889160156,
+                        0,
+                        0.46904668211936951,
+                        0,
+                        -1.1036620140075684,
+                        0.57870286703109741,
+                        -1.8995437622070312,
+                        1
+                      ]
+                    }
+                  },
+                  "27BF0A25-79C4-4D16-B864-B88D48884958" : {
+                    "overrides" : {
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:2bbc8ae40a85367f844def0fa56cd60a\/Other.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "29D9A610-EA35-4EDF-8DFA-A0ACCF8CCC61"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "F40082C4-2034-478C-918C-B8B43C4ECF4D"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        -5.468019962310791,
+                        0,
+                        8.3726158142089844,
+                        0,
+                        0,
+                        9.999995231628418,
+                        0,
+                        0,
+                        -8.3726167678833008,
+                        0,
+                        -5.4680204391479492,
+                        0,
+                        0.59507495164871216,
+                        0.001783400890417397,
+                        -0.2867492139339447,
                         1
                       ]
                     }
@@ -5515,9 +6376,9 @@
                         0,
                         5.0000004768371582,
                         0,
-                        0.10331415385007858,
-                        5.7309869589516893e-05,
-                        0.35864832997322083,
+                        0.1033208891749382,
+                        5.730916018364951e-05,
+                        -1.2710715532302856,
                         1
                       ]
                     }
@@ -5621,9 +6482,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.29562017321586609,
-                        0.00057816511252894998,
-                        -0.45079982280731201,
+                        0.29562690854072571,
+                        0.00057816441403701901,
+                        -2.0805196762084961,
                         1
                       ]
                     }
@@ -5727,9 +6588,9 @@
                         0,
                         4.5812864303588867,
                         0,
-                        -0.55435317754745483,
-                        0.0001016035457723774,
-                        -0.012896476313471794,
+                        -0.55434644222259521,
+                        0.0001016028254525736,
+                        -1.6426161527633667,
                         1
                       ]
                     }
@@ -5833,9 +6694,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.70219594240188599,
-                        0.0005716682062484324,
-                        0.060636524111032486,
+                        0.70220267772674561,
+                        0.00057166750775650144,
+                        -1.5690832138061523,
                         1
                       ]
                     }
@@ -5939,9 +6800,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.4022158682346344,
-                        0.00057792669394984841,
-                        0.22213035821914673,
+                        -0.40220913290977478,
+                        0.00057792599545791745,
+                        -1.4075895547866821,
                         1
                       ]
                     }
@@ -6045,9 +6906,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.58903920650482178,
-                        0.00057077413657680154,
-                        -0.21222658455371857,
+                        0.5890459418296814,
+                        0.00057077343808487058,
+                        -1.8419461250305176,
                         1
                       ]
                     }
@@ -6151,9 +7012,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.19609914720058441,
-                        0.00058263546088710427,
-                        0.45762333273887634,
+                        -0.19609241187572479,
+                        0.00058263476239517331,
+                        -1.1720964908599854,
                         1
                       ]
                     }
@@ -6257,9 +7118,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.44120672345161438,
-                        0.00057381397346034646,
-                        0.54142606258392334,
+                        0.441213458776474,
+                        0.0005738132749684155,
+                        -1.0882937908172607,
                         1
                       ]
                     }
@@ -6363,9 +7224,9 @@
                         0,
                         1.7471424341201782,
                         0,
-                        -0.503692626953125,
+                        -0.88291805982589722,
                         0.63126665353775024,
-                        -0.38207638263702393,
+                        -2.0117928981781006,
                         1
                       ]
                     }
@@ -6469,9 +7330,9 @@
                         0,
                         2.5915632247924805,
                         0,
-                        -0.47189998626708984,
+                        -0.47189325094223022,
                         -0.0035000001080334187,
-                        -0.88569998741149902,
+                        -2.5154199600219727,
                         1
                       ]
                     }
@@ -6575,9 +7436,9 @@
                         0,
                         3.0942249298095703,
                         0,
-                        0.080443553626537323,
-                        0.00010157024371437728,
-                        -0.83823877573013306,
+                        0.080450288951396942,
+                        0.00010156952339457348,
+                        -2.4679586887359619,
                         1
                       ]
                     }
@@ -6681,9 +7542,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.4728754460811615,
-                        0.00057560211280360818,
-                        -0.16115429997444153,
+                        -0.47286871075630188,
+                        0.00057560141431167722,
+                        -1.7908738851547241,
                         1
                       ]
                     }
@@ -6787,9 +7648,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.14395777881145477,
-                        0.00057381397346034646,
-                        0.10927622765302658,
+                        -0.14395104348659515,
+                        0.0005738132749684155,
+                        -1.5204436779022217,
                         1
                       ]
                     }
@@ -6893,9 +7754,9 @@
                         0,
                         3.6044683456420898,
                         0,
-                        1.1942789554595947,
-                        0.0001015699963318184,
-                        0.52413487434387207,
+                        1.1942857503890991,
+                        0.0001015692760120146,
+                        -1.105584979057312,
                         1
                       ]
                     }
@@ -7000,9 +7861,9 @@
                         -2.8205622584209777e-06,
                         -9.2149982452392578,
                         0,
-                        0.67243790626525879,
+                        1.1234664916992188,
                         0.67839926481246948,
-                        -0.46343129873275757,
+                        -2.0931484699249268,
                         1
                       ]
                     }
@@ -7106,9 +7967,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.37849900126457214,
-                        0.00057172781089320779,
-                        0.014250160194933414,
+                        0.37850573658943176,
+                        0.00057172711240127683,
+                        -1.6154695749282837,
                         1
                       ]
                     }
@@ -7212,9 +8073,9 @@
                         0,
                         2.5915632247924805,
                         0,
-                        0.75792688131332397,
+                        0.75793361663818359,
                         -0.0034999849740415812,
-                        1.1588634252548218,
+                        -0.47085639834403992,
                         1
                       ]
                     }
@@ -7319,9 +8180,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.8045075535774231,
-                        0.0005741716013289988,
-                        0.29427334666252136,
+                        0.80451428890228271,
+                        0.00057417090283706784,
+                        -1.3354465961456299,
                         1
                       ]
                     }
@@ -7426,9 +8287,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.49550959467887878,
-                        0.00057530408957973123,
-                        0.7899773120880127,
+                        0.4955163300037384,
+                        0.00057530339108780026,
+                        -0.83974248170852661,
                         1
                       ]
                     }
@@ -7532,9 +8393,9 @@
                         0,
                         5.0000004768371582,
                         0,
-                        -0.063630633056163788,
-                        0.00010316819680156186,
-                        1.2063444852828979,
+                        -0.063623897731304169,
+                        0.00010316747648175806,
+                        -0.42337536811828613,
                         1
                       ]
                     }
@@ -7638,9 +8499,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        -0.011718112975358963,
-                        0.00057816511252894998,
-                        -0.31304720044136047,
+                        -0.011711377650499344,
+                        0.00057816441403701901,
+                        -1.9427667856216431,
                         1
                       ]
                     }
@@ -7744,9 +8605,9 @@
                         0,
                         10.000000953674316,
                         0,
-                        0.74854362010955811,
-                        0.00057381397346034646,
-                        0.65385478734970093,
+                        0.74855035543441772,
+                        0.0005738132749684155,
+                        -0.9758649468421936,
                         1
                       ]
                     }
@@ -7850,9 +8711,9 @@
                         0,
                         5.0000004768371582,
                         0,
-                        -0.60824310779571533,
-                        0.00010322780144633725,
-                        0.49913141131401062,
+                        -0.60823637247085571,
+                        0.00010322708112653345,
+                        -1.1305884122848511,
                         1
                       ]
                     }
